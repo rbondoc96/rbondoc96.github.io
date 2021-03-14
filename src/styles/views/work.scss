@@ -1,0 +1,70 @@
+.Work,
+.Work--mobile {
+    display: grid;
+}
+.Work {
+    min-height: 100vh;
+
+    grid-template-areas:
+    "header header"
+    "timeline pCards";
+    grid-template-rows: fit-content(100%);
+    column-gap: 1.5em;
+}
+.Work--mobile {
+    grid-template-areas:
+    "header"
+    "timeline"
+    "pCards";
+}
+.Work .Header {
+    grid-area: header;
+}
+.Work-timeline {
+    grid-area: timeline;
+
+    display: grid;
+    align-items: center;
+}
+.Work-links {
+    align-self: start;
+
+    display: flex;
+    align-items: center;
+}
+.Work-links-icons {
+    margin-left: 2.5em;
+
+    display: grid;
+    grid-template-columns:
+    fit-content(100%)
+    fit-content(100%)
+    fit-content(100%);
+    column-gap: 0.1em;
+}
+.Work-links-icon {
+    margin-right: 0.8em;
+}
+.Work-links-icon > svg {
+    width: 35px;
+    height: 35px;
+
+    &:hover {
+        cursor: pointer;
+        fill: var(--color-link);
+
+        transition: var(--msecs-300) fill ease-in-out;
+    }    
+}
+.Work-ProjectCards {
+    grid-area: pCards;
+}
+
+.Work--mobile .Work-links {
+    margin: 2em 0;
+}
+.Work--mobile .Work-ProjectCards {
+    margin: 2em 0;
+    display: grid;
+    justify-items: center;
+}

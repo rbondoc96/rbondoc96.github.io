@@ -1,0 +1,165 @@
+.app .NavBar,
+.app .NavBar--mobile {
+    background-color: var(--color-bg-light);
+}
+.app--dark .NavBar,
+.app--dark .NavBar--mobile {
+    background-color: var(--color-bg-dark);
+}
+
+.NavBar,
+.NavBar--mobile {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    z-index: var(--zIndex-9);
+
+    transition: var(--msecs-300) top;
+}
+
+.NavBar--hidden {
+    top: -80px;
+    transition: var(--msecs-300) top;
+}
+
+.NavBar {
+    display: grid;
+    grid-template-columns: 
+    auto auto;
+}
+.NavBar--mobile {
+    display: flex;
+    justify-content: space-between;
+
+    .NavBar-links,
+    .NavBar-links--hidden {
+        position: fixed;
+        top: 0;
+
+        width: var(--width-mobile-sidebar);
+        height: 100vh;
+
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 
+        fit-content(100%) 
+        fit-content(100%) 
+        fit-content(100%) 
+        fit-content(100%)
+        fit-content(100%);
+        justify-items: center;
+        row-gap: 2em;
+
+        background-color: var(--color-bg-dark-sidebar);
+
+        .NavLink > a,
+        > .button {
+            background-color: var(--color-bg-dark-sidebar);
+        }
+    }
+
+    .NavBar-links {
+        right: 0;
+        transition: var(--msecs-300) right;
+    }
+    .NavBar-links--hidden {
+        right: -100%;
+        transition: var(--msecs-300) right;
+    }
+
+    .NavBar-links--sidebar-toggle {
+        color: var(--color-text);
+    
+        justify-self: end;
+        margin: 0.4em 0.8em;
+    
+        &:hover {
+            cursor: pointer;
+    
+            color: var(--color-link);
+            transition: var(--msecs-300) color;
+        }
+    }
+}
+.app {
+    .NavBar--mobile .NavBar-links,
+    .NavBar--mobile .NavBar-links--hidden {
+        background-color: var(--color-bg-light-sidebar);
+
+        .NavLink > a,
+        > .button {
+            background-color: var(--color-bg-light-sidebar);
+        }
+    }  
+}
+.app--dark {
+    .NavBar--mobile .NavBar-links,
+    .NavBar--mobile .NavBar-links--hidden {
+        background-color: var(--color-bg-dark-sidebar);
+
+        .NavLink > a,
+        .button {
+            background-color: var(--color-bg-dark-sidebar);
+        }
+    }
+}
+
+.NavBar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.NavBar-links {
+    justify-self: end;
+
+    display: grid;
+    grid-template-rows: none;
+    grid-template-columns: 
+    fit-content(100%) 
+    fit-content(100%) 
+    fit-content(100%) 
+    fit-content(100%);
+    column-gap: 85px;
+    align-items: center;
+}
+
+.NavBar-toggle {
+    width: 2em;
+
+    &:hover {
+        cursor: pointer;
+        fill: var(--color-link);
+
+        transition: var(--msecs-300) fill ease-in-out;
+    }
+}
+
+/*
+NavLink component for the NavBar
+
+*/
+.NavLink {
+    > a {
+        position: relative;
+
+        text-decoration: none;
+        font-size: var(--fontSize-text);
+        font-weight: var(--fontWeight-light);
+    }
+    > a:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-link);
+        visibility: hidden;
+        
+        transition: all var(--msecs-300) ease-in-out;
+    }
+    > a:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+}

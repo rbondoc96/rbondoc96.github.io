@@ -1,0 +1,32 @@
+.Home,
+.Home--mobile {
+    display: grid;
+
+}
+// 80px == Nav height
+.Home {
+    min-height: 80vh;
+
+    grid-template-areas: 
+    "left right";
+}
+.Home--mobile {
+    grid-template-areas: 
+    "left"
+    "right";
+}
+
+.Home-header {
+    display: grid;
+    margin: 3.5rem 0;
+
+    font-size: calc(4rem + 0.5vw);
+
+    grid-template-rows: 
+    fit-content(100%)
+    fit-content(100%);
+}
+.Home-text {
+    font-size: calc(1.4rem + 0.5vw);
+    margin: 2em 0;
+}

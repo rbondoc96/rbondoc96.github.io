@@ -1,0 +1,26 @@
+/*
+*/
+.button {
+    border: 0;
+    padding: 0.5em 1.2em;
+
+    font-family: "Lato", sans-serif;
+    font-size: var(--fontSize-text);
+    font-weight: var(--fontWeight-regular);
+
+    color: var(--color-link);
+    border: 2px solid var(--color-link);
+    border-radius: 0.25em;
+
+    background: transparent;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-link-overlay) !important;
+        transition: var(--msecs-300) background-color;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
