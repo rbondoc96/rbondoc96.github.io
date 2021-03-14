@@ -166,7 +166,7 @@ export default function Work() {
                 <ProjectCard 
                 name="Personal Website"
                 status="Updating"
-                github="https://github.com/"
+                github="https://github.com/rbondoc96/rbondoc96.github.io"
                 description={"My portfoilio website I designed and built. This current iteration was built using React."}
                 tags={[
                     "React",
@@ -177,7 +177,7 @@ export default function Work() {
                 <ProjectCard 
                 name="Game Randomizer"
                 status="Work in Progress"
-                github="https://github.com/"
+                github="https://github.com/rbondoc96/DBD-Game-Randomizer"
                 description={"A web application for randomizing and analyzing player builds in Dead by Daylight, an asymmetrical action-horror game by Behavior Interactive. Choose a random build and analyze the effects of each player’s assets and resources."}
                 tags={[
                     "React",
@@ -190,7 +190,7 @@ export default function Work() {
                 <ProjectCard 
                 name="Parking Buddy"
                 status="Complete"
-                github="https://github.com/"
+                github="https://github.com/rbondoc96/EE-Senior-Design"
                 description={"My senior capstone group project for my Electrical Engineering major at San Diego State University. Track parking availability in campus parking structures and know ahead of time where you can park"}
                 tags={[
                     "Python",
