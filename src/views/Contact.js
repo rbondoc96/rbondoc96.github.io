@@ -1,6 +1,6 @@
 import React from "react"
 
-import Header from "../components/Header"
+import Header from "../components/content/Header"
 import Button from "../components/inputs/Button"
 import InlineLink from "../components/content/InlineLink"
 

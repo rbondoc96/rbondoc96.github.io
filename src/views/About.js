@@ -1,6 +1,6 @@
 import React, {useContext} from "react"
 
-import Header from "../components/Header"
+import Header from "../components/content/Header"
 import InlineLink from "../components/content/InlineLink"
 import SkillList from "../components/content/SkillList"
 

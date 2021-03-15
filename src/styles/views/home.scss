@@ -18,15 +18,15 @@
 
 .Home-header {
     display: grid;
-    margin: 3.5rem 0;
+    margin: calc(2.4rem + 1vh) 0;
 
-    font-size: calc(4rem + 0.5vw);
+    font-size: calc(3rem + 1vw);
 
     grid-template-rows: 
     fit-content(100%)
     fit-content(100%);
 }
 .Home-text {
-    font-size: calc(1.4rem + 0.5vw);
-    margin: 2em 0;
+    font-size: calc(1.3rem + 0.5vw);
+    margin: calc(1.5em + 1vh) 0;
 }

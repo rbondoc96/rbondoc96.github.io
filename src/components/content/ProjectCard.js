@@ -51,9 +51,11 @@ export default function ProjectCard({
             </p>
 
             <ul className="ProjectCard-tags">
-                {tags && tags.map(elem => {
+                {tags && tags.map((elem, idx) => {
                     return(
-                        <li className="ProjectCard-tag">
+                        <li
+                        key={idx}
+                        className="ProjectCard-tag">
                             {elem}
                         </li>
                     )

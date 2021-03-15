@@ -12,9 +12,13 @@
     justify-items: center;
     margin-top: 5em;
 
+    text-align: center;
     font-weight: var(--fontWeight-light);
 }
 .Contact-footer-attributions,
 .Contact-footer-attributions a {
     font-size: 0.8rem;
+}
+.Contact-footer-attributions {
+    margin-top: 1em;
 }

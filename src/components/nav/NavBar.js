@@ -31,37 +31,38 @@ export default function NavBar() {
         <nav className={`${isMobile ? "NavBar--mobile": "NavBar"} ${
             isNavBarShown ? "" : "NavBar--hidden"
         }`}>
+            <div className="NavBar-inner">
+                <div className="NavBar-logo" onClick={() => {
+                    window.open(window.location.href.split("#")[0], "_self")
+                }}>
+                    <Logo />
+                </div>
 
-            <div className="NavBar-logo" onClick={() => {
-                window.open(window.location.href.split("#")[0], "_self")
-            }}>
-                <Logo />
+                <div className={(isMobile && !isSidebarActive)
+                    ? "NavBar-links--hidden"
+                    : "NavBar-links"}>
+
+                    {isMobile && <div 
+                    className="NavBar-links--sidebar-toggle"
+                    onClick={toggleSidebar}>
+                        X
+                    </div>}
+
+                    <NavLink href="#about" children="About" />
+                    <NavLink href="#work" children="Work" />
+                    <NavLink href="#contact" children="Contact" />
+                    <Button children="Resume" href={Resume} onClick={() => {
+                        window.open(Resume, "_blank")
+                    }}/>
+
+                </div>
+
+                {isMobile && <Hamburger 
+                    className="NavBar-toggle" 
+                    theme={uiTheme}
+                    onClick={toggleSidebar}
+                />}
             </div>
-
-            <div className={(isMobile && !isSidebarActive)
-                ? "NavBar-links--hidden"
-                : "NavBar-links"}>
-
-                {isMobile && <div 
-                className="NavBar-links--sidebar-toggle"
-                onClick={toggleSidebar}>
-                    X
-                </div>}
-
-                <NavLink href="#about" children="About" />
-                <NavLink href="#work" children="Work" />
-                <NavLink href="#contact" children="Contact" />
-                <Button children="Resume" href={Resume} onClick={() => {
-                    window.open(Resume, "_blank")
-                }}/>
-
-            </div>
-
-            {isMobile && <Hamburger 
-                className="NavBar-toggle" 
-                theme={uiTheme}
-                onClick={toggleSidebar}
-            />}
         </nav>
     )
 }

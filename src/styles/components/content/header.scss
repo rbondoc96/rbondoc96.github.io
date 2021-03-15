@@ -1,0 +1,22 @@
+.Header {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    margin: 1.5em 0;
+}
+.Header-text {
+    position: relative;
+    margin: 0;
+    z-index: var(--zIndex-2);
+}
+.Header-underline {
+    position: absolute;
+    z-index: var(--zIndex-1);
+
+    width: 62%;
+    height: 10px;
+    background-color: var(--color-link);
+
+    bottom: 0.3rem;
+    left: 0;
+}

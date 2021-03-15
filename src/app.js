@@ -80,8 +80,8 @@ export default function App({
         <div className={uiTheme.toLowerCase() == "light"
         ? "app"
         : "app--dark"}>
+            <NavBar />
             <div className="app-inner">
-                <NavBar />
                 <Home />
                 <About />
                 <Work />
@@ -90,7 +90,9 @@ export default function App({
             </div>
 
             <div className={`app-theme-toggle ${
-                !isNavBarShown && "app-theme-toggle--hidden"
+                !isNavBarShown
+                ? "app-theme-toggle--hidden"
+                : ""
             }`} onClick={toggleTheme}>
                 {uiTheme.toLowerCase() == "dark"
                 ? <Moon 

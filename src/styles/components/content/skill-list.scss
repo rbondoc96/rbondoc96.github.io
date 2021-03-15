@@ -1,0 +1,77 @@
+/*
+.SkillList-icon             Wrapper for svg
+.SkillList-icon > svg       Actual svg element
+.SkillList-content          The content for each paragraph
+*/
+.SkillList {
+    display: grid;
+    grid-template-columns: 
+    fit-content(100%)
+    auto;
+
+}
+.SkillList {
+    max-width: 540px;
+}
+.SkillList-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(65px + 0.4vw);
+    height: calc(65px + 0.4vw);
+
+    border-radius: 0.8em;
+}
+.SkillList-icon > svg {
+    width: calc(45px + 0.4vw);
+    height: calc(45px + 0.4vw);
+}
+
+.app .SkillList-icon:hover {
+    cursor: pointer;
+    background-color: var(--color-icon-overlay-light);
+    transition: var(--msecs-300) ease-in-out;
+}
+.app--dark .SkillList-icon:hover {
+    cursor: pointer;
+    background-color: var(--color-icon-overlay-dark);
+    transition: var(--msecs-300) ease-in-out;
+}
+
+.app .SkillList-icon--selected {
+    background-color: var(--color-icon-overlay-light);
+}
+.app--dark .SkillList-icon--selected {
+    background-color: var(--color-icon-overlay-dark);
+}
+
+
+
+.SkillList-content {
+    position: relative;
+    margin: 0 2em;
+}
+.SkillList-content-item {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.SkillList-content-item-header {
+    text-align: center;
+    margin: 0;
+}
+.SkillList-content-item-list {
+    list-style-type: none;
+    padding: 0;
+
+    display: grid;
+    row-gap: 10px;
+}
+.SkillList-content-item-list li {
+    font-size: var(--fontSize-text);
+    font-weight: var(--fontWeight-light);
+}   
+.SkillList sup {
+    font-size: 0.8rem;
+}

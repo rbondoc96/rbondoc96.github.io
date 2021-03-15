@@ -1,0 +1,29 @@
+.InlineLink {
+    position: relative;
+
+    > a {
+        color: var(--color-link);
+
+        text-decoration: none;
+        font-size: var(--fontSize-text);
+        font-weight: var(--fontWeight-bold);
+    }
+
+    .InlineLink-underline {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-link);
+        visibility: hidden;
+        
+        transition: all var(--msecs-300) ease-in-out;
+    }
+
+    &:hover .InlineLink-underline {
+        visibility: visible;
+        width: 100%;
+    }
+}

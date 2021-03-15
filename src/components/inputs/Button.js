@@ -9,10 +9,8 @@ export default function Button({
     let className = `button${""}`
 
     return(
-        <div>
-            <button onClick={onClick} className={className}>
-                {children}
-            </button>
-        </div>
+        <button onClick={onClick} className={className}>
+            {children}
+        </button>
     )
 }

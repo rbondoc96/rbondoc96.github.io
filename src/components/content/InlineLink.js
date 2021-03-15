@@ -11,7 +11,7 @@ export default function InlineLink({
             <a href={href} target="_blank">
                 {children}
             </a>
-            {underline && <div className="InlineLink-underline"></div>}
+            {underline && <span className="InlineLink-underline"></span>}
         </span>
     )
 }

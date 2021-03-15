@@ -1,0 +1,74 @@
+/*
+
+*/
+.Timeline {
+    padding: 0;
+    list-style-type: none;
+
+    display: grid;
+    row-gap: 6em;
+}
+.TimelineBullet {
+    font-size: var(--fontSize-text);
+}
+.TimelineBullet-inner {
+    display: inline-grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+.TimelineBullet-bullet {
+    width: 0.4em;
+    height: 0.4em;
+
+    border-radius: 50%;
+
+    margin-right: 0.5em;
+}
+.TimelineBullet--work .TimelineBullet-bullet {
+    background-color: var(--color-text-work);
+}
+.TimelineBullet--education .TimelineBullet-bullet {
+    background-color: var(--color-text-education);
+}
+.TimelineBullet--personal .TimelineBullet-bullet {
+    background-color: var(--color-text-personal);
+}
+
+.TimelineBullet-date,
+.TimelineBullet-text {
+    font-weight: var(--fontWeight-light);
+}
+.TimelineBullet-date {
+    margin: 0 0.8em;
+    width: 90px;
+}
+.TimelineBullet-text {
+    margin-left: 0.8em;
+    vertical-align: bottom;
+}
+.TimelineBullet-text-bold {
+    font-weight: var(--fontWeight-bold);
+}
+.TimelineBullet--work,
+.TimelineBullet--work .TimelineBullet-text-bold,
+.TimelineBullet--work .TimelineBullet-text-bold a  {
+    color: var(--color-text-work);
+}
+.TimelineBullet--education,
+.TimelineBullet--education .TimelineBullet-text-bold,
+.TimelineBullet--education .TimelineBullet-text-bold a {
+    color: var(--color-text-education) !important;
+}
+.TimelineBullet--personal,
+.TimelineBullet--personal .TimelineBullet-text-bold,
+.TimelineBullet--personal .TimelineBullet-text-bold a {
+    color: var(--color-text-personal);
+}
+.app .TimelineBullet-text,
+.app .TimelineBullet-date {
+    color: var(--color-text-light);
+}
+.app--dark .TimelineBullet-text,
+.app--dark .TimelineBullet-date {
+    color: var(--color-text-dark);
+}

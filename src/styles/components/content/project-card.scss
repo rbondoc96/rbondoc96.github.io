@@ -1,0 +1,79 @@
+/*
+.
+*/
+.ProjectCard {
+    display: grid;
+
+    grid-template-areas:
+    "header github"
+    "status status"
+    "description description"
+    "tags tags";
+    grid-template-columns: 10fr 1fr;
+
+    padding: 0.5em 1.2em;
+    border-radius: 6px;
+
+    margin: 1em 0;
+}
+.app .ProjectCard {
+    background-color: var(--color-card-bg-light);
+}
+.app--dark .ProjectCard {
+    background-color: var(--color-card-bg-dark);
+}
+.ProjectCard-header {
+    grid-area: header;
+
+    margin: 0.5em 0;    
+}
+.ProjectCard-github {
+    grid-area: github;
+
+    width: fit-content;
+    justify-self: end;
+    align-self: center;
+}
+.ProjectCard-github > svg {
+
+    width: 1.8em;
+    height: 1.8em;
+
+    &:hover {
+        cursor: pointer;
+        fill: var(--color-link);
+
+        transition: var(--msecs-300) fill ease-in-out;
+    }
+}
+.ProjectCard-status {
+    grid-area: status;
+}
+.ProjectCard-status-label {
+    font-weight: var(--fontWeight-semiBold);
+    margin-right: 0.6em;
+}
+
+.ProjectCard-description {
+    grid-area: description;
+
+    width: 100%;
+    max-width: none;
+}
+.ProjectCard-status,
+.ProjectCard-description {
+    margin: 0.6em 0;
+}
+.ProjectCard-tags {
+    grid-area: tags;
+
+    list-style-type: none;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.ProjectCard-tag {
+    width: fit-content;
+    margin-right: 0.8rem;
+}

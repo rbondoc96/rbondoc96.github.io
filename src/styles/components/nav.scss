@@ -10,11 +10,21 @@
 .NavBar,
 .NavBar--mobile {
     position: sticky;
-    top: 0;
-    height: 80px;
+
+    /* -1px fixes minor clipping at top of NavBar */
+    top: -1px;
     z-index: var(--zIndex-9);
 
     transition: var(--msecs-300) top;
+
+    width: 100vw;
+}
+
+.NavBar-inner {
+    width: 88%;
+    height: 80px;
+
+    margin: 0 auto;
 }
 
 .NavBar--hidden {
@@ -22,12 +32,12 @@
     transition: var(--msecs-300) top;
 }
 
-.NavBar {
+.NavBar .NavBar-inner {
     display: grid;
     grid-template-columns: 
     auto auto;
 }
-.NavBar--mobile {
+.NavBar--mobile .NavBar-inner {
     display: flex;
     justify-content: space-between;
 

@@ -2,3 +2,15 @@
 @import "./about.scss";
 @import "./work.scss";
 @import "./contact.scss";
+
+.About,
+.Work,
+.Contact {
+    margin-top: 5rem;
+}
+
+.About--mobile,
+.Work--mobile,
+.Contact--mobile {
+    margin-top: 4rem;
+}

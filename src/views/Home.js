@@ -12,9 +12,7 @@ export default function Home() {
                     <span>I'm Rodrigo.</span>
                 </h1>
 
-                <p className="Home-text">I'm an electrical engineer and
-                <br/> software developer based in San 
-                <br/> Diego, CA, U.S.A.</p>
+                <p className="Home-text">I'm an electrical engineer and software developer based in San Diego, CA, U.S.A.</p>
 
                 <Button children="Say Hello" onClick={() => {
                     window.open("mailto:rbondoc96@gmail.com")
