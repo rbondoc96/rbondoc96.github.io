@@ -7,7 +7,7 @@ import Button from "../inputs/Button"
 import {UIContext} from "../../context/UIContext"
 
 import Hamburger from "../../svg/Hamburger"
-import Resume from "../../../public/pdfs/Software QA Analyst - Rodrigo Bondoc Resume.pdf"
+import Resume from "../../../public/pdfs/Rodrigo Bondoc Resume.pdf"
 
 export default function NavBar() {
 

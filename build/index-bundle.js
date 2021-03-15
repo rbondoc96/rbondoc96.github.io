@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 748:
+/***/ 999:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -126,8 +126,8 @@ function Hamburger(_ref) {
     d: "M324.267,102.4c-9.426,0-17.067,7.641-17.067,17.067v17.067c0,9.426,7.641,17.067,17.067,17.067\r c9.426,0,17.067-7.641,17.067-17.067v-17.067C341.333,110.041,333.692,102.4,324.267,102.4z"
   }))), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null), /*#__PURE__*/react.createElement("g", null));
 }
-;// CONCATENATED MODULE: ./public/pdfs/Software QA Analyst - Rodrigo Bondoc Resume.pdf
-/* harmony default export */ const Software_QA_Analyst_Rodrigo_Bondoc_Resume = (__webpack_require__.p + "assets/Software QA Analyst - Rodrigo Bondoc Resume.pdf");
+;// CONCATENATED MODULE: ./public/pdfs/Rodrigo Bondoc Resume.pdf
+/* harmony default export */ const Rodrigo_Bondoc_Resume = (__webpack_require__.p + "assets/Rodrigo Bondoc Resume.pdf");
 ;// CONCATENATED MODULE: ./src/components/nav/NavBar.js
 function NavBar_slicedToArray(arr, i) { return NavBar_arrayWithHoles(arr) || NavBar_iterableToArrayLimit(arr, i) || NavBar_unsupportedIterableToArray(arr, i) || NavBar_nonIterableRest(); }
 
@@ -202,9 +202,9 @@ function NavBar() {
     children: "Contact"
   }), /*#__PURE__*/react.createElement(Button, {
     children: "Resume",
-    href: Software_QA_Analyst_Rodrigo_Bondoc_Resume,
+    href: Rodrigo_Bondoc_Resume,
     onClick: function onClick() {
-      window.open(Software_QA_Analyst_Rodrigo_Bondoc_Resume, "_blank");
+      window.open(Rodrigo_Bondoc_Resume, "_blank");
     }
   })), isMobile && /*#__PURE__*/react.createElement(Hamburger, {
     className: "NavBar-toggle",
@@ -913,9 +913,9 @@ function Work() {
     className: "Work-links-button"
   }, /*#__PURE__*/react.createElement(Button, {
     children: "Resume",
-    href: Software_QA_Analyst_Rodrigo_Bondoc_Resume,
+    href: Rodrigo_Bondoc_Resume,
     onClick: function onClick() {
-      window.open(Software_QA_Analyst_Rodrigo_Bondoc_Resume, "_blank");
+      window.open(Rodrigo_Bondoc_Resume, "_blank");
     }
   })), /*#__PURE__*/react.createElement("div", {
     className: "Work-links-icons"
@@ -1090,7 +1090,6 @@ function app_iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" ||
 
 function app_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
- // import _ from "lodash"
 
 
 
@@ -1305,7 +1304,7 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[748,209]
+/******/ 			[999,209]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
