@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 819:
+/***/ 748:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -93,10 +93,10 @@ function Button(_ref) {
       onClick = _ref.onClick,
       children = _ref.children;
   var className = "button";
-  return /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("button", {
+  return /*#__PURE__*/react.createElement("button", {
     onClick: onClick,
     className: className
-  }, children));
+  }, children);
 }
 ;// CONCATENATED MODULE: ./src/svg/Hamburger.js
 
@@ -180,6 +180,8 @@ function NavBar() {
   return /*#__PURE__*/react.createElement("nav", {
     className: "".concat(isMobile ? "NavBar--mobile" : "NavBar", " ").concat(isNavBarShown ? "" : "NavBar--hidden")
   }, /*#__PURE__*/react.createElement("div", {
+    className: "NavBar-inner"
+  }, /*#__PURE__*/react.createElement("div", {
     className: "NavBar-logo",
     onClick: function onClick() {
       window.open(window.location.href.split("#")[0], "_self");
@@ -208,7 +210,7 @@ function NavBar() {
     className: "NavBar-toggle",
     theme: uiTheme,
     onClick: toggleSidebar
-  }));
+  })));
 }
 ;// CONCATENATED MODULE: ./src/views/Home.js
 
@@ -222,7 +224,7 @@ function Home() {
     className: "Home-header"
   }, /*#__PURE__*/react.createElement("span", null, "Hi there!"), /*#__PURE__*/react.createElement("span", null, "I'm Rodrigo.")), /*#__PURE__*/react.createElement("p", {
     className: "Home-text"
-  }, "I'm an electrical engineer and", /*#__PURE__*/react.createElement("br", null), " software developer based in San", /*#__PURE__*/react.createElement("br", null), " Diego, CA, U.S.A."), /*#__PURE__*/react.createElement(Button, {
+  }, "I'm an electrical engineer and software developer based in San Diego, CA, U.S.A."), /*#__PURE__*/react.createElement(Button, {
     children: "Say Hello",
     onClick: function onClick() {
       window.open("mailto:rbondoc96@gmail.com");
@@ -231,7 +233,7 @@ function Home() {
     className: "Home-right"
   }));
 }
-;// CONCATENATED MODULE: ./src/components/Header.js
+;// CONCATENATED MODULE: ./src/components/content/Header.js
 
 function Header(_ref) {
   var children = _ref.children;
@@ -255,7 +257,7 @@ function InlineLink(_ref) {
   }, /*#__PURE__*/react.createElement("a", {
     href: href,
     target: "_blank"
-  }, children), underline && /*#__PURE__*/react.createElement("div", {
+  }, children), underline && /*#__PURE__*/react.createElement("span", {
     className: "InlineLink-underline"
   }));
 }
@@ -729,11 +731,91 @@ function ProjectCard(_ref) {
     className: "ProjectCard-description"
   }, description), /*#__PURE__*/react.createElement("ul", {
     className: "ProjectCard-tags"
-  }, tags && tags.map(function (elem) {
+  }, tags && tags.map(function (elem, idx) {
     return /*#__PURE__*/react.createElement("li", {
+      key: idx,
       className: "ProjectCard-tag"
     }, elem);
   })));
+}
+;// CONCATENATED MODULE: ./src/components/content/Timeline.js
+
+
+
+function TimelineBullet(_ref) {
+  var type = _ref.type,
+      date = _ref.date,
+      lightText = _ref.lightText,
+      boldText = _ref.boldText,
+      boldHref = _ref.boldHref;
+  // Types: Personal, Work, Education
+  var colorClass;
+
+  switch (type) {
+    case "Work":
+      colorClass = "TimelineBullet--work";
+      break;
+
+    case "Education":
+      colorClass = "TimelineBullet--education";
+      break;
+
+    case "Personal":
+      colorClass = "TimelineBullet--personal";
+  }
+
+  return /*#__PURE__*/react.createElement("li", {
+    className: "TimelineBullet ".concat(colorClass)
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "TimelineBullet-inner"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "TimelineBullet-bullet"
+  }), /*#__PURE__*/react.createElement("div", {
+    className: "TimelineBullet-date"
+  }, date), /*#__PURE__*/react.createElement("div", {
+    className: "TimelineBullet-text"
+  }, lightText, " ", /*#__PURE__*/react.createElement("span", {
+    className: "TimelineBullet-text-bold"
+  }, boldHref ? /*#__PURE__*/react.createElement(InlineLink, {
+    href: boldHref,
+    children: boldText,
+    underline: false
+  }) : boldText))));
+}
+
+function Timeline() {
+  return /*#__PURE__*/react.createElement("ul", {
+    className: "Timeline"
+  }, /*#__PURE__*/react.createElement(TimelineBullet, {
+    type: "Work",
+    date: "Jan 2021",
+    lightText: "Started as a Software QA Analyst at",
+    boldText: "snapIoT (acquired by Covance Inc.)",
+    boldHref: "https://snapiot.com/"
+  }), /*#__PURE__*/react.createElement(TimelineBullet, {
+    type: "Work",
+    date: "Dec 2019",
+    lightText: "Started as a Compliance Specialist at",
+    boldText: "Aya Healthcare Inc.",
+    boldHref: "https://www.ayahealthcare.com/"
+  }), /*#__PURE__*/react.createElement(TimelineBullet, {
+    type: "Personal",
+    date: "Sep 2019",
+    lightText: "Went backpacking solo through",
+    boldText: "Europe"
+  }), /*#__PURE__*/react.createElement(TimelineBullet, {
+    type: "Work",
+    date: "Jul 2019",
+    lightText: "Started as a Design Engineer at",
+    boldText: "Raveon Technologies Corp.",
+    boldHref: "https://www.raveon.com/"
+  }), /*#__PURE__*/react.createElement(TimelineBullet, {
+    type: "Education",
+    date: "May 2019",
+    lightText: "Graduated from",
+    boldText: "San Diego State University",
+    boldHref: "https://electrical.sdsu.edu/"
+  }));
 }
 ;// CONCATENATED MODULE: ./src/svg/Email.js
 
@@ -793,82 +875,6 @@ function Work_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-function TimelineBullet(_ref) {
-  var type = _ref.type,
-      date = _ref.date,
-      lightText = _ref.lightText,
-      boldText = _ref.boldText,
-      boldHref = _ref.boldHref;
-  // Types: Personal, Work, Education
-  var colorClass;
-
-  switch (type) {
-    case "Work":
-      colorClass = "TimelineBullet--work";
-      break;
-
-    case "Education":
-      colorClass = "TimelineBullet--education";
-      break;
-
-    case "Personal":
-      colorClass = "TimelineBullet--personal";
-  }
-
-  return /*#__PURE__*/react.createElement("li", {
-    className: "TimelineBullet ".concat(colorClass)
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "TimelineBullet-inner"
-  }, /*#__PURE__*/react.createElement("div", {
-    className: "TimelineBullet-bullet"
-  }), /*#__PURE__*/react.createElement("div", {
-    className: "TimelineBullet-date"
-  }, date), /*#__PURE__*/react.createElement("div", {
-    className: "TimelineBullet-text"
-  }, lightText, " ", /*#__PURE__*/react.createElement("span", {
-    className: "TimelineBullet-text-bold"
-  }, boldHref ? /*#__PURE__*/react.createElement(InlineLink, {
-    href: boldHref,
-    children: boldText,
-    underline: false
-  }) : boldText))));
-}
-
-function Timeline() {
-  return /*#__PURE__*/react.createElement("ul", {
-    className: "Timeline"
-  }, /*#__PURE__*/react.createElement(TimelineBullet, {
-    type: "Work",
-    date: "Jan 2021",
-    lightText: "Started as a Software QA Analyst at",
-    boldText: "snapIoT (acquired by Covance Inc.)",
-    boldHref: "https://snapiot.com/"
-  }), /*#__PURE__*/react.createElement(TimelineBullet, {
-    type: "Work",
-    date: "Dec 2019",
-    lightText: "Started as a Software QA Analyst at",
-    boldText: "Aya Healthcare Inc.",
-    boldHref: "https://www.ayahealthcare.com/"
-  }), /*#__PURE__*/react.createElement(TimelineBullet, {
-    type: "Personal",
-    date: "Sep 2019",
-    lightText: "Went backpacking solo through",
-    boldText: "Europe"
-  }), /*#__PURE__*/react.createElement(TimelineBullet, {
-    type: "Work",
-    date: "Jul 2019",
-    lightText: "Started as a Design Engineer at",
-    boldText: "Raveon Technologies Corp.",
-    boldHref: "https://www.raveon.com/"
-  }), /*#__PURE__*/react.createElement(TimelineBullet, {
-    type: "Education",
-    date: "May 2019",
-    lightText: "Graduated from",
-    boldText: "San Diego State University",
-    boldHref: "https://electrical.sdsu.edu/"
-  }));
-}
 
 function Work() {
   var _useContext = (0,react.useContext)(UIContext),
@@ -947,7 +953,7 @@ function Work() {
     status: "Work in Progress",
     github: "https://github.com/rbondoc96/DBD-Game-Randomizer",
     description: "A web application for randomizing and analyzing player builds in Dead by Daylight, an asymmetrical action-horror game by Behavior Interactive. Choose a random build and analyze the effects of each player’s assets and resources.",
-    tags: ["React", "Django", "SCSS", "Webpack", "PostgreSQL"]
+    tags: ["React", "Django", "SCSS", "Webpack", "WebSockets", "PostgreSQL"]
   }), /*#__PURE__*/react.createElement(ProjectCard, {
     name: "Parking Buddy",
     status: "Complete",
@@ -1168,10 +1174,10 @@ function App(_ref) {
   }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: uiTheme.toLowerCase() == "light" ? "app" : "app--dark"
-  }, /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement(NavBar, null), /*#__PURE__*/react.createElement("div", {
     className: "app-inner"
-  }, /*#__PURE__*/react.createElement(NavBar, null), /*#__PURE__*/react.createElement(Home, null), /*#__PURE__*/react.createElement(About, null), /*#__PURE__*/react.createElement(Work, null), /*#__PURE__*/react.createElement(Contact, null)), /*#__PURE__*/react.createElement("div", {
-    className: "app-theme-toggle ".concat(!isNavBarShown && "app-theme-toggle--hidden"),
+  }, /*#__PURE__*/react.createElement(Home, null), /*#__PURE__*/react.createElement(About, null), /*#__PURE__*/react.createElement(Work, null), /*#__PURE__*/react.createElement(Contact, null)), /*#__PURE__*/react.createElement("div", {
+    className: "app-theme-toggle ".concat(!isNavBarShown ? "app-theme-toggle--hidden" : ""),
     onClick: toggleTheme
   }, uiTheme.toLowerCase() == "dark" ? /*#__PURE__*/react.createElement(Moon, {
     theme: uiTheme
@@ -1311,7 +1317,7 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[819,16]
+/******/ 			[748,16]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
