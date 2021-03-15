@@ -1,5 +1,4 @@
 import regeneratorRuntime from "regenerator-runtime"
-// import _ from "lodash"
 import throttle from "lodash/throttle"
 
 import React, {useContext, useEffect, useState} from "react"
