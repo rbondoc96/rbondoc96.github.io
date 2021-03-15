@@ -59,9 +59,9 @@ function UIProvider(_ref) {
 }
 // EXTERNAL MODULE: ./node_modules/regenerator-runtime/runtime.js
 var runtime = __webpack_require__(666);
-// EXTERNAL MODULE: ./node_modules/lodash/lodash.js
-var lodash = __webpack_require__(486);
-var lodash_default = /*#__PURE__*/__webpack_require__.n(lodash);
+// EXTERNAL MODULE: ./node_modules/lodash/throttle.js
+var throttle = __webpack_require__(493);
+var throttle_default = /*#__PURE__*/__webpack_require__.n(throttle);
 ;// CONCATENATED MODULE: ./src/components/Logo.js
 
 function Logo() {
@@ -1090,6 +1090,7 @@ function app_iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" ||
 
 function app_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+ // import _ from "lodash"
 
 
 
@@ -1163,8 +1164,7 @@ function App(_ref) {
   };
 
   (0,react.useEffect)(function () {
-    var throttledScroll = lodash_default().throttle(onScroll, 100);
-
+    var throttledScroll = throttle_default()(onScroll, 100);
     window.addEventListener("resize", onResize);
     window.addEventListener("scroll", throttledScroll);
     return function () {
@@ -1228,16 +1228,13 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -1291,15 +1288,6 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/node module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.nmd = (module) => {
-/******/ 			module.paths = [];
-/******/ 			if (!module.children) module.children = [];
-/******/ 			return module;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
 /******/ 		__webpack_require__.p = "";
@@ -1317,7 +1305,7 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			[748,16]
+/******/ 			[748,209]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		

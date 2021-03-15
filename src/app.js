@@ -1,5 +1,6 @@
 import regeneratorRuntime from "regenerator-runtime"
-import _ from "lodash"
+// import _ from "lodash"
+import throttle from "lodash/throttle"
 
 import React, {useContext, useEffect, useState} from "react"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
@@ -65,7 +66,7 @@ export default function App({
     }
 
     useEffect(() => {
-        const throttledScroll = _.throttle(onScroll, 100)
+        const throttledScroll = throttle(onScroll, 100)
         
         window.addEventListener("resize", onResize)
         window.addEventListener("scroll", throttledScroll)
