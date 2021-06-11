@@ -1,7 +1,7 @@
-@import "./home.scss";
-@import "./about.scss";
-@import "./work.scss";
-@import "./contact.scss";
+@import "./home.css";
+@import "./about.css";
+@import "./work.css";
+@import "./contact.css";
 
 .About,
 .Work,

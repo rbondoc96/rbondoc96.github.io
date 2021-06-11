@@ -13,14 +13,12 @@
     border-radius: 0.25em;
 
     background: transparent;
-
-    &:hover {
-        cursor: pointer;
-        background-color: var(--color-link-overlay) !important;
-        transition: var(--msecs-300) background-color;
-    }
-
-    &:focus {
-        outline: none;
-    }
+}
+.button:hover {
+    cursor: pointer;
+    background-color: var(--color-link-overlay) !important;
+    transition: var(--msecs-300) background-color;
+}
+.button:focus {
+    outline: none
 }

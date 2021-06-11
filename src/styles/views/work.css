@@ -48,13 +48,12 @@
 .Work-links-icon > svg {
     width: 35px;
     height: 35px;
+}
+.Work-links-icon > svg:hover {
+    cursor: pointer;
+    fill: var(--color-link);
 
-    &:hover {
-        cursor: pointer;
-        fill: var(--color-link);
-
-        transition: var(--msecs-300) fill ease-in-out;
-    }    
+    transition: var(--msecs-300) fill ease-in-out;
 }
 .Work-ProjectCards {
     grid-area: pCards;

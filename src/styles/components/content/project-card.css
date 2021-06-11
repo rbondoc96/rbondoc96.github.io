@@ -35,16 +35,14 @@
     align-self: center;
 }
 .ProjectCard-github > svg {
-
     width: 1.8em;
     height: 1.8em;
+}
+.ProjectCard-github > svg:hover {
+    cursor: pointer;
+    fill: var(--color-link);
 
-    &:hover {
-        cursor: pointer;
-        fill: var(--color-link);
-
-        transition: var(--msecs-300) fill ease-in-out;
-    }
+    transition: var(--msecs-300) fill ease-in-out;
 }
 .ProjectCard-status {
     grid-area: status;

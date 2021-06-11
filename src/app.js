@@ -16,9 +16,9 @@ import Contact from "./views/Contact"
 import Sun from "./svg/Sun"
 import Moon from "./svg/Moon"
 
-import "./styles/theme.scss"
-import "./styles/components/_all.scss"
-import "./styles/views/_all.scss"
+import "./styles/theme.css"
+import "./styles/components/_all.css"
+import "./styles/views/_all.css"
 
 export default function App({
     DEBUG_WINDOW=true,
