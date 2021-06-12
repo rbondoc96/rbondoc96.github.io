@@ -100,8 +100,8 @@ export default function App({
             }`} onClick={toggleTheme}>
 
                 {uiTheme.toLowerCase() == "dark"
-                ? <img src={`/build/${Moon}`} />
-                : <img src={`/build/${Sun}`} />
+                ? <img src={Moon} />
+                : <img src={Sun} />
                 }
             </div>
         </div>

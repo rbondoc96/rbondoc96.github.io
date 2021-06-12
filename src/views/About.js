@@ -58,7 +58,7 @@ export default function About() {
                 <SkillList />
             </div>
             <div className="About-right">
-                <img src={`/build/${GPOY}`} />
+                <img src={GPOY} />
             </div>
         </div>
     )
