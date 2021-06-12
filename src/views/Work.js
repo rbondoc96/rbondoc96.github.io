@@ -1,7 +1,9 @@
 import React, {useContext} from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 import Header from "../components/content/Header"
-import Button from "../components/inputs/Button"
+import LinkButton from "../components/inputs/LinkButton"
 import ProjectCard from "../components/content/ProjectCard"
 import InlineLink from "../components/content/InlineLink"
 
@@ -17,57 +19,44 @@ import Resume from "../../public/pdfs/Rodrigo Bondoc Resume.pdf"
 
 export default function Work() {
 
-    const {theme, 
-        mobile, 
-        sidebar, 
-        navbar} = useContext(UIContext)
+    const {theme, mobile} = useContext(UIContext)
 
     const [uiTheme, setUITheme] = theme
     const [isMobile, setIsMobile] = mobile
-    const [isSidebarActive, setIsSidebarActive] = sidebar
-    const [isNavBarShown, setIsNavBarShown] = navbar
 
     let className = isMobile? "Work--mobile" : "Work"
 
     return(
         <div className={className} id="work">
-            <Header children="Things I've Done" />
+            <Header classes="js-Work-Header" children="Things I've Done" />
 
             <div className="Work-timeline">
                 <Timeline />
 
                 <div className="Work-links">
                     <div className="Work-links-button">
-                        <Button 
+                        <LinkButton 
                             children="Resume"
                             href={Resume} 
-                            onClick={() => {
-                                window.open(Resume, "_blank")
-                            }}
                         />
                     </div>
                     <div className="Work-links-icons">
-                        <div className="Work-links-icon" onClick={() => {
-                            window.open("https://github.com/rbondoc96", "_blank")
-                        }}>
+                        <a href="https://github.com/rbondoc96" className="Work-links-icon" target="_blank">
                             <Github 
                                 theme={uiTheme}
                             />
-                        </div>
-                        <div className="Work-links-icon" onClick={() => {
-                            window.open("https://www.linkedin.com/in/rbondoc96/", "_blank")
-                        }}>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/rbondoc96/" className="Work-links-icon" target="_blank">
                             <LinkedIn 
                                 theme={uiTheme}
                             />
-                        </div>
-                        <div className="Work-links-icon" onClick={() => {
-                            window.open("mailto:rbondoc96@gmail.com")
-                        }}>
+                        </a>
+                        <a href="mailto:rbondoc96@gmail.com" className="Work-links-icon" target="_blank">
                             <Email 
                                 theme={uiTheme}
                             />
-                        </div>                                                
+                        </a>                                                
                     </div>
                 </div>
             </div>

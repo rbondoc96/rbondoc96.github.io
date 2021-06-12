@@ -1,6 +1,7 @@
 import React from "react"
+import gsap from "gsap"
 
-import Button from "../components/inputs/Button"
+import LinkButton from "../components/inputs/LinkButton"
 
 export default function Home() {
 
@@ -12,14 +13,11 @@ export default function Home() {
                     <span>I'm Rodrigo.</span>
                 </h1>
 
-                <p className="Home-text">I'm an electrical engineer and software developer based in San Diego, CA, U.S.A.</p>
+                <p className="Home-text">I'm a software developer based in San Diego, CA, U.S.A. who specializes in building web applications.</p>
 
-                <Button children="Say Hello" onClick={() => {
-                    window.open("mailto:rbondoc96@gmail.com")
-                }} />
-            </div>
-            <div className="Home-right">
-
+                <div className="Home-button">
+                    <LinkButton children="Say Hello" href="mailto:rbondoc96@gmail.com" />
+                </div>
             </div>
         </div>
     )

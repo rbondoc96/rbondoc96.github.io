@@ -22,3 +22,7 @@
 .button:focus {
     outline: none
 }
+
+a.LinkButton {
+    background-color: transparent;
+}

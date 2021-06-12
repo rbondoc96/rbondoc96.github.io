@@ -8,6 +8,9 @@
     font-size: var(--fontSize-text);
     font-weight: var(--fontWeight-bold);
 }
+.About-left .InlineLink > a {
+    white-space: nowrap;
+}
 .InlineLink .InlineLink-underline {
     position: absolute;
     display: block;

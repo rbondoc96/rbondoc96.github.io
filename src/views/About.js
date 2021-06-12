@@ -1,4 +1,6 @@
 import React, {useContext} from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 import Header from "../components/content/Header"
 import InlineLink from "../components/content/InlineLink"
@@ -8,52 +10,47 @@ import {UIContext} from "../context/UIContext"
 
 import GPOY from "../../public/imgs/me_london.png"
 
+
 export default function About() {
 
-    const {theme, 
-        mobile, 
-        sidebar, 
-        navbar} = useContext(UIContext)
-
-    const [uiTheme, setUITheme] = theme
+    const {mobile} = useContext(UIContext)
     const [isMobile, setIsMobile] = mobile
-    const [isSidebarActive, setIsSidebarActive] = sidebar
-    const [isNavBarShown, setIsNavBarShown] = navbar
 
     let className = isMobile? "About--mobile" : "About"
 
     return(
         <div className={className} id="about">
-            <Header children="About Me" />
+            <Header classes="js-About-Header" children="About Me" />
 
             <div className="About-left">
                 <p>
-                    Welcome! My name’s Rodrigo and my pronouns ar
-                    {/* The <span>'s are formatted this way to 
-                        keep the space character before the word
-                    */}
-                    e <span className="fw-bold">he</span>
+                    <span>Welcome! My name's Rodrigo and my pronouns 
+                    are <span className="fw-bold">he</span>
                     , <span className="fw-bold">him</span>
-                    , and <span className="fw-bold">his</span>. 
-                    I’m an electrical engineer and software developer based in San Diego, CA, U.S.A.
+                    , and <span className="fw-bold">his</span>
+                    . I'm a self-taught web developer based in sunny San Diego, CA, U.S.A.
+                    </span>
                     <br/><br/>
 
-                    I studied 
+                    I started programming while I was pursuing my degree in Electrical Engineering
                     at <InlineLink 
-                    children="San Diego State University" 
-                    href="https://electrical.sdsu.edu/" /> and
-                    graduated with a B.S. in Electrical Engineering and a minor in Computer Science. 
-                    I recently joined the software quality assurance team 
-                    at <InlineLink 
-                    children="snapIoT"
-                    href="https://snapiot.com/"
-                    /> where
-                    I test applications used in clinical trials.
+                    children="San Diego State University"
+                    href="https://electrical.sdsu.edu"
+                    />. I tinkered around with HTML & CSS, but focused on C, Java, and Python. It wasn't until I graudated that I started
+                    to dive deeper into web development and began teaching myself.
                     <br/><br/>
 
-                    In my free time, I enjoy working on personal projects to work on my technical 
-                    skills. But when I’m not at my desk, I like to play some video games, visit the 
-                    beach, and spend time with loved ones.
+                    Since then, I've gotten the opportunity to work in a variety of positions where I've had the chance to
+                    work <InlineLink href="https://www.raveon.com/" children="with radio devices" />
+                    , <InlineLink href="https://www.ayahealthcare.com/" children="travel nursing compliance" />
+                    , and now with web and mobile <InlineLink href="https://www.covance.com/" children="applications used in clinical trials" />.
+
+                    <br/><br/>
+
+                    My favorite hobby is playing video games. I grew up with Playstation consoles, but now I also 
+                    play on my PC. But when I'm not at my desk, I like to visit the beach,
+                    play <InlineLink href="https://www.varsitygayleague.com/" children="kickball"/> on weekends,
+                    and spend time with loved ones.
                     <br/><br/>
 
                     Here are some technologies I have experience with:
@@ -61,7 +58,7 @@ export default function About() {
                 <SkillList />
             </div>
             <div className="About-right">
-                <img src={GPOY} />
+                <img src={`/build/${GPOY}`} />
             </div>
         </div>
     )

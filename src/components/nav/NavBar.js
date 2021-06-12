@@ -1,8 +1,10 @@
 import React, {useContext} from "react"
+import gsap from "gsap"
 
 import Logo from "../Logo"
 import NavLink from "./NavLink"
 import Button from "../inputs/Button"
+import LinkButton from "../inputs/LinkButton"
 
 import {UIContext} from "../../context/UIContext"
 
@@ -27,16 +29,35 @@ export default function NavBar() {
         }
     }
 
+    React.useEffect(() => {
+        const timeline = gsap.timeline()
+        timeline.from(".NavBar-logo", {
+            opacity: 0,
+            duration: 0.5,
+            x: "-10%"
+        })
+        if(isMobile)
+            timeline.from(".NavBar-toggle", {
+                opacity: 0,
+                duration: 0.5,
+                x: "-10%"
+            })
+
+        timeline.from(".NavLink, .NavBar-links .LinkButton", {
+            opacity: 0,
+            duration: 0.5,
+            x: "-10%",
+        })
+    }, [])
+
     return(
         <nav className={`${isMobile ? "NavBar--mobile": "NavBar"} ${
             isNavBarShown ? "" : "NavBar--hidden"
         }`}>
             <div className="NavBar-inner">
-                <div className="NavBar-logo" onClick={() => {
-                    window.open(window.location.href.split("#")[0], "_self")
-                }}>
+                <a className="NavBar-logo" href={window.location.href.split("#")[0]} target="_self">
                     <Logo />
-                </div>
+                </a>
 
                 <div className={(isMobile && !isSidebarActive)
                     ? "NavBar-links--hidden"
@@ -51,9 +72,7 @@ export default function NavBar() {
                     <NavLink href="#about" children="About" />
                     <NavLink href="#work" children="Work" />
                     <NavLink href="#contact" children="Contact" />
-                    <Button children="Resume" href={Resume} onClick={() => {
-                        window.open(Resume, "_blank")
-                    }}/>
+                    <LinkButton children="Resume" href={Resume} />
 
                 </div>
 

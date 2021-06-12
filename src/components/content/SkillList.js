@@ -1,4 +1,5 @@
 import React, {useContext, useState} from "react"
+import gsap from "gsap"
 
 import {UIContext} from "../../context/UIContext"
 
@@ -6,6 +7,16 @@ import Hardware from "../../svg/Hardware"
 import Programming from "../../svg/Programming"
 import Frameworks from "../../svg/Frameworks"
 import Software from "../../svg/Software"
+
+function animateList() {
+    const animProps = {
+        duration: 0.3,
+        opacity: 0,
+        y: "10%"
+    }
+
+    gsap.from(".SkillList-content", animProps)
+}
 
 export default function SkillList({
 
@@ -34,6 +45,7 @@ export default function SkillList({
                 }`}
                 onClick={() => {
                     setSelectedList("hardware")
+                    animateList()
                 }}>
                     <Hardware 
                         theme={uiTheme}
@@ -45,6 +57,7 @@ export default function SkillList({
                 }`}
                 onClick={() => {
                     setSelectedList("programming")
+                    animateList()
                 }}>
                     <Programming 
                         theme={uiTheme}
@@ -56,6 +69,7 @@ export default function SkillList({
                 }`} 
                 onClick={() => {
                     setSelectedList("frameworks")
+                    animateList()
                 }}>
                     <Frameworks 
                         theme={uiTheme}
@@ -67,6 +81,7 @@ export default function SkillList({
                 }`}
                 onClick={() => {
                     setSelectedList("software")
+                    animateList()
                 }}>
                     <Software 
                         theme={uiTheme}
@@ -97,7 +112,8 @@ export default function SkillList({
                         <ul className="SkillList-content-item-list">
                             <li>C/C++</li>
                             <li>Python</li>
-                            <li>JavaScript</li>
+                            <li>ES6 JavaScript</li>
+                            <li>Node.js</li>
                             <li>HTML & (S)CSS</li>
                         </ul>
                     </div>
@@ -111,6 +127,8 @@ export default function SkillList({
                         <ul className="SkillList-content-item-list">
                             <li>React</li>
                             <li>Django</li>
+                            <li>Cypress</li>
+                            <li>Express.js</li>
                         </ul>
                     </div>
                 }
@@ -121,8 +139,10 @@ export default function SkillList({
                             Tools & Other Software
                         </h3>
                         <ul className="SkillList-content-item-list">
+                            <li>Webpack</li>
                             <li>VS Code</li>
                             <li>PostgreSQL</li>
+                            <li>Chrome DevTools</li>
                             <li>Altium CircuitMaker</li>
                         </ul>
                     </div>

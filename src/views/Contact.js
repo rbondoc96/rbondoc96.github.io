@@ -1,22 +1,22 @@
 import React from "react"
 
 import Header from "../components/content/Header"
-import Button from "../components/inputs/Button"
+import LinkButton from "../components/inputs/LinkButton"
 import InlineLink from "../components/content/InlineLink"
 
 export default function Contact() {
 
     return(
         <div className="Contact" id="contact">
-            <Header children="Contact Me" />
+            <Header classes="js-Contact-Header" children="Contact Me" />
 
             <p className="Contact-content">
                 My inbox is always open, whether you have a question or you just feel like having a chat. I’ll get back to you as soon as I can!
             </p>
 
-            <Button children="Get In Touch" onClick={() => {
-                window.open("mailto:rbondoc96@gmail.com")
-            }}  />
+            <div className="Contact-button">
+                <LinkButton children="Get In Touch" href="mailto:rbondoc96@gmail.com" />
+            </div>
 
             <footer className="Contact-footer">
                 <div className="Contact-footer-note">

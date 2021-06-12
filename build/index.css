@@ -12,14 +12,14 @@
     /* Light Mode Colors */
     --color-bg-light: rgb(255, 255, 255);
     --color-bg-light-sidebar: rgb(131, 131, 131);
-    --color-border-light: rgb(58, 58, 58);
+    --color-border-light: rgb(112, 112, 112);
     --color-text-light: rgb(0, 0, 0);
     --color-icon-overlay-light: rgba(151, 151, 151, 0.4);
     --color-card-bg-light: rgb(228, 228, 228);
 
 
     /* Dark Mode Colors */
-    --color-bg-dark: rgb(7, 20, 27);
+    --color-bg-dark: rgb(7, 20, 27); 
     --color-bg-dark-sidebar: rgb(2, 6, 8);
     --color-border-dark: rgb(201, 201, 201);
     --color-text-dark: rgb(255, 255, 255);
@@ -179,8 +179,8 @@ Application styles
 }
 .app-theme-toggle {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 2.5em;
+    right: 1.5em;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -194,19 +194,14 @@ Application styles
 .app-theme-toggle:hover {
     cursor: pointer;
     border-color: var(--color-link);
-    transition: var(--msecs-300) border-color;
-}
-.app-theme-toggle:hover > svg {
-    fill: var(--color-link);
-    transition: var(--msecs-200) fill;
+    transition: var(--msecs-300) border-color, var(--msecs-200) bottom ease-in-out;
 }
 .app-theme-toggle--hidden {
     bottom: -100%;
     transition: var(--msecs-200) bottom ease-in-out;
 }
-.app-theme-toggle > svg {
+.app-theme-toggle > img {
     width: 35px;
-    height: 35px;
 }
 
 
@@ -306,7 +301,8 @@ rbondoc
     background-color: var(--color-bg-dark-sidebar);
 }
 
-.NavBar--mobile .NavBar-inner .NavBar-links {
+.NavBar--mobile .NavBar-links {
+    z-index: var(--zIndex-9);
     right: 0;
     transition: var(--msecs-300) right;
 }
@@ -356,6 +352,7 @@ rbondoc
 .NavBar-logo {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .NavBar-links {
@@ -374,9 +371,9 @@ rbondoc
 
 .NavBar-toggle {
     width: 2em;
-}
-.NavBar--toggle:hover {
     cursor: pointer;
+}
+.NavBar-toggle:hover {
     fill: var(--color-link);
 
     transition: var(--msecs-300) fill ease-in-out;
@@ -433,6 +430,10 @@ NavLink component for the NavBar
 .button:focus {
     outline: none
 }
+
+a.LinkButton {
+    background-color: transparent;
+}
 .Header {
     position: relative;
     display: inline-block;
@@ -464,6 +465,9 @@ NavLink component for the NavBar
     text-decoration: none;
     font-size: var(--fontSize-text);
     font-weight: var(--fontWeight-bold);
+}
+.About-left .InlineLink > a {
+    white-space: nowrap;
 }
 .InlineLink .InlineLink-underline {
     position: absolute;
@@ -498,6 +502,8 @@ NavLink component for the NavBar
     border-radius: 6px;
 
     margin: 1em 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 .app .ProjectCard {
     background-color: var(--color-card-bg-light);
@@ -516,6 +522,7 @@ NavLink component for the NavBar
     width: fit-content;
     justify-self: end;
     align-self: center;
+    background-color: transparent !important;
 }
 .ProjectCard-github > svg {
     width: 1.8em;
@@ -713,10 +720,10 @@ NavLink component for the NavBar
 
 .Home,
 .Home--mobile {
+    position: relative;
     display: grid;
-
 }
-// 80px == Nav height
+/* 80px == Nav height */
 .Home {
     min-height: 80vh;
 
@@ -730,6 +737,7 @@ NavLink component for the NavBar
 }
 
 .Home-header {
+    position: relative;
     display: grid;
     margin: calc(2.4rem + 1vh) 0;
 
@@ -740,6 +748,7 @@ NavLink component for the NavBar
     fit-content(100%);
 }
 .Home-text {
+    position: relative;
     font-size: calc(1.3rem + 0.5vw);
     margin: calc(1.5em + 1vh) 0;
 }
@@ -867,6 +876,7 @@ NavLink component for the NavBar
     row-gap: 1em;
     justify-items: center;
     margin-top: 5em;
+    margin-bottom: 3em;
 
     text-align: center;
     font-weight: var(--fontWeight-light);

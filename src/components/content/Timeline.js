@@ -1,4 +1,6 @@
 import React from "react"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 import InlineLink from "./InlineLink"
 
@@ -9,6 +11,7 @@ function TimelineBullet({
     boldText,
     boldHref,
 }) {
+
 
     // Types: Personal, Work, Education
     let colorClass
@@ -56,8 +59,8 @@ export default function Timeline() {
                 type="Work"
                 date="Jan 2021"
                 lightText="Started as a Software QA Analyst at"
-                boldText="snapIoT (acquired by Covance Inc.)"
-                boldHref="https://snapiot.com/"
+                boldText="Covance Inc."
+                boldHref="https://www.covance.com/"
             />
 
             <TimelineBullet 

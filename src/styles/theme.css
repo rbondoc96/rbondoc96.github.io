@@ -13,14 +13,14 @@
     /* Light Mode Colors */
     --color-bg-light: rgb(255, 255, 255);
     --color-bg-light-sidebar: rgb(131, 131, 131);
-    --color-border-light: rgb(58, 58, 58);
+    --color-border-light: rgb(112, 112, 112);
     --color-text-light: rgb(0, 0, 0);
     --color-icon-overlay-light: rgba(151, 151, 151, 0.4);
     --color-card-bg-light: rgb(228, 228, 228);
 
 
     /* Dark Mode Colors */
-    --color-bg-dark: rgb(7, 20, 27);
+    --color-bg-dark: rgb(7, 20, 27); 
     --color-bg-dark-sidebar: rgb(2, 6, 8);
     --color-border-dark: rgb(201, 201, 201);
     --color-text-dark: rgb(255, 255, 255);
@@ -180,8 +180,8 @@ Application styles
 }
 .app-theme-toggle {
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 2.5em;
+    right: 1.5em;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -195,19 +195,14 @@ Application styles
 .app-theme-toggle:hover {
     cursor: pointer;
     border-color: var(--color-link);
-    transition: var(--msecs-300) border-color;
-}
-.app-theme-toggle:hover > svg {
-    fill: var(--color-link);
-    transition: var(--msecs-200) fill;
+    transition: var(--msecs-300) border-color, var(--msecs-200) bottom ease-in-out;
 }
 .app-theme-toggle--hidden {
     bottom: -100%;
     transition: var(--msecs-200) bottom ease-in-out;
 }
-.app-theme-toggle > svg {
+.app-theme-toggle > img {
     width: 35px;
-    height: 35px;
 }
 
 

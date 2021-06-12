@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.dev.js --open",
-    "dev": "nodemon -w src --exec \"webpack --config webpack.dev.js --open\"",
+    "dev": "nodemon -w src -e js,ts,html,css --exec \"webpack --config webpack.dev.js --open\"",
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.2.6",
+    "gsap": "^3.6.1",
     "history": "^5.0.0",
     "lodash": "^4.17.21",
     "postcss-loader": "^6.1.0",

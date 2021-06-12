@@ -33,13 +33,11 @@ export default function ProjectCard({
                 {name}
             </h3>
 
-            <div className="ProjectCard-github" onClick={() => {
-                window.open(github, "_blank")
-            }}>
+            <a className="ProjectCard-github" href={github} target="_blank">
                 <Github 
                     theme={uiTheme}
                 />
-            </div>
+            </a>
 
             <p className="ProjectCard-status">
                 <span className="ProjectCard-status-label">Status:</span>

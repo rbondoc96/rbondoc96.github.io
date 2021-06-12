@@ -13,12 +13,15 @@ import About from "./views/About"
 import Work from "./views/Work"
 import Contact from "./views/Contact"
 
-import Sun from "./svg/Sun"
-import Moon from "./svg/Moon"
+import Sun from "../public/imgs/sun.svg"
+import Moon from "../public/imgs/moon.svg"
+
+import {animationInit} from "./anims"
 
 import "./styles/theme.css"
 import "./styles/components/_all.css"
 import "./styles/views/_all.css"
+
 
 export default function App({
     DEBUG_WINDOW=true,
@@ -66,6 +69,7 @@ export default function App({
 
     useEffect(() => {
         const throttledScroll = throttle(onScroll, 100)
+        animationInit(isMobile)
         
         window.addEventListener("resize", onResize)
         window.addEventListener("scroll", throttledScroll)
@@ -94,13 +98,11 @@ export default function App({
                 ? "app-theme-toggle--hidden"
                 : ""
             }`} onClick={toggleTheme}>
+
                 {uiTheme.toLowerCase() == "dark"
-                ? <Moon 
-                    theme={uiTheme}
-                />
-                : <Sun 
-                    theme={uiTheme}
-                />}
+                ? <img src={`/build/${Moon}`} />
+                : <img src={`/build/${Sun}`} />
+                }
             </div>
         </div>
     )
