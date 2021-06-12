@@ -695,7 +695,7 @@ function About() {
   }), " on weekends, and spend time with loved ones.", /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("br", null), "Here are some technologies I have experience with:"), /*#__PURE__*/react.createElement(SkillList, null)), /*#__PURE__*/react.createElement("div", {
     className: "About-right"
   }, /*#__PURE__*/react.createElement("img", {
-    src: "/build/".concat(me_london)
+    src: me_london
   })));
 }
 ;// CONCATENATED MODULE: ./src/svg/Github.js
@@ -1242,9 +1242,9 @@ function App(_ref) {
     className: "app-theme-toggle ".concat(!isNavBarShown ? "app-theme-toggle--hidden" : ""),
     onClick: toggleTheme
   }, uiTheme.toLowerCase() == "dark" ? /*#__PURE__*/react.createElement("img", {
-    src: "/build/".concat(moon)
+    src: moon
   }) : /*#__PURE__*/react.createElement("img", {
-    src: "/build/".concat(sun)
+    src: sun
   })));
 }
 ;// CONCATENATED MODULE: ./src/index.js
