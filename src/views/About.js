@@ -41,9 +41,9 @@ export default function About() {
                     <br/><br/>
 
                     Since then, I've gotten the opportunity to work in a variety of positions where I've had the chance to
-                    work <InlineLink href="https://www.raveon.com/" children="with radio devices" />
-                    , <InlineLink href="https://www.ayahealthcare.com/" children="travel nursing compliance" />
-                    , and now with web and mobile <InlineLink href="https://www.covance.com/" children="applications used in clinical trials" />.
+                    work with <InlineLink href="https://www.raveon.com/" children="radio devices" />
+                    , <InlineLink href="https://www.ayahealthcare.com/" children="travel nursing" />
+                    , and now with web and mobile <InlineLink href="https://drugdevelopment.labcorp.com/" children="applications used in clinical trials" />.
 
                     <br/><br/>
 

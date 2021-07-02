@@ -34,24 +34,12 @@ export default function SkillList({
     const [isSidebarActive, setIsSidebarActive] = sidebar
     const [isNavBarShown, setIsNavBarShown] = navbar
 
-    const [selectedList, setSelectedList] = useState("hardware")
+    const [selectedList, setSelectedList] = useState("programming")
 
     return(
         <div className="SkillList">
 
             <div className="SkillList-icons">
-                <div className={`SkillList-icon ${
-                    selectedList == "hardware" && "SkillList-icon--selected"
-                }`}
-                onClick={() => {
-                    setSelectedList("hardware")
-                    animateList()
-                }}>
-                    <Hardware 
-                        theme={uiTheme}
-                    />
-                </div>
-
                 <div className={`SkillList-icon ${
                     selectedList == "programming" && "SkillList-icon--selected"
                 }`}
@@ -72,6 +60,18 @@ export default function SkillList({
                     animateList()
                 }}>
                     <Frameworks 
+                        theme={uiTheme}
+                    />
+                </div>
+
+                <div className={`SkillList-icon ${
+                    selectedList == "hardware" && "SkillList-icon--selected"
+                }`}
+                onClick={() => {
+                    setSelectedList("hardware")
+                    animateList()
+                }}>
+                    <Hardware 
                         theme={uiTheme}
                     />
                 </div>

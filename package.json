@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.dev.js --open",
-    "dev": "nodemon -w src -e js,ts,html,css --exec \"webpack --config webpack.dev.js --open\"",
+    "dev": "nodemon -w src -w public -e js,ts,html,css --exec \"webpack --config webpack.dev.js --open\"",
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],

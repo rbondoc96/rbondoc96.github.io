@@ -59,15 +59,15 @@ export default function Timeline() {
                 type="Work"
                 date="Jan 2021"
                 lightText="Started as a Software QA Analyst at"
-                boldText="Covance Inc."
-                boldHref="https://www.covance.com/"
+                boldText="LabCorp Drug Development"
+                boldHref="https://drugdevelopment.labcorp.com/"
             />
 
             <TimelineBullet 
                 type="Work"
                 date="Dec 2019"
                 lightText="Started as a Compliance Specialist at"
-                boldText="Aya Healthcare Inc."
+                boldText="Aya Healthcare"
                 boldHref="https://www.ayahealthcare.com/"
             />
 
@@ -82,7 +82,7 @@ export default function Timeline() {
                 type="Work"
                 date="Jul 2019"
                 lightText="Started as a Design Engineer at"
-                boldText="Raveon Technologies Corp."
+                boldText="Raveon Technologies"
                 boldHref="https://www.raveon.com/"
             />
 

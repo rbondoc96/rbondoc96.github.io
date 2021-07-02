@@ -4,7 +4,17 @@ export const UIContext = createContext()
 
 export function UIProvider({children}) {
 
-    const [uiTheme, setUITheme] = useState("light")
+    var defaultTheme
+    let today = new Date()
+    let hours = today.getHours()
+
+    if(hours < 17 && hours > 6) {
+        defaultTheme = "light"
+    } else {
+        defaultTheme = "dark"
+    }
+
+    const [uiTheme, setUITheme] = useState(defaultTheme)
     const [isUIMobile, setIsUIMobile] = useState(window.innerWidth < 960)
     const [isSidebarActive, setIsSidebarActive] = useState(false)
     const [isNavBarShown, setIsNavBarShown] = useState(true)

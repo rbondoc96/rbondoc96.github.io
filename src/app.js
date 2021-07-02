@@ -104,6 +104,6 @@ export default function App({
                 : <img src={Sun} />
                 }
             </div>
-        </div>
+        </div> 
     )
 }
