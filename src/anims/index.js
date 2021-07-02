@@ -84,8 +84,7 @@ export function animationInit(isMobile) {
     const contactTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: ".js-Contact-Header",
-            start: "top 50%",
-            markers: true,
+            start: "top 50%"
         }
     })
 
