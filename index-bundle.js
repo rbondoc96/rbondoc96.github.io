@@ -1134,8 +1134,7 @@ function animationInit(isMobile) {
   var contactTimeline = gsap/* default.timeline */.ZP.timeline({
     scrollTrigger: {
       trigger: ".js-Contact-Header",
-      start: "top 50%",
-      markers: true
+      start: "top 50%"
     }
   });
   var contactAnimProps = {
