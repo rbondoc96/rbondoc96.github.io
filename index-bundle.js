@@ -27,8 +27,17 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var UIContext = /*#__PURE__*/(0,react.createContext)();
 function UIProvider(_ref) {
   var children = _ref.children;
+  var defaultTheme;
+  var today = new Date();
+  var hours = today.getHours();
 
-  var _useState = (0,react.useState)("light"),
+  if (hours < 17 && hours > 6) {
+    defaultTheme = "light";
+  } else {
+    defaultTheme = "dark";
+  }
+
+  var _useState = (0,react.useState)(defaultTheme),
       _useState2 = _slicedToArray(_useState, 2),
       uiTheme = _useState2[0],
       setUITheme = _useState2[1];
@@ -562,7 +571,7 @@ function SkillList(_ref) {
       isNavBarShown = _navbar[0],
       setIsNavBarShown = _navbar[1];
 
-  var _useState = (0,react.useState)("hardware"),
+  var _useState = (0,react.useState)("programming"),
       _useState2 = SkillList_slicedToArray(_useState, 2),
       selectedList = _useState2[0],
       setSelectedList = _useState2[1];
@@ -572,14 +581,6 @@ function SkillList(_ref) {
   }, /*#__PURE__*/react.createElement("div", {
     className: "SkillList-icons"
   }, /*#__PURE__*/react.createElement("div", {
-    className: "SkillList-icon ".concat(selectedList == "hardware" && "SkillList-icon--selected"),
-    onClick: function onClick() {
-      setSelectedList("hardware");
-      animateList();
-    }
-  }, /*#__PURE__*/react.createElement(Hardware, {
-    theme: uiTheme
-  })), /*#__PURE__*/react.createElement("div", {
     className: "SkillList-icon ".concat(selectedList == "programming" && "SkillList-icon--selected"),
     onClick: function onClick() {
       setSelectedList("programming");
@@ -594,6 +595,14 @@ function SkillList(_ref) {
       animateList();
     }
   }, /*#__PURE__*/react.createElement(Frameworks, {
+    theme: uiTheme
+  })), /*#__PURE__*/react.createElement("div", {
+    className: "SkillList-icon ".concat(selectedList == "hardware" && "SkillList-icon--selected"),
+    onClick: function onClick() {
+      setSelectedList("hardware");
+      animateList();
+    }
+  }, /*#__PURE__*/react.createElement(Hardware, {
     theme: uiTheme
   })), /*#__PURE__*/react.createElement("div", {
     className: "SkillList-icon ".concat(selectedList == "software" && "SkillList-icon--selected"),
@@ -680,14 +689,14 @@ function About() {
   }, "his"), ". I'm a self-taught web developer based in sunny San Diego, CA, U.S.A."), /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("br", null), "I started programming while I was pursuing my degree in Electrical Engineering at ", /*#__PURE__*/react.createElement(InlineLink, {
     children: "San Diego State University",
     href: "https://electrical.sdsu.edu"
-  }), ". I tinkered around with HTML & CSS, but focused on C, Java, and Python. It wasn't until I graudated that I started to dive deeper into web development and began teaching myself.", /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("br", null), "Since then, I've gotten the opportunity to work in a variety of positions where I've had the chance to work ", /*#__PURE__*/react.createElement(InlineLink, {
+  }), ". I tinkered around with HTML & CSS, but focused on C, Java, and Python. It wasn't until I graudated that I started to dive deeper into web development and began teaching myself.", /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("br", null), "Since then, I've gotten the opportunity to work in a variety of positions where I've had the chance to work with ", /*#__PURE__*/react.createElement(InlineLink, {
     href: "https://www.raveon.com/",
-    children: "with radio devices"
+    children: "radio devices"
   }), ", ", /*#__PURE__*/react.createElement(InlineLink, {
     href: "https://www.ayahealthcare.com/",
-    children: "travel nursing compliance"
+    children: "travel nursing"
   }), ", and now with web and mobile ", /*#__PURE__*/react.createElement(InlineLink, {
-    href: "https://www.covance.com/",
+    href: "https://drugdevelopment.labcorp.com/",
     children: "applications used in clinical trials"
   }), ".", /*#__PURE__*/react.createElement("br", null), /*#__PURE__*/react.createElement("br", null), "My favorite hobby is playing video games. I grew up with Playstation consoles, but now I also play on my PC. But when I'm not at my desk, I like to visit the beach, play ", /*#__PURE__*/react.createElement(InlineLink, {
     href: "https://www.varsitygayleague.com/",
@@ -842,13 +851,13 @@ function Timeline() {
     type: "Work",
     date: "Jan 2021",
     lightText: "Started as a Software QA Analyst at",
-    boldText: "Covance Inc.",
-    boldHref: "https://www.covance.com/"
+    boldText: "LabCorp Drug Development",
+    boldHref: "https://drugdevelopment.labcorp.com/"
   }), /*#__PURE__*/react.createElement(TimelineBullet, {
     type: "Work",
     date: "Dec 2019",
     lightText: "Started as a Compliance Specialist at",
-    boldText: "Aya Healthcare Inc.",
+    boldText: "Aya Healthcare",
     boldHref: "https://www.ayahealthcare.com/"
   }), /*#__PURE__*/react.createElement(TimelineBullet, {
     type: "Personal",
@@ -859,7 +868,7 @@ function Timeline() {
     type: "Work",
     date: "Jul 2019",
     lightText: "Started as a Design Engineer at",
-    boldText: "Raveon Technologies Corp.",
+    boldText: "Raveon Technologies",
     boldHref: "https://www.raveon.com/"
   }), /*#__PURE__*/react.createElement(TimelineBullet, {
     type: "Education",
@@ -1125,7 +1134,8 @@ function animationInit(isMobile) {
   var contactTimeline = gsap/* default.timeline */.ZP.timeline({
     scrollTrigger: {
       trigger: ".js-Contact-Header",
-      start: "top 30%"
+      start: "top 50%",
+      markers: true
     }
   });
   var contactAnimProps = {
