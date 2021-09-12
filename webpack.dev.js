@@ -8,8 +8,8 @@ const {CleanWebpackPlugin} = require("clean-webpack-plugin")
 module.exports = merge(common, {
     mode: "development",
     devServer: {
-        contentBase: path.resolve(__dirname, "build"),
         historyApiFallback: true,
+        port: 9000,
     },    
     output: {
         filename: '[name]-bundle.js',

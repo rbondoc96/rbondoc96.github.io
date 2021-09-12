@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack --config webpack.dev.js --open",
     "dev": "nodemon -w src -w public -e js,ts,html,css --exec \"webpack --config webpack.dev.js --open\"",
+    "dev-server": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "keywords": [],
@@ -25,8 +26,9 @@
     "nodemon": "^2.0.4",
     "style-loader": "^1.2.1",
     "url-loader": "^4.1.0",
-    "webpack": "^5.4.0",
-    "webpack-cli": "^3.3.12",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.0",
     "webpack-merge": "^5.1.1"
   },
   "dependencies": {
