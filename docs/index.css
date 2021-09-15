@@ -15,7 +15,7 @@
     position: relative;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: auto fit-content(100%);
     align-items: center;
 }
 .appprojectcard--reversed .appprojectcard-container {
@@ -50,6 +50,7 @@
     
     display: flex;
     height: fit-content;
+    width: fit-content;
 }
 .appprojectcard--reversed .appprojectcard-img {
     left: 15%;
@@ -76,7 +77,7 @@
     background-color: transparent;
 }
 .appprojectcard-img img {
-    width: 100%;
+    width: 500px;
     height: auto;
 }
 
