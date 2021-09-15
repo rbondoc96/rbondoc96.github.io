@@ -8,10 +8,8 @@ import {UIContext} from "./context/UIContext"
 
 import NavBar from "./components/nav/NavBar"
 
-import Home from "./views/Home"
-import About from "./views/About"
-import Work from "./views/Work"
-import Contact from "./views/Contact"
+import Home from "./pages/Home"
+import AppsHome from "./pages/AppsHome";
 
 import Sun from "../public/imgs/sun.svg"
 import Moon from "../public/imgs/moon.svg"
@@ -84,26 +82,27 @@ export default function App({
         <div className={uiTheme.toLowerCase() == "light"
         ? "app"
         : "app--dark"}>
-            <NavBar />
-            <div className="app-inner">
-                <Home />
-                <About />
-                <Work />
-                <Contact />
+            <Router>
+                <NavBar />
+                <div className="app-inner">
+                    <Switch>
+                        <Route exact path="/" render={Home}/>
+                        <Route path="/apps" component={AppsHome} />
+                    </Switch>
+                </div>
 
-            </div>
+                <div className={`app-theme-toggle ${
+                    !isNavBarShown
+                    ? "app-theme-toggle--hidden"
+                    : ""
+                }`} onClick={toggleTheme}>
 
-            <div className={`app-theme-toggle ${
-                !isNavBarShown
-                ? "app-theme-toggle--hidden"
-                : ""
-            }`} onClick={toggleTheme}>
-
-                {uiTheme.toLowerCase() == "dark"
-                ? <img src={Moon} />
-                : <img src={Sun} />
-                }
-            </div>
+                    {uiTheme.toLowerCase() == "dark"
+                    ? <img src={Moon} />
+                    : <img src={Sun} />
+                    }
+                </div>
+            </Router>
         </div> 
     )
 }

@@ -2,7 +2,7 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 78:
+/***/ 318:
 /***/ ((__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) => {
 
 
@@ -71,6 +71,10 @@ var runtime = __webpack_require__(666);
 // EXTERNAL MODULE: ./node_modules/lodash/throttle.js
 var throttle = __webpack_require__(493);
 var throttle_default = /*#__PURE__*/__webpack_require__.n(throttle);
+// EXTERNAL MODULE: ./node_modules/react-router-dom/esm/react-router-dom.js + 1 modules
+var react_router_dom = __webpack_require__(513);
+// EXTERNAL MODULE: ./node_modules/react-router/esm/react-router.js + 2 modules
+var react_router = __webpack_require__(709);
 // EXTERNAL MODULE: ./node_modules/gsap/index.js + 2 modules
 var gsap = __webpack_require__(358);
 ;// CONCATENATED MODULE: ./src/components/Logo.js
@@ -94,6 +98,18 @@ function NavLink(_ref) {
     className: "NavLink"
   }, /*#__PURE__*/react.createElement("a", {
     href: href
+  }, children));
+}
+;// CONCATENATED MODULE: ./src/components/nav/NavPageLink.js
+
+
+function NavPageLink(_ref) {
+  var to = _ref.to,
+      children = _ref.children;
+  return /*#__PURE__*/react.createElement("div", {
+    className: "NavLink"
+  }, /*#__PURE__*/react.createElement(react_router_dom/* Link */.rU, {
+    to: to
   }, children));
 }
 ;// CONCATENATED MODULE: ./src/components/inputs/Button.js
@@ -180,6 +196,7 @@ function NavBar_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function NavBar() {
   var _useContext = (0,react.useContext)(UIContext),
       theme = _useContext.theme,
@@ -233,7 +250,7 @@ function NavBar() {
     className: "NavBar-inner"
   }, /*#__PURE__*/react.createElement("a", {
     className: "NavBar-logo",
-    href: window.location.href.split("#")[0],
+    href: window.location.origin,
     target: "_self"
   }, /*#__PURE__*/react.createElement(Logo, null)), /*#__PURE__*/react.createElement("div", {
     className: isMobile && !isSidebarActive ? "NavBar-links--hidden" : "NavBar-links"
@@ -249,6 +266,9 @@ function NavBar() {
   }), /*#__PURE__*/react.createElement(NavLink, {
     href: "#contact",
     children: "Contact"
+  }), /*#__PURE__*/react.createElement(NavPageLink, {
+    to: "/apps",
+    children: "Apps"
   }), /*#__PURE__*/react.createElement(LinkButton, {
     children: "Resume",
     href: Rodrigo_Bondoc_Resume
@@ -258,11 +278,11 @@ function NavBar() {
     onClick: toggleSidebar
   })));
 }
-;// CONCATENATED MODULE: ./src/views/Home.js
+;// CONCATENATED MODULE: ./src/pages/sections/Intro.js
 
 
 
-function Home() {
+function Intro() {
   return /*#__PURE__*/react.createElement("div", {
     className: "Home"
   }, /*#__PURE__*/react.createElement("div", {
@@ -642,7 +662,7 @@ function SkillList(_ref) {
 }
 ;// CONCATENATED MODULE: ./public/imgs/me_london.png
 /* harmony default export */ const me_london = (__webpack_require__.p + "assets/me_london.png");
-;// CONCATENATED MODULE: ./src/views/About.js
+;// CONCATENATED MODULE: ./src/pages/sections/About.js
 function About_slicedToArray(arr, i) { return About_arrayWithHoles(arr) || About_iterableToArrayLimit(arr, i) || About_unsupportedIterableToArray(arr, i) || About_nonIterableRest(); }
 
 function About_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -654,8 +674,6 @@ function About_arrayLikeToArray(arr, len) { if (len == null || len > arr.length)
 function About_iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function About_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
 
 
 
@@ -913,7 +931,7 @@ function LinkedIn(_ref) {
     d: "m160.007812 423h-70v-226h70zm6.984376-298.003906c0-22.628906-18.359376-40.996094-40.976563-40.996094-22.703125 0-41.015625 18.367188-41.015625 40.996094 0 22.636718 18.3125 41.003906 41.015625 41.003906 22.617187 0 40.976563-18.367188 40.976563-41.003906zm255.007812 173.667968c0-60.667968-12.816406-105.664062-83.6875-105.664062-34.054688 0-56.914062 17.03125-66.246094 34.742188h-.066406v-30.742188h-68v226h68v-112.210938c0-29.386718 7.480469-57.855468 43.90625-57.855468 35.929688 0 37.09375 33.605468 37.09375 59.722656v110.34375h69zm90 153.335938v-392c0-33.085938-26.914062-60-60-60h-392c-33.085938 0-60 26.914062-60 60v392c0 33.085938 26.914062 60 60 60h392c33.085938 0 60-26.914062 60-60zm-60-412c11.027344 0 20 8.972656 20 20v392c0 11.027344-8.972656 20-20 20h-392c-11.027344 0-20-8.972656-20-20v-392c0-11.027344 8.972656-20 20-20zm0 0"
   }));
 }
-;// CONCATENATED MODULE: ./src/views/Work.js
+;// CONCATENATED MODULE: ./src/pages/sections/Work.js
 function Work_slicedToArray(arr, i) { return Work_arrayWithHoles(arr) || Work_iterableToArrayLimit(arr, i) || Work_unsupportedIterableToArray(arr, i) || Work_nonIterableRest(); }
 
 function Work_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -991,6 +1009,12 @@ function Work() {
   }))))), /*#__PURE__*/react.createElement("div", {
     className: "Work-ProjectCards"
   }, /*#__PURE__*/react.createElement(ProjectCard, {
+    name: "Sudoku",
+    status: "Complete",
+    github: "https://rbondoc.com/sudoku",
+    description: "A web app that creates a solvable 9x9 Sudoku grid with a given amount of clues. The app features a focusing mechanic that highlights areas affected by the cell being changed and a hint mechanic that reveals hints 1-by-1.",
+    tags: ["CSS", "React", "TypeScript", "Webpack"]
+  }), /*#__PURE__*/react.createElement(ProjectCard, {
     name: "Personal Website",
     status: "Updating",
     github: "https://github.com/rbondoc96/rbondoc96.github.io",
@@ -1002,15 +1026,9 @@ function Work() {
     github: "https://github.com/rbondoc96/DBD-Game-Randomizer",
     description: "A web application for randomizing and analyzing player builds in Dead by Daylight, an asymmetrical action-horror game by Behavior Interactive. Choose a random build and analyze the effects of each player’s assets and resources.",
     tags: ["React", "Django", "SCSS", "Webpack", "WebSockets", "PostgreSQL"]
-  }), /*#__PURE__*/react.createElement(ProjectCard, {
-    name: "Parking Buddy",
-    status: "Complete",
-    github: "https://github.com/rbondoc96/EE-Senior-Design",
-    description: "My senior capstone group project for my Electrical Engineering major at San Diego State University. Track parking availability in campus parking structures and know ahead of time where you can park",
-    tags: ["Python", "LoRa", "Android", "Raspberry Pi"]
   })));
 }
-;// CONCATENATED MODULE: ./src/views/Contact.js
+;// CONCATENATED MODULE: ./src/pages/sections/Contact.js
 
 
 
@@ -1054,6 +1072,84 @@ function Contact() {
     href: "https://www.flaticon.com/",
     children: "www.flaticon.com"
   }))));
+}
+;// CONCATENATED MODULE: ./src/pages/Home.js
+
+
+
+
+
+function Home() {
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Intro, null), /*#__PURE__*/react.createElement(About, null), /*#__PURE__*/react.createElement(Work, null), /*#__PURE__*/react.createElement(Contact, null));
+}
+;// CONCATENATED MODULE: ./public/imgs/sudoku.png
+/* harmony default export */ const sudoku = (__webpack_require__.p + "assets/sudoku.png");
+;// CONCATENATED MODULE: ./src/pages/AppsHome.js
+
+
+
+
+
+
+
+function AppProjectCard(props) {
+  var classes = ["appprojectcard"];
+
+  if (props.reversed) {
+    classes.push("appprojectcard--reversed");
+  }
+
+  var card = /*#__PURE__*/react.createElement("div", {
+    className: "appprojectcard-card"
+  }, /*#__PURE__*/react.createElement(ProjectCard, {
+    name: /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(InlineLink, {
+      href: props.link
+    }, props.name)),
+    status: props.status,
+    github: props.github,
+    description: props.description,
+    tags: props.tags
+  }));
+  var img = /*#__PURE__*/react.createElement("div", {
+    className: "appprojectcard-img"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "appprojectcard-img-overlay"
+  }), /*#__PURE__*/react.createElement("img", {
+    src: props.img
+  }));
+  return /*#__PURE__*/react.createElement("div", {
+    className: classes.join(" ")
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "appprojectcard-container"
+  }, props.reversed ? /*#__PURE__*/react.createElement(react.Fragment, null, img, card) : /*#__PURE__*/react.createElement(react.Fragment, null, card, img)));
+}
+
+function AppsHome() {
+  return /*#__PURE__*/react.createElement("div", {
+    className: "appshome"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "appshome-container"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "appshome-header"
+  }, /*#__PURE__*/react.createElement(Header, {
+    classes: "js-apphome-header",
+    children: "My Apps"
+  })), /*#__PURE__*/react.createElement("div", {
+    className: "appshome-cards"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "appshome-cards-container"
+  }, /*#__PURE__*/react.createElement(AppProjectCard, {
+    name: "Sudoku",
+    status: "Complete",
+    link: "https://rbondoc.com/sudoku",
+    description: /*#__PURE__*/react.createElement("span", null, "A web app that creates a solvable 9x9 Sudoku grid with a given amount of clues. The app features a focusing mechanic that highlights areas affected by the cell being changed and a hint mechanic that reveals hints 1-by-1. ", /*#__PURE__*/react.createElement(InlineLink, {
+      href: "https://rbondoc.com/sudoku",
+      children: "Play it here."
+    })),
+    tags: ["CSS", "React", "TypeScript", "Webpack"],
+    github: "https://github.com/rbondoc96/sudoku",
+    img: sudoku
+  })))));
 }
 ;// CONCATENATED MODULE: ./public/imgs/sun.svg
 /* harmony default export */ const sun = (__webpack_require__.p + "assets/sun.svg");
@@ -1174,8 +1270,6 @@ function app_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
 function App(_ref) {
   var _ref$DEBUG_WINDOW = _ref.DEBUG_WINDOW,
       DEBUG_WINDOW = _ref$DEBUG_WINDOW === void 0 ? true : _ref$DEBUG_WINDOW;
@@ -1245,16 +1339,23 @@ function App(_ref) {
   }, []);
   return /*#__PURE__*/react.createElement("div", {
     className: uiTheme.toLowerCase() == "light" ? "app" : "app--dark"
-  }, /*#__PURE__*/react.createElement(NavBar, null), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement(react_router_dom/* BrowserRouter */.VK, null, /*#__PURE__*/react.createElement(NavBar, null), /*#__PURE__*/react.createElement("div", {
     className: "app-inner"
-  }, /*#__PURE__*/react.createElement(Home, null), /*#__PURE__*/react.createElement(About, null), /*#__PURE__*/react.createElement(Work, null), /*#__PURE__*/react.createElement(Contact, null)), /*#__PURE__*/react.createElement("div", {
+  }, /*#__PURE__*/react.createElement(react_router/* Switch */.rs, null, /*#__PURE__*/react.createElement(react_router/* Route */.AW, {
+    exact: true,
+    path: "/",
+    render: Home
+  }), /*#__PURE__*/react.createElement(react_router/* Route */.AW, {
+    path: "/apps",
+    component: AppsHome
+  }))), /*#__PURE__*/react.createElement("div", {
     className: "app-theme-toggle ".concat(!isNavBarShown ? "app-theme-toggle--hidden" : ""),
     onClick: toggleTheme
   }, uiTheme.toLowerCase() == "dark" ? /*#__PURE__*/react.createElement("img", {
     src: moon
   }) : /*#__PURE__*/react.createElement("img", {
     src: sun
-  })));
+  }))));
 }
 ;// CONCATENATED MODULE: ./src/index.js
 
@@ -1273,8 +1374,9 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		if(__webpack_module_cache__[moduleId]) {
-/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
@@ -1293,10 +1395,39 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
-/******/ 	// the startup function
-/******/ 	// It's empty as some runtime module handles the default behavior
-/******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -1349,14 +1480,11 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// Promise = chunk loading, 0 = chunk loaded
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			826: 0
 /******/ 		};
 /******/ 		
-/******/ 		var deferredModules = [
-/******/ 			[78,722]
-/******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
 /******/ 		// no prefetching
@@ -1367,75 +1495,45 @@ react_dom.render( /*#__PURE__*/react.createElement(react.StrictMode, null, /*#__
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		var checkDeferredModules = x => {};
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
-/******/ 			var [chunkIds, moreModules, runtime, executeModules] = data;
+/******/ 			var [chunkIds, moreModules, runtime] = data;
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
-/******/ 			var moduleId, chunkId, i = 0, resolves = [];
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
 /******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
-/******/ 					resolves.push(installedChunks[chunkId][0]);
+/******/ 					installedChunks[chunkId][0]();
 /******/ 				}
-/******/ 				installedChunks[chunkId] = 0;
+/******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			for(moduleId in moreModules) {
-/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
-/******/ 				}
-/******/ 			}
-/******/ 			if(runtime) runtime(__webpack_require__);
-/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
-/******/ 			while(resolves.length) {
-/******/ 				resolves.shift()();
-/******/ 			}
-/******/ 		
-/******/ 			// add entry modules from loaded chunk to deferred list
-/******/ 			if(executeModules) deferredModules.push.apply(deferredModules, executeModules);
-/******/ 		
-/******/ 			// run deferred modules when all chunks ready
-/******/ 			return checkDeferredModules();
+/******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunkwebsite"] = self["webpackChunkwebsite"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
-/******/ 		
-/******/ 		function checkDeferredModulesImpl() {
-/******/ 			var result;
-/******/ 			for(var i = 0; i < deferredModules.length; i++) {
-/******/ 				var deferredModule = deferredModules[i];
-/******/ 				var fulfilled = true;
-/******/ 				for(var j = 1; j < deferredModule.length; j++) {
-/******/ 					var depId = deferredModule[j];
-/******/ 					if(installedChunks[depId] !== 0) fulfilled = false;
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferredModules.splice(i--, 1);
-/******/ 					result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
-/******/ 				}
-/******/ 			}
-/******/ 			if(deferredModules.length === 0) {
-/******/ 				__webpack_require__.x();
-/******/ 				__webpack_require__.x = x => {};
-/******/ 			}
-/******/ 			return result;
-/******/ 		}
-/******/ 		var startup = __webpack_require__.x;
-/******/ 		__webpack_require__.x = () => {
-/******/ 			// reset startup function so it can be called again when more startup code is added
-/******/ 			__webpack_require__.x = startup || (x => {});
-/******/ 			return (checkDeferredModules = checkDeferredModulesImpl)();
-/******/ 		};
 /******/ 	})();
 /******/ 	
 /************************************************************************/
 /******/ 	
-/******/ 	// run startup
-/******/ 	var __webpack_exports__ = __webpack_require__.x();
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [754], () => (__webpack_require__(318)))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;

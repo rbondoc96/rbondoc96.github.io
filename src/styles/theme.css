@@ -4,7 +4,9 @@
     --color-bg-overlay: rgba(10, 10, 10, 1.0);
     --color-link: rgb(90, 180, 231);
     --color-link-overlay: rgba(90, 180, 231, 0.2);
+    --color-link-shadow: rgba(90, 180, 231, 0.5);
     --color-border: rgb(51, 51, 51);
+    --color-border-overlay: rgba(243, 243, 243, 0.3);
 
     --color-text-personal: rgb(132, 144, 254);
     --color-text-work: rgb(214, 138, 221);
@@ -125,7 +127,7 @@ h2 {
     font-weight: var(--fontWeight-extraBold);
 }
 h3 {
-    font-size: 24px;
+    font-size: 24px !important;
     font-weight: var(--fontWeight-bold);
     color: var(--color-text);
 }
@@ -191,6 +193,7 @@ Application styles
     justify-content: center;
 
     transition: var(--msecs-200) bottom ease-in-out;
+    z-index: 900;
 }
 .app-theme-toggle:hover {
     cursor: pointer;

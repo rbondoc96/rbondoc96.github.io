@@ -3,6 +3,7 @@ import gsap from "gsap"
 
 import Logo from "../Logo"
 import NavLink from "./NavLink"
+import NavPageLink from "./NavPageLink"
 import Button from "../inputs/Button"
 import LinkButton from "../inputs/LinkButton"
 
@@ -55,7 +56,7 @@ export default function NavBar() {
             isNavBarShown ? "" : "NavBar--hidden"
         }`}>
             <div className="NavBar-inner">
-                <a className="NavBar-logo" href={window.location.href.split("#")[0]} target="_self">
+                <a className="NavBar-logo" href={window.location.origin} target="_self">
                     <Logo />
                 </a>
 
@@ -72,6 +73,7 @@ export default function NavBar() {
                     <NavLink href="#about" children="About" />
                     <NavLink href="#work" children="Work" />
                     <NavLink href="#contact" children="Contact" />
+                    <NavPageLink to="/apps" children="Apps" />
                     <LinkButton children="Resume" href={Resume} />
 
                 </div>

@@ -1,0 +1,116 @@
+.appshome-container {
+    padding-bottom: 2em;
+}
+
+.appshome-cards-container {
+    display: grid;
+    row-gap: 1.4em;
+}
+
+.appprojectcard {
+    width: 100%;
+}
+.appprojectcard-container {
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+}
+.appprojectcard--reversed .appprojectcard-container {
+    grid-template-columns: 40% 60%;
+}
+.appprojectcard--reversed {
+    grid-auto-flow: dense;
+}
+
+.appprojectcard-card {
+    position: relative;
+    z-index: 200;
+    width: 100%;
+}
+
+.appprojectcard-card .ProjectCard-header .InlineLink > a {
+    cursor: pointer;
+    color: var(--color-text);
+    font-size: 24px;
+    background-color: transparent;
+}
+.appprojectcard-card .InlineLink > a {
+    cursor: pointer;
+    font-size: var(--fontSize-text);
+    background-color: transparent;
+}
+
+.appprojectcard-img {
+    position: relative;
+    right: 15%;
+    z-index: 100;
+    
+    display: flex;
+    height: fit-content;
+}
+.appprojectcard--reversed .appprojectcard-img {
+    left: 15%;
+}
+.appprojectcard-img-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.app .appprojectcard-img-overlay {
+    background-color: var(--color-border-overlay);
+}
+.app--dark .appprojectcard-img-overlay {
+    background-color: var(--color-link-overlay);
+}
+.appprojectcard-img:hover {
+    z-index: 300;
+    box-shadow: -5px 5px 0 var(--color-link-shadow);
+}
+.appprojectcard--reversed .appprojectcard-img:hover {
+    box-shadow: 5px 5px 0 var(--color-link-shadow);
+}
+.appprojectcard-img:hover .appprojectcard-img-overlay {
+    background-color: transparent;
+}
+.appprojectcard-img img {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 960px) {
+    .appshome-cards-container {
+        display: grid;
+        row-gap: 2.4em;
+    }
+    .appprojectcard-container,
+    .appprojectcard--reversed .appprojectcard-container {
+        grid-auto-flow: row;
+        grid-template-columns: none;
+    }
+    .appprojectcard-card {
+        width: 100%;
+    }
+    .appprojectcard--reversed .appprojectcard-card {
+        order: -1;
+    }
+    .appprojectcard-img {
+        right: initial;
+        top: initial;
+    }
+    .appprojectcard--reversed .appprojectcard-img {
+        left: initial;
+        top: initial;
+    }
+    .appprojectcard-img:hover,
+    .appprojectcard--reversed .appprojectcard-img:hover {
+        box-shadow: none;
+    }
+    .appprojectcard-img-overlay {
+        background-color: transparent;
+    }    
+    .appprojectcard-img img {
+        width: 100%;
+    }
+}

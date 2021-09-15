@@ -51,11 +51,12 @@
     height: 100vh;
 
     display: grid;
-    grid-template-columns: none;
+    grid-auto-flow: row;
     grid-template-rows: 
     fit-content(100%) 
     fit-content(100%) 
     fit-content(100%) 
+    fit-content(100%)
     fit-content(100%)
     fit-content(100%);
     justify-items: center;
@@ -129,12 +130,7 @@
     justify-self: end;
 
     display: grid;
-    grid-template-rows: none;
-    grid-template-columns: 
-    fit-content(100%) 
-    fit-content(100%) 
-    fit-content(100%) 
-    fit-content(100%);
+    grid-auto-flow: column;
     column-gap: 85px;
     align-items: center;
 }
