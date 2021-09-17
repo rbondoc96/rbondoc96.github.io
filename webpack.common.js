@@ -47,5 +47,10 @@ module.exports = {
             favicon: "public/favicon.ico",
             chunks: ["index"]
         }),
+        new HtmlWebpackPlugin({
+            filename: "404.html",
+            template: "public/404.html",
+            favicon: "public/favicon.ico"
+        }),        
     ],    
 };
