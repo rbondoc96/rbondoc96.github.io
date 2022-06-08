@@ -1,24 +1,23 @@
-import regeneratorRuntime from "regenerator-runtime"
-import throttle from "lodash/throttle"
+import throttle from "lodash.throttle"
 
 import React, {useContext, useEffect, useState} from "react"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
-import {UIContext} from "./context/UIContext"
+import {UIContext} from "@/context/UIContext"
 
-import NavBar from "./components/nav/NavBar"
+import NavBar from "@/components/nav/NavBar"
 
-import Home from "./pages/Home"
-import AppsHome from "./pages/AppsHome";
+import Home from "@/pages/Home"
+import AppsHome from "@/pages/AppsHome";
 
-import Sun from "../public/imgs/sun.svg"
-import Moon from "../public/imgs/moon.svg"
+import Sun from "@public/imgs/sun.svg"
+import Moon from "@public/imgs/moon.svg"
 
 import {animationInit} from "./anims"
 
-import "./styles/theme.css"
-import "./styles/components/_all.css"
-import "./styles/views/_all.css"
+import "@/styles/theme.css"
+import "@/styles/components/_all.css"
+import "@/styles/views/_all.css"
 
 
 export default function App({

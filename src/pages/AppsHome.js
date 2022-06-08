@@ -1,11 +1,11 @@
 import React from "react"
 
-import Header from "../components/content/Header"
-import InlineLink from "../components/content/InlineLink"
-import ProjectCard from "../components/content/ProjectCard"
+import Header from "@/components/content/Header"
+import InlineLink from "@/components/content/InlineLink"
+import ProjectCard from "@/components/content/ProjectCard"
 
-import SudokuImg from "../../public/imgs/sudoku.png"
-import "../styles/components/appcard.css"
+import SudokuImg from "@public/imgs/sudoku.png"
+import "@/styles/components/appcard.css"
 
 function AppProjectCard(props) {
 

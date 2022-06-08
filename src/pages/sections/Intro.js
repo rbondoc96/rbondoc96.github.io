@@ -1,7 +1,7 @@
 import React from "react"
 import gsap from "gsap"
 
-import LinkButton from "../../components/inputs/LinkButton"
+import LinkButton from "@/components/inputs/LinkButton"
 
 export default function Intro() {
 

@@ -2,20 +2,20 @@ import React, {useContext} from "react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 
-import Header from "../components/content/Header"
-import LinkButton from "../components/inputs/LinkButton"
-import ProjectCard from "../components/content/ProjectCard"
-import InlineLink from "../components/content/InlineLink"
+import Header from "@/components/content/Header"
+import LinkButton from "@/components/inputs/LinkButton"
+import ProjectCard from "/components/content/ProjectCard"
+import InlineLink from "@/components/content/InlineLink"
 
-import Timeline from "../components/content/Timeline"
+import Timeline from "@/components/content/Timeline"
 
-import Email from "../svg/Email"
-import Github from "../svg/Github"
-import LinkedIn from "../svg/LinkedIn"
+import Email from "@/svg/Email"
+import Github from "@/svg/Github"
+import LinkedIn from "@/svg/LinkedIn"
 
-import {UIContext} from "../context/UIContext"
+import {UIContext} from "@/context/UIContext"
 
-import Resume from "../../public/pdfs/Rodrigo Bondoc Resume.pdf"
+import Resume from "@public/pdfs/Rodrigo Bondoc Resume.pdf"
 
 export default function Work() {
 

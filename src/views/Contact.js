@@ -1,8 +1,8 @@
 import React from "react"
 
-import Header from "../components/content/Header"
-import LinkButton from "../components/inputs/LinkButton"
-import InlineLink from "../components/content/InlineLink"
+import Header from "@/components/content/Header"
+import LinkButton from "@/components/inputs/LinkButton"
+import InlineLink from "@/components/content/InlineLink"
 
 export default function Contact() {
 

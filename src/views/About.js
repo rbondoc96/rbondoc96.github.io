@@ -2,13 +2,13 @@ import React, {useContext} from "react"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 
-import Header from "../components/content/Header"
-import InlineLink from "../components/content/InlineLink"
-import SkillList from "../components/content/SkillList"
+import Header from "@/components/content/Header"
+import InlineLink from "@/components/content/InlineLink"
+import SkillList from "@/components/content/SkillList"
 
-import {UIContext} from "../context/UIContext"
+import {UIContext} from "@/context/UIContext"
 
-import GPOY from "../../public/imgs/me_london.png"
+import GPOY from "@public/imgs/me_london.png"
 
 
 export default function About() {
