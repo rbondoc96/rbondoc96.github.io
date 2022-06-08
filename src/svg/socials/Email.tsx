@@ -1,16 +1,24 @@
-import React from "react"
+import React, {FunctionComponent, useContext} from "react"
+import {UIContext} from "@/context/UIContext"
+import {UITheme} from "@/types/enum"
 
-export default function Email({
+interface IEmailProps {
+	className?: string,
+	onClick?: React.MouseEventHandler
+}
+
+const Email: FunctionComponent<IEmailProps> = ({
     className,
     onClick,
-    theme,
-}) {
+}) => {
+	const {theme} = useContext(UIContext)
+	const uiTheme = theme[0]    
 
     return(
 <svg 
 className={className}
 onClick={onClick}
-fill={theme.toLowerCase() == "dark" ? "#FFF":"#000"} 
+fill={uiTheme === UITheme.dark ? "#FFF":"#000"} 
 x="0px" y="0px"
 viewBox="0 0 512 512" >
         <g>
@@ -55,3 +63,5 @@ viewBox="0 0 512 512" >
         </svg>
     )
 }
+
+export default Email

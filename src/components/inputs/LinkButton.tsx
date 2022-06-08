@@ -1,12 +1,16 @@
-import React from "react"
+import React, {FunctionComponent} from "react"
 
-export default function LinkButton({
-    size="medium",
-    onClick,
-    children,
+interface ILinkButton {
+    href: string,
+    classes?: string[]
+    children: React.ReactNode
+}
+
+const LinkButton: FunctionComponent<ILinkButton> = ({
     href,
     classes,
-}) {
+    children,
+}) => {
 
     let cssClass
     if(classes) 
@@ -23,3 +27,5 @@ export default function LinkButton({
         </a>
     )
 }
+
+export default LinkButton

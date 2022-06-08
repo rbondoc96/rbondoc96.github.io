@@ -1,6 +1,6 @@
 import React, {useContext} from "react"
 
-import Github from "../../svg/Github"
+import Github from "../../svg/socials/Github"
 
 import {UIContext} from "../../context/UIContext"
 

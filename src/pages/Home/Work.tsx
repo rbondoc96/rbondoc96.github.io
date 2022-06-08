@@ -1,17 +1,14 @@
 import React, {useContext} from "react"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
 
 import Header from "@/components/content/Header"
 import LinkButton from "@/components/inputs/LinkButton"
-import ProjectCard from "/components/content/ProjectCard"
-import InlineLink from "@/components/content/InlineLink"
+import ProjectCard from "@/components/content/ProjectCard"
 
 import Timeline from "@/components/content/Timeline"
 
-import Email from "@/svg/Email"
-import Github from "@/svg/Github"
-import LinkedIn from "@/svg/LinkedIn"
+import Email from "@/svg/socials/Email"
+import Github from "@/svg/socials/Github"
+import LinkedIn from "@/svg/socials/LinkedIn"
 
 import {UIContext} from "@/context/UIContext"
 
@@ -19,10 +16,9 @@ import Resume from "@public/pdfs/Rodrigo Bondoc Resume.pdf"
 
 export default function Work() {
 
-    const {theme, mobile} = useContext(UIContext)
+    const {mobile} = useContext(UIContext)
 
-    const [uiTheme, setUITheme] = theme
-    const [isMobile, setIsMobile] = mobile
+    const isMobile = mobile[0]
 
     let className = isMobile? "Work--mobile" : "Work"
 
@@ -42,26 +38,33 @@ export default function Work() {
                     </div>
                     <div className="Work-links-icons">
                         <a href="https://github.com/rbondoc96" className="Work-links-icon" target="_blank">
-                            <Github 
-                                theme={uiTheme}
-                            />
+                            <Github />
                         </a>
 
                         <a href="https://www.linkedin.com/in/rbondoc96/" className="Work-links-icon" target="_blank">
-                            <LinkedIn 
-                                theme={uiTheme}
-                            />
+                            <LinkedIn />
                         </a>
                         <a href="mailto:rbondoc96@gmail.com" className="Work-links-icon" target="_blank">
-                            <Email 
-                                theme={uiTheme}
-                            />
+                            <Email />
                         </a>                                                
                     </div>
                 </div>
             </div>
 
             <div className="Work-ProjectCards">
+                <ProjectCard 
+                name="Sudoku"
+                status="Complete"
+                github="https://rbondoc.com/sudoku"
+                description="A web app that creates a solvable 9x9 Sudoku grid with a given amount of clues. The app features a focusing mechanic that highlights areas affected by the cell being changed and a hint mechanic that reveals hints 1-by-1."
+                tags={[
+                    "CSS", 
+                    "React", 
+                    "TypeScript", 
+                    "Webpack"
+                ]}
+                />
+
                 <ProjectCard 
                 name="Personal Website"
                 status="Updating"
@@ -85,18 +88,6 @@ export default function Work() {
                     "Webpack",
                     "WebSockets",
                     "PostgreSQL",
-                ]} />
-
-                <ProjectCard 
-                name="Parking Buddy"
-                status="Complete"
-                github="https://github.com/rbondoc96/EE-Senior-Design"
-                description={"My senior capstone group project for my Electrical Engineering major at San Diego State University. Track parking availability in campus parking structures and know ahead of time where you can park"}
-                tags={[
-                    "Python",
-                    "LoRa",
-                    "Android",
-                    "Raspberry Pi",
                 ]} />
             </div>
         </div>

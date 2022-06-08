@@ -1,6 +1,4 @@
 import React, {useContext} from "react"
-import gsap from "gsap"
-import ScrollTrigger from "gsap/ScrollTrigger"
 
 import Header from "@/components/content/Header"
 import InlineLink from "@/components/content/InlineLink"
@@ -14,7 +12,7 @@ import GPOY from "@public/imgs/me_london.png"
 export default function About() {
 
     const {mobile} = useContext(UIContext)
-    const [isMobile, setIsMobile] = mobile
+    const isMobile = mobile[0]
 
     let className = isMobile? "About--mobile" : "About"
 
