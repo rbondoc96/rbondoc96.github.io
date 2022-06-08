@@ -1,9 +1,10 @@
 import throttle from "lodash.throttle"
 
-import React, {useContext, useEffect, useState} from "react"
+import React, {FunctionComponent, useContext, useEffect} from "react"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 import {UIContext} from "@/context/UIContext"
+import {UITheme} from "@/types/enum"
 
 import NavBar from "@/components/nav/NavBar"
 
@@ -20,22 +21,22 @@ import "@/styles/components/_all.css"
 import "@/styles/views/_all.css"
 
 
-export default function App({
-    DEBUG_WINDOW=true,
-}) {
+const App: FunctionComponent = () => {
 
-    const {theme, 
+    const {
+        theme, 
         mobile, 
         sidebar, 
-        navbar} = useContext(UIContext)
+        navbar
+    } = useContext(UIContext)
 
     const [uiTheme, setUITheme] = theme
     const [isMobile, setIsMobile] = mobile
-    const [isSidebarActive, setIsSidebarActive] = sidebar
+    const setIsSidebarActive = sidebar[1]
     const [isNavBarShown, setIsNavBarShown] = navbar
 
     var prevScrollPos = window.pageYOffset
-    const onScroll = event => {
+    const onScroll = () => {
         var currScrollPos = window.pageYOffset
 
         if(prevScrollPos > currScrollPos) {
@@ -47,7 +48,7 @@ export default function App({
         prevScrollPos = currScrollPos
     }
 
-    const onResize = event => {
+    const onResize = () => {
         if(window.innerWidth < 960) {
             setIsMobile(true)
         } else {
@@ -56,11 +57,11 @@ export default function App({
         }
     }
 
-    const toggleTheme = event => {
-        if(uiTheme.toLowerCase() == "dark") {
-            setUITheme("light")
+    const toggleTheme = () => {
+        if(uiTheme === UITheme.dark) {
+            setUITheme(UITheme.light)
         } else {
-            setUITheme("dark")
+            setUITheme(UITheme.dark)
         }
     }
 
@@ -78,9 +79,7 @@ export default function App({
     }, [])
 
     return(
-        <div className={uiTheme.toLowerCase() == "light"
-        ? "app"
-        : "app--dark"}>
+        <div className={uiTheme === UITheme.light? "app" : "app--dark"}>
             <Router>
                 <NavBar />
                 <div className="app-inner">
@@ -90,18 +89,15 @@ export default function App({
                     </Switch>
                 </div>
 
-                <div className={`app-theme-toggle ${
-                    !isNavBarShown
-                    ? "app-theme-toggle--hidden"
-                    : ""
-                }`} onClick={toggleTheme}>
-
-                    {uiTheme.toLowerCase() == "dark"
-                    ? <img src={Moon} />
-                    : <img src={Sun} />
-                    }
+                <div 
+                    className={`app-theme-toggle${!isNavBarShown? "app-theme-toggle--hidden" : ""}`} 
+                    onClick={toggleTheme}
+                >
+                    {uiTheme === UITheme.dark? <img src={Moon} /> : <img src={Sun} />}
                 </div>
             </Router>
         </div> 
     )
 }
+
+export default App

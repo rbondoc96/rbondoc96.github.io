@@ -21,6 +21,15 @@ This is useful for several reasons:
     - For example, the package name `http` is already taken in the main registry, but Angular is able to have `@angular/http` as well.
 
 
+## Enums in d.ts Files
+See [Enums in Typescript](https://stackoverflow.com/questions/62109542/enums-in-typescript-d-ts-file)
+
+Enums can't go into a `d.ts` file.
+
+Enums have a compiled output, where as `.d.ts` such as interfaces do not!
+* After transpilation, a `.d.ts` with only interfaces is compiled down to nothing/empty file
+
+
 ## Dev Dependencies
 These are dependencies that aid in development and bundling the website for release.
 
