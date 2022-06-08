@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
     entry: {
-        index: "./src/index.js",
+        index: "./src/index.tsx",
     },
     module: {
         rules: [
@@ -13,14 +13,23 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            },{
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "ts-loader"
+                }
+            },
+            {
                 test: /\.html$/,
                 use: [
                     {
                         loader: "html-loader",
                     }
                 ],
-            },{
+            },
+            {
                 test: /\.(pdf|png|svg|jpg|gif|ico|woff|woff2)$/,
                 use: [
                     {
@@ -44,7 +53,8 @@ module.exports = {
         alias: {
             "@": path.resolve(__dirname, "src"),
             "@public": path.resolve(__dirname, "public")
-        }
+        },
+        extensions: [".js", ".jsx", ".ts", ".tsx"]
     },
     plugins: [
         new HtmlWebpackPlugin({
