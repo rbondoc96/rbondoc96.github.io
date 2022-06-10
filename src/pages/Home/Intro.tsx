@@ -1,23 +1,27 @@
-import React from "react"
+import React, {FunctionComponent as FC} from 'react';
 
-import LinkButton from "@/components/inputs/LinkButton"
+import LinkButton from '@/components/inputs/LinkButton';
 
-export default function Intro() {
-
-    return(
+const Intro: FC = () => (
         <div className="Home">
             <div className="Home-left">
                 <h1 className="Home-header">
                     <span>Hi there!</span>
-                    <span>I'm Rodrigo.</span>
+                    <span>I$aposm Rodrigo.</span>
                 </h1>
 
-                <p className="Home-text">I'm a software developer based in San Diego, CA, U.S.A. who specializes in building web applications.</p>
+                <p className="Home-text">
+                    I&aposm a software developer based in San Diego, CA, U.S.A. who specializes
+                    in building web applications.
+                </p>
 
                 <div className="Home-button">
-                    <LinkButton children="Say Hello" href="mailto:rbondoc96@gmail.com" />
+                    <LinkButton href="mailto:rbondoc96@gmail.com">
+                        Say Hello
+                    </LinkButton>
                 </div>
             </div>
         </div>
-    )
-}
+);
+
+export default Intro;

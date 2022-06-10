@@ -1,110 +1,104 @@
-import React, {useContext, useState} from "react"
-import gsap from "gsap"
+import React, {FunctionComponent as FC, useContext, useState} from 'react';
+import gsap from 'gsap';
 
-import {UIContext} from "../../context/UIContext"
-
-import Hardware from "../../svg/Hardware"
-import Programming from "../../svg/Programming"
-import Frameworks from "../../svg/Frameworks"
-import Software from "../../svg/Software"
+import UIContext from '@/core/UIContext';
+import Hardware from '@/assets/svg/Hardware';
+import Programming from '@/assets/svg/Programming';
+import Frameworks from '@/assets/svg/Frameworks';
+import Software from '@/assets/svg/Software';
 
 function animateList() {
     const animProps = {
         duration: 0.3,
         opacity: 0,
-        y: "10%"
-    }
+        y: '10%',
+    };
 
-    gsap.from(".SkillList-content", animProps)
+    gsap.from('.SkillList-content', animProps);
 }
 
-export default function SkillList({
+const SkillList: FC = () => {
+    const {theme} = useContext(UIContext);
+    const uiTheme = theme[0];
 
-}) {
+    const [selectedList, setSelectedList] = useState<string>('programming');
 
-    const {
-        theme, 
-        mobile, 
-        sidebar, 
-        navbar
-    } = useContext(UIContext)
+    const goTo = (section: string) => {
+        setSelectedList(section);
+        animateList();
+    };
 
-    const [uiTheme, setUITheme] = theme
-    const [isMobile, setIsMobile] = mobile
-    const [isSidebarActive, setIsSidebarActive] = sidebar
-    const [isNavBarShown, setIsNavBarShown] = navbar
-
-    const [selectedList, setSelectedList] = useState("programming")
-
-    return(
+    return (
         <div className="SkillList">
-
             <div className="SkillList-icons">
-                <div className={`SkillList-icon ${
-                    selectedList == "programming" && "SkillList-icon--selected"
-                }`}
-                onClick={() => {
-                    setSelectedList("programming")
-                    animateList()
-                }}>
-                    <Programming 
+                <div
+                    className={`SkillList-icon ${selectedList === 'programming' ? 'SkillList-icon--selected' : ''}`}
+                    onClick={() => goTo('programming')}
+                    onKeyDown={() => goTo('programming')}
+                    role="button"
+                    tabIndex={0}
+                >
+                    <Programming
                         theme={uiTheme}
                     />
                 </div>
 
-                <div className={`SkillList-icon ${
-                    selectedList == "frameworks" && "SkillList-icon--selected"
-                }`} 
-                onClick={() => {
-                    setSelectedList("frameworks")
-                    animateList()
-                }}>
-                    <Frameworks 
+                <div
+                    className={`SkillList-icon ${selectedList === 'frameworks' ? 'SkillList-icon--selected' : ''}`}
+                    onClick={() => goTo('frameworks')}
+                    onKeyDown={() => goTo('frameworks')}
+                    role="button"
+                    tabIndex={0}
+                >
+                    <Frameworks
                         theme={uiTheme}
                     />
                 </div>
 
-                <div className={`SkillList-icon ${
-                    selectedList == "hardware" && "SkillList-icon--selected"
-                }`}
-                onClick={() => {
-                    setSelectedList("hardware")
-                    animateList()
-                }}>
-                    <Hardware 
+                <div
+                    className={`SkillList-icon ${selectedList === 'hardware' ? 'SkillList-icon--selected' : ''}`}
+                    onClick={() => goTo('hardware')}
+                    onKeyDown={() => goTo('hardware')}
+                    role="button"
+                    tabIndex={0}
+                >
+                    <Hardware
                         theme={uiTheme}
                     />
                 </div>
 
-                <div className={`SkillList-icon ${
-                    selectedList == "software" && "SkillList-icon--selected"
-                }`}
-                onClick={() => {
-                    setSelectedList("software")
-                    animateList()
-                }}>
-                    <Software 
+                <div
+                    className={`SkillList-icon ${selectedList === 'software' ? 'SkillList-icon--selected' : ''}`}
+                    onClick={() => goTo('software')}
+                    onKeyDown={() => goTo('software')}
+                    role="button"
+                    tabIndex={0}
+                >
+                    <Software
                         theme={uiTheme}
                     />
                 </div>
             </div>
-            
-            <div className="SkillList-content">
 
-                {selectedList == "hardware" && 
+            <div className="SkillList-content">
+                {selectedList === 'hardware' && (
                     <div className="SkillList-content-item SkillList-content-software">
                         <h3 className="SkillList-content-item-header">
                             Hardware
                         </h3>
                         <ul className="SkillList-content-item-list">
                             <li>Microcontrollers</li>
-                            <li>Serial Communications (I<sup>2</sup>C, CAN, UART)</li>
+                            <li>
+                                Serial Communications (I
+                                <sup>2</sup>
+                                C, CAN, UART)
+                            </li>
                             <li>Lab Equipment (O-scopes, signal generators, DMMs)</li>
                         </ul>
                     </div>
-                }
+                )}
 
-                {selectedList == "programming" && 
+                {selectedList === 'programming' && (
                     <div className="SkillList-content-item SkillList-content-software">
                         <h3 className="SkillList-content-item-header">
                             Programming Languages
@@ -117,9 +111,9 @@ export default function SkillList({
                             <li>HTML & (S)CSS</li>
                         </ul>
                     </div>
-                }
+                )}
 
-                {selectedList == "frameworks" && 
+                {selectedList === 'frameworks' && (
                     <div className="SkillList-content-item SkillList-content-software">
                         <h3 className="SkillList-content-item-header">
                             Libraries & Frameworks
@@ -131,9 +125,9 @@ export default function SkillList({
                             <li>Express.js</li>
                         </ul>
                     </div>
-                }
+                )}
 
-                {selectedList == "software" && 
+                {selectedList === 'software' && (
                     <div className="SkillList-content-item SkillList-content-software">
                         <h3 className="SkillList-content-item-header">
                             Tools & Other Software
@@ -146,9 +140,10 @@ export default function SkillList({
                             <li>Altium CircuitMaker</li>
                         </ul>
                     </div>
-                }
+                )}
             </div>
-
         </div>
-    )
-}
+    );
+};
+
+export default SkillList;

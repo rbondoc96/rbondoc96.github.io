@@ -1,22 +1,18 @@
-import React, { FunctionComponent } from "react"
+import React, {FunctionComponent as FC} from 'react';
 
 interface IButton {
-    onClick: (event: React.MouseEvent) => void
-    children: React.ReactNode
+    onClick: (event: React.MouseEvent) => void;
+    children: React.ReactNode;
 }
 
-const Button: FunctionComponent<IButton> = ({
-    onClick,
-    children,
-}) => {
+const Button: FC<IButton> = ({onClick, children}) => {
+    const className = `button${''}`;
 
-    let className = `button${""}`
-
-    return(
-        <button onClick={onClick} className={className}>
+    return (
+        <button onClick={onClick} className={className} type="button" tabIndex={0}>
             {children}
         </button>
-    )
-}
+    );
+};
 
-export default Button
+export default Button;

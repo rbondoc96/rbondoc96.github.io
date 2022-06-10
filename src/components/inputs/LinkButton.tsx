@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from "react"
+import React, {FunctionComponent} from 'react';
 
 interface ILinkButton {
     href: string,
@@ -11,21 +11,20 @@ const LinkButton: FunctionComponent<ILinkButton> = ({
     classes,
     children,
 }) => {
+    let cssClass: string;
+    if (classes) {
+        cssClass = `button ${classes.join(' ')}`;
+    } else {
+        cssClass = 'button';
+    }
 
-    let cssClass
-    if(classes) 
-        cssClass = `button ${classes}`
-    else 
-        cssClass = "button"
-
-
-    return(
-        <a href={href} target="_blank" className="LinkButton">
-            <button className={cssClass}>
+    return (
+        <a href={href} target="_blank" className="LinkButton" rel="noreferrer">
+            <button className={cssClass} type="button">
                 {children}
             </button>
         </a>
-    )
-}
+    );
+};
 
-export default LinkButton
+export default LinkButton;

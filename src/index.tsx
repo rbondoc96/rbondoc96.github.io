@@ -1,15 +1,15 @@
-import React from "react"
-import ReactDOM from "react-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import {UIProvider} from "./context/UIContext"
+import {UIProvider} from './core/UIContext';
 
-import App from "./app"
+import App from './app';
 
 ReactDOM.render(
     <React.StrictMode>
         <UIProvider>
             <App />
         </UIProvider>
-    </React.StrictMode>, 
-    document.getElementById("root")
-)
+    </React.StrictMode>,
+    document.getElementById('root'),
+);
