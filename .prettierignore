@@ -1,6 +1,16 @@
+# Build Directories
 build
 dist
+
+# Code Coverage
 coverage
-node_modules/
-.prettierrc.json
-.eslintrs.json
+
+# Frontend
+public
+
+# Dependencies
+node_modules
+
+# Miscellaneous
+*.md
+*.yml
