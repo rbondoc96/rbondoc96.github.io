@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: Work Sans;
-    scroll-behavior: smooth;
-  }
+    html {
+        font-family: Work Sans;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-dark;
+    }
 }
 
 /* 

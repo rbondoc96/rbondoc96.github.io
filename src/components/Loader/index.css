@@ -1,0 +1,44 @@
+.loader {
+    @apply absolute inset-0;
+    @apply z-50;
+}
+
+.loader__container {
+    @apply relative;
+    @apply h-full;
+    @apply bg-dark;
+}
+
+.loader__bars {
+    @apply absolute inset-0;
+    @apply flex justify-between items-center;
+
+    @apply h-full;
+}
+
+.loader__bar {
+    @apply w-1 h-1;
+}
+.loader__bar.left {
+    @apply bg-red;
+}
+.loader__bar.right {
+    @apply bg-blue;
+}
+
+.loader__box__wrapper {
+    @apply flex justify-center items-center;
+    @apply h-full;
+}
+
+.loader__box {
+    @apply w-3 h-3;
+
+    background: linear-gradient(
+        to top,
+        theme(colors.blue) 0%,
+        theme(colors.blue) 50%,
+        theme(colors.red) 50%,
+        theme(colors.red) 100%
+    );
+}

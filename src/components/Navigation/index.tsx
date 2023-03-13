@@ -1,48 +1,43 @@
-import {useState} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
-import Logo from '@/assets/icons/Logo';
-import Button from '@/components/Button';
-import ColorSchemeToggle from '@/components/ColorSchemeToggle';
-import Sidebar from '@/components/Navigation/Sidebar';
-import FullWidthLayout from '@/layouts/FullWidthLayout';
+import type {Component} from 'solid-js';
+
+import logo from '@/assets/logo.svg';
 
 import './index.css';
 
-const Navigation = () => {
-  const [sidebarVisible, setSidebarVisible] = useState(false);
+const Navigation: Component = () => {
+    return (
+        <nav
+            class="nav js-nav"
+            role="navigation"
+            aria-label="Home page sections"
+        >
+            <ul>
+                <li>
+                    <a href="/">
+                        <img src={logo} alt="Logo" width="30" />
+                    </a>
+                </li>
 
-  const closeSidebar = () => setSidebarVisible(false);
-  const openSidebar = () => setSidebarVisible(true);
+                <li>
+                    <a
+                        class="text-white hover:text-red duration-300 transition-colors"
+                        href="#home-about"
+                    >
+                        About
+                    </a>
+                </li>
 
-  return (
-    <div className="nav-wrapper">
-      <div className="nav-background" />
-      <FullWidthLayout className="nav">
-        <nav className="nav-container">
-          <a href="/">
-            <Logo />
-          </a>
-          <div className="hidden md:flex items-center space-x-8">
-            <Button>Resume</Button>
-            <ColorSchemeToggle />
-          </div>
-          <div className="md:hidden flex">
-            {!sidebarVisible && (
-              <button type="button" onClick={openSidebar}>
-                <FontAwesomeIcon
-                  className="text-dark dark:text-light"
-                  icon={faBars}
-                  size="2x"
-                />
-              </button>
-            )}
-          </div>
+                <li>
+                    <a
+                        class="text-white hover:text-red duration-300 transition-colors"
+                        href="#home-work"
+                    >
+                        Work
+                    </a>
+                </li>
+            </ul>
         </nav>
-      </FullWidthLayout>
-      <Sidebar icon={faBars} onClose={closeSidebar} visible={sidebarVisible} />
-    </div>
-  );
+    );
 };
 
 export default Navigation;
