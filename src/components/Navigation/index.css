@@ -1,5 +1,6 @@
 .nav {
-    @apply absolute right-7;
+    @apply hidden md:block;
+    @apply fixed right-7;
     @apply origin-bottom-right -rotate-90;
     @apply z-30;
 }

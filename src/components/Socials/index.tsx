@@ -20,7 +20,7 @@ const Socials: Component<{
     );
 
     return (
-        <div class="socials">
+        <div class="socials js-socials">
             <ul class="inline-flex flex-col space-y-5">
                 <li>
                     <a aria-label="Email" href="mailto:rbondoc96@gmail.com">

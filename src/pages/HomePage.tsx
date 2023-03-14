@@ -3,15 +3,10 @@ import type {Component} from 'solid-js';
 import {createEffect} from 'solid-js';
 
 import Navigation from '@/components/Navigation';
+import SectionHeader from '@/components/SectionHeader';
 import Socials from '@/components/Socials';
 
 import './index.css';
-
-// import About from '@/pages/Home/About';
-// import Contact from '@/pages/Home/Contact';
-// import Experience from '@/pages/Home/Experience';
-// import Hero from '@/pages/Home/Hero';
-// import Scroller from '@/components/Scroller';
 
 const Home: Component = () => {
     createEffect(() => {
@@ -23,7 +18,7 @@ const Home: Component = () => {
                 duration: 1,
             })
             .from(
-                '.socials',
+                '.js-socials',
                 {
                     opacity: 0,
                     yPercent: 20,
@@ -50,14 +45,42 @@ const Home: Component = () => {
             </header>
 
             <main class="home flex items-center">
-                <div class="js-title flex flex-col mx-8 md:mx-20">
-                    <h1 class="text-white text-7xl font-bold">
-                        Rodrigo Bondoc
-                    </h1>
-                    <h2 class="text-white text-2xl font-medium">
-                        Full Stack Software Engineer
-                    </h2>
-                </div>
+                <section id="home-welcome">
+                    <div class="flex-1 flex items-center">
+                        <div class="js-title flex flex-col">
+                            <h1 class="text-white text-7xl font-bold">
+                                Rodrigo Bondoc
+                            </h1>
+                            <h2 class="text-white text-2xl font-light">
+                                Full Stack Software Engineer
+                            </h2>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="home-about">
+                    <div class="flex-1 flex flex-col">
+                        <SectionHeader>Me, Myself, and I</SectionHeader>
+                    </div>
+                </section>
+
+                <section id="home-experience">
+                    <div class="flex-1 flex flex-col">
+                        <SectionHeader>My Experience</SectionHeader>
+                    </div>
+                </section>
+                
+                <section id="home-projects">
+                    <div class="flex-1 flex flex-col">
+                        <SectionHeader>Things I&apos;ve Built</SectionHeader>
+                    </div>
+                </section>
+
+                <section id="home-contact">
+                    <div class="flex-1 flex flex-col">
+                        <SectionHeader>Let&apos;s get in touch!</SectionHeader>
+                    </div>
+                </section>
             </main>
 
             <footer>

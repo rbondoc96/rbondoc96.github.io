@@ -1,22 +1,17 @@
-import Text from '@/components/Text';
+import type {ParentComponent} from 'solid-js';
 
 import './index.css';
 
 interface SectionHeaderProps {
-  children: string;
+    children: string;
 }
 
-const SectionHeader = ({children}: SectionHeaderProps) => {
-  return (
-    <h2 className="section-header">
-      <Text
-        className="section-header-text text-5xl font-extrabold"
-        component="span"
-      >
-        {children}
-      </Text>
-    </h2>
-  );
+const SectionHeader: ParentComponent<SectionHeaderProps> = (props) => {
+    return (
+        <div class="section-header">
+            <h2 class="section-header__text">{props.children}</h2>
+        </div>
+    );
 };
 
 export default SectionHeader;
