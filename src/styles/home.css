@@ -1,0 +1,104 @@
+.home {
+    @apply relative;
+    @apply flex flex-col;
+    @apply w-full;
+
+    @apply px-8 md:px-20;
+}
+
+.home-section {
+    @apply flex flex-col;
+    @apply w-full;
+    @apply md:min-h-screen;
+
+    @apply py-28;
+}
+
+/* --- START Hero Section ---  */
+
+.hero {
+    @apply flex-1;
+    @apply flex items-center;
+
+    /* @apply py-32 md:py-0; */
+}
+
+.hero-content {
+    @apply flex-1;
+    @apply flex flex-col;
+    @apply space-y-6 md:space-y-8;
+}
+
+.hero-content-header {
+    @apply flex flex-col;
+    @apply space-y-2 md:space-y-4;
+}
+
+.hero-preamble {
+    @apply text-blue font-bold;
+    @apply text-base md:text-lg;
+}
+
+.hero-title {
+    @apply text-white font-semibold;
+    @apply tracking-tightest;
+    @apply text-5xl md:text-7xl;
+
+    /* Account for excess spacing in relation to preamble and subtitle */
+    @apply -mx-1;
+}
+
+.hero-subtitle {
+    @apply text-white font-light;
+    @apply tracking-tighter;
+    @apply text-xl md:text-2xl;
+}
+
+.hero-body {
+    @apply flex flex-col;
+    @apply space-y-4 md:space-y-2;
+}
+
+.hero-caption {
+    @apply text-sm md:text-lg;
+    @apply text-white;
+}
+
+.hero-link {
+    @apply inline-block;
+    @apply text-white;
+}
+
+.hero-link--joke {
+    @apply duration-500 ease-in-out;
+    @apply text-xs md:text-sm italic;
+    @apply underline;
+    @apply decoration-blue decoration-2;
+    @apply underline-offset-4;
+    @apply hover:text-blue;
+}
+
+.hero-button {
+    @apply relative;
+    @apply duration-500;
+    @apply px-4 py-3;
+    @apply md:px-5 md:py-4;
+    @apply text-blue;
+    @apply text-sm md:text-base;
+    @apply border-blue border-2 rounded-md;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+    box-shadow: inset 12em 0 0 0 theme('colors.blue');
+    @apply text-white;
+    @apply opacity-90;
+}
+
+/* --- END Hero Section ---  */
+
+.section-title {
+    @apply text-white font-semibold;
+    @apply tracking-tighter;
+    @apply text-3xl md:text-5xl;
+}
