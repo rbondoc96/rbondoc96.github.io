@@ -2,12 +2,11 @@
     "name": "rbondoc.com",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
     "scripts": {
         "start": "vite",
         "checks:lint": "eslint . --ext .ts,.tsx",
         "checks:types": "tsc --noEmit --skipLibCheck",
-        "checks": "npm run checks:lint && npm run checks:types",
+        "checks": "pnpm checks:lint && pnpm checks:types",
         "dev": "vite --host",
         "build": "tsc && vite build",
         "preview": "vite preview",
