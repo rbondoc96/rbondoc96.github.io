@@ -6,12 +6,9 @@ specifiers:
   '@fortawesome/free-brands-svg-icons': ^6.2.0
   '@fortawesome/free-regular-svg-icons': ^6.2.0
   '@fortawesome/free-solid-svg-icons': ^6.2.0
-  '@solidjs/meta': ^0.28.2
   '@solidjs/router': ^0.8.0
   '@types/lodash.throttle': ^4.1.7
   '@types/node': ^18.15.1
-  '@types/scrollmagic': ^2.0.3
-  '@types/three': ^0.148.0
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
   autoprefixer: ^10.4.14
@@ -29,12 +26,9 @@ specifiers:
   lodash.throttle: ^4.1.1
   postcss: ^8.4.21
   prettier: ^2.8.4
-  scrollmagic: ^2.0.8
   solid-icons: ^1.0.4
   solid-js: ^1.6.14
-  tailwind-merge: ^1.7.0
   tailwindcss: ^3.2.7
-  three: ^0.148.0
   typescript: ^4.9.5
   vite: ^4.1.4
   vite-plugin-solid: ^2.6.1
@@ -45,20 +39,15 @@ dependencies:
   '@fortawesome/free-brands-svg-icons': 6.2.0
   '@fortawesome/free-regular-svg-icons': 6.2.0
   '@fortawesome/free-solid-svg-icons': 6.2.0
-  '@solidjs/meta': 0.28.2_solid-js@1.6.14
   '@solidjs/router': 0.8.0_solid-js@1.6.14
   gsap: 3.11.4
   lodash.throttle: 4.1.1
-  scrollmagic: 2.0.8
   solid-icons: 1.0.4_solid-js@1.6.14
   solid-js: 1.6.14
-  three: 0.148.0
 
 devDependencies:
   '@types/lodash.throttle': 4.1.7
   '@types/node': 18.15.1
-  '@types/scrollmagic': 2.0.3
-  '@types/three': 0.148.0
   '@typescript-eslint/eslint-plugin': 5.55.0_342y7v4tc7ytrrysmit6jo4wri
   '@typescript-eslint/parser': 5.55.0_vgl77cfdswitgr47lm5swmv43m
   autoprefixer: 10.4.14_postcss@8.4.21
@@ -74,7 +63,6 @@ devDependencies:
   eslint-plugin-solid: 0.11.0_vgl77cfdswitgr47lm5swmv43m
   postcss: 8.4.21
   prettier: 2.8.4
-  tailwind-merge: 1.7.0
   tailwindcss: 3.2.7_postcss@8.4.21
   typescript: 4.9.5
   vite: 4.1.4_@types+node@18.15.1
@@ -814,14 +802,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@solidjs/meta/0.28.2_solid-js@1.6.14:
-    resolution: {integrity: sha512-avlLgBPdk4KVxzRGFlYp/MIJo8B5jVgXPgk6OUnUP8km21Z+ovO+DUd7ZPA7ejv8PBdWi9GE3zCzw8RU2YuV2Q==}
-    peerDependencies:
-      solid-js: '>=1.4.0'
-    dependencies:
-      solid-js: 1.6.14
-    dev: false
-
   /@solidjs/router/0.8.0_solid-js@1.6.14:
     resolution: {integrity: sha512-gvKAfYbuq6rpuNM9E7qIRXOrUEHY4AoOiok3xo/Slw5ph+hvJ+gKRhQgW0Et8xcsq2NZcc4AvJF8VTBmXfwEyA==}
     peerDependencies:
@@ -881,22 +861,8 @@ packages:
     resolution: {integrity: sha512-U2TWca8AeHSmbpi314QBESRk7oPjSZjDsR+c+H4ECC1l+kFgpZf8Ydhv3SJpPy51VyZHHqxlb6mTTqYNNRVAIw==}
     dev: true
 
-  /@types/scrollmagic/2.0.3:
-    resolution: {integrity: sha512-bfTr5jGgcbBZa/KcbhbuT4Pj6LFYQE1e2NKa93++7oAnAG0+5rBijSbRCuPP5yoNgbxw6jLiUvEn99JYLi1I0A==}
-    dev: true
-
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
-    dev: true
-
-  /@types/three/0.148.0:
-    resolution: {integrity: sha512-1GiErjt1pJMadO8EhaxNrtULzdn+f3BbM3YTukiiXBVeRvvx4CXc2rpYdEuEBU/ouCX7Rc95j1HoVG9kFQXQJw==}
-    dependencies:
-      '@types/webxr': 0.5.0
-    dev: true
-
-  /@types/webxr/0.5.0:
-    resolution: {integrity: sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.55.0_342y7v4tc7ytrrysmit6jo4wri:
@@ -2976,11 +2942,6 @@ packages:
       is-regex: 1.1.4
     dev: true
 
-  /scrollmagic/2.0.8:
-    resolution: {integrity: sha512-UYXEGBPVLziovXl3FjHGkY9c4UXKUKopIdXwWR2JapWxCo0U345wYegi7rcsv5vHf/ktc1bSNWy4QRFiV+Yccw==}
-    engines: {node: '>=0.10.x'}
-    dev: false
-
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
@@ -3144,10 +3105,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /tailwind-merge/1.7.0:
-    resolution: {integrity: sha512-A7oBapTWhV9M4bwLtxLQS9ZpPrvcikp21l+Xhwbet5SbaxUVogbHGLy+VDZcHe4LHWE99RpRbSpCBKaVqBs5Og==}
-    dev: true
-
   /tailwindcss/3.2.7_postcss@8.4.21:
     resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
@@ -3190,10 +3147,6 @@ packages:
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
-
-  /three/0.148.0:
-    resolution: {integrity: sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==}
-    dev: false
 
   /tiny-glob/0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
