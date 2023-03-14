@@ -1,95 +1,42 @@
-# rbondoc.com
+<p align="center">
+    <img width="30" src="public/favicon.ico">
+</p>
 
-## Import Aliasing
+<h1 align="center">Rodrigo Bondoc</h1>
+<h2 align="center">My Personal Portfolio Website</h2>
 
-When adding new aliases, they must be added in the following files:
+<p align="center">
+    <img src="https://img.shields.io/badge/SolidJS-2c4f7c?style=for-the-badge&logo=solid&logoColor=c8c9cb">
+    <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
+    <img src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220">
+    <img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white">
+    <img src="https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7">
+</p>
 
-- `vite.config.ts`
-- `tsconfig.json`
+## Welcome!
 
-```ts
-// vite.config.ts
+This repo contains all the code I've written to create my personal website. My website is hosted through Netlify.
 
-resolve: {
-  alias: {
-    '@': resolve(__dirname, 'src'),
-    '@mocks': resolve(__dirname, 'mocks'),
-  },
-},
+### Environments
+
+- [https://rbondoc.com](https://rbondoc.com) - The `production` environment tied to the `master` branch.
+- [https://alpha.rbondoc.com](https://alpha.rbondoc.com) - The `alpha` environment tied to the `dev` branch.
+
+## Installation
+
+To install this repo on your local machine, you must meet these requirements:
+
+- `pnpm` - v7.29.x
+- `node` - v18.x.y
+
+In the root of the project, run the command to install dependencies:
+
+```bash
+pnpm install
 ```
 
-```json
-// tsconfig.json
+Then run the development server with:
 
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"],
-      "@mocks/*": ["./mocks/*"]
-    }
-  }
-}
+```bash
+pnpm dev
 ```
-
-## Dependencies
-
-### Development Tools
-
-- `typescript` -
-- `vite` -
-- `@vitejs/plugin-react` -
-
-### Types for TypeScript
-
-- `@types/node` -
-- `@types/react` -
-- `@types/react-dom` -
-
-### Assets
-
-- `@fontsource/work-sans` - Font used for this project.
-- `@fortawesome/fontawesome-svg-core` - Required for using SVGs for FontAwesome.
-- `@fortawesome/free-brands-svg-icons` - Icons for brands (Facebook, GitHub, etc.)
-- `@fortawesome/free-regular-svg-icons` - Used for outlined versions of solid icons.
-- `@fortawesome/free-solid-svg-icons` - Filled/solid icons.
-- `@fortawesome/react-fontawesome` - Provides `<FontAwesomeIcon />` component.
-
-### React
-
-- `react` - JS frontend library
-- `react-dom` -
-- `react-router-dom` -
-- `react-snapshot` -
-
-### TailwindCSS
-
-Configuring with Vite: https://tailwindcss.com/docs/guides/vite
-
-- `tailwindcss` - CSS utility framework
-- `postcss` - TailwindCSS peer dependency
-- `autoprefixer` - TailwindCSS peer dependency
-
-### Code Style
-
-#### ESLint
-
-- `eslint` - Main linter.
-- `eslint-plugin-import` - Tells ESLint how to resolve imports.
-- `eslint-import-resolver-typescript` - Allows `eslint` to resolve aliases defined in `tsconfig.json`
-- `eslint-config-google` - Google JS style rules.
-- `eslint-config-standard-with-typescript` - Standard ESLint rules for TypeScript.
-- `eslint-plugin-jsx-a11y` - Checks for accessiblity issues.
-- `eslint-plugin-n` -
-- `eslint-plugin-promise` -
-- `eslint-plugin-react` - React specific linting rules for ESLint.
-- `eslint-plugin-react-hooks` - Linting rules for using React hooks
-- `@typescript-eslint/eslint-plugin` - An ESLint plugin which provides rules for TypeScript codebases.
-- `@typescript-eslint/parser` - A parser which allows ESLint to lint TypeScript source code.
-
-#### Prettier
-
-- `prettier` - Main code formatter.
-
-#### Configuring ESLint and Prettier
-
-- `eslint-config-prettier` - An ESLint configuration which disables the formatting rules in ESLint that Prettier is going to be responsible for handling, hence avoiding any clashes.
