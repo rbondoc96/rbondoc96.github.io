@@ -140,8 +140,12 @@ const Home: Component = () => {
                 </section>
             </main>
 
+            <Socials />
+
             <footer>
-                <Socials />
+                <p class="copyright-text">
+                    &copy; 2023 Rodrigo Bondoc. All rights reserved.
+                </p>
             </footer>
         </>
     );

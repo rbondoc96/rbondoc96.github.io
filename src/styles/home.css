@@ -102,3 +102,18 @@
     @apply tracking-tighter;
     @apply text-3xl md:text-5xl;
 }
+
+/* --- START Footer Section ---  */
+
+footer {
+    @apply flex flex-col justify-center;
+    @apply py-4;
+}
+
+.copyright-text {
+    @apply text-white;
+    @apply text-sm;
+    @apply text-center;
+}
+
+/* --- END Hero Section ---  */
