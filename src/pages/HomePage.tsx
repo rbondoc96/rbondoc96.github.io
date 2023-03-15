@@ -69,21 +69,22 @@ const Home: Component = () => {
 
             <main class="home flex items-center">
                 <section id="home-welcome" class="home-section">
-                    <div class="hero">
-                        <div class="js-hero-content hero-content">
+                    <div class="home-section-layout">
+                        <div class="js-hero-content home-section-content">
                             <div class="hero-content-header">
                                 <div class="hero-preamble">
-                                    Hey there. My name is
+                                    Hey there! My name is
                                 </div>
                                 <h1 class="hero-title">Rodrigo Bondoc</h1>
                                 <h3 class="hero-subtitle">
-                                    Full Stack Software Developer
+                                    Software Engineer
                                 </h3>
                             </div>
                             <p class="hero-body">
                                 <span class="hero-caption">
-                                    I'm a web and mobile app developer with a
-                                    background in electrical engineering.
+                                    I'm a full-stack web and mobile app
+                                    developer with a background in electrical
+                                    engineering.
                                 </span>
                                 <span class="hero-caption">
                                     In other words, I joined the dark (soft)
@@ -116,26 +117,38 @@ const Home: Component = () => {
                 </section>
 
                 <section id="home-about" class="home-section">
-                    <div class="flex-1 flex flex-col">
-                        <h2 class="section-title">Me, Myself, and I</h2>
+                    <div class="home-section-layout">
+                        <div class="home-section-content">
+                            <h2 class="section-title">Me, Myself, and I</h2>
+                        </div>
                     </div>
                 </section>
 
                 <section id="home-experience" class="home-section">
-                    <div class="flex-1 flex flex-col">
-                        <h2 class="section-title">My Experience</h2>
+                    <div class="home-section-layout">
+                        <div class="home-section-content">
+                            <h2 class="section-title">My Experience</h2>
+                        </div>
                     </div>
                 </section>
 
                 <section id="home-projects" class="home-section">
-                    <div class="flex-1 flex flex-col">
-                        <h2 class="section-title">Things I&apos;ve Built</h2>
+                    <div class="home-section-layout">
+                        <div class="home-section-content">
+                            <h2 class="section-title">
+                                Things I&apos;ve Built
+                            </h2>
+                        </div>
                     </div>
                 </section>
 
                 <section id="home-contact" class="home-section">
-                    <div class="flex-1 flex flex-col">
-                        <h2 class="section-title">Let&apos;s get in touch!</h2>
+                    <div class="home-section-layout">
+                        <div class="home-section-content">
+                            <h2 class="section-title">
+                                Let&apos;s get in touch!
+                            </h2>
+                        </div>
                     </div>
                 </section>
             </main>

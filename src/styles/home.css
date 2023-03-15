@@ -14,33 +14,31 @@
     @apply py-28;
 }
 
-/* --- START Hero Section ---  */
-
-.hero {
+.home-section-layout {
     @apply flex-1;
-    @apply flex items-center;
-
-    /* @apply py-32 md:py-0; */
+    @apply flex justify-center items-center;
 }
 
-.hero-content {
-    @apply flex-1;
+.home-section-content {
     @apply flex flex-col;
     @apply space-y-6 md:space-y-8;
 }
 
+/* --- START Hero Section ---  */
+
 .hero-content-header {
     @apply flex flex-col;
-    @apply space-y-2 md:space-y-4;
+    @apply space-y-2 md:space-y-6;
 }
 
 .hero-preamble {
-    @apply text-blue font-bold;
+    @apply text-blue font-light;
+    @apply tracking-wide;
     @apply text-base md:text-lg;
 }
 
 .hero-title {
-    @apply text-white font-semibold;
+    @apply text-white font-bold;
     @apply tracking-tightest;
     @apply text-5xl md:text-7xl;
 
@@ -50,8 +48,8 @@
 
 .hero-subtitle {
     @apply text-white font-light;
-    @apply tracking-tighter;
-    @apply text-xl md:text-2xl;
+    @apply tracking-tight;
+    @apply text-3xl md:text-5xl;
 }
 
 .hero-body {
@@ -61,17 +59,19 @@
 
 .hero-caption {
     @apply text-sm md:text-lg;
-    @apply text-white;
+    @apply tracking-wide;
+    @apply text-white font-light;
 }
 
 .hero-link {
     @apply inline-block;
-    @apply text-white;
+    @apply text-white font-light;
 }
 
 .hero-link--joke {
     @apply duration-500 ease-in-out;
     @apply text-xs md:text-sm italic;
+    @apply font-normal;
     @apply underline;
     @apply decoration-blue decoration-2;
     @apply underline-offset-4;
@@ -83,13 +83,12 @@
     @apply duration-500;
     @apply px-4 py-3;
     @apply md:px-5 md:py-4;
-    @apply text-blue;
+    @apply text-blue font-medium;
     @apply text-sm md:text-base;
-    @apply border-blue border-2 rounded-md;
+    @apply border-blue border-2 rounded-3xl;
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.hero-button:hover {
     box-shadow: inset 12em 0 0 0 theme('colors.blue');
     @apply text-white;
     @apply opacity-90;
@@ -116,4 +115,4 @@ footer {
     @apply text-center;
 }
 
-/* --- END Hero Section ---  */
+/* --- END Footer Section ---  */
