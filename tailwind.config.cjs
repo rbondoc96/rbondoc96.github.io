@@ -31,14 +31,6 @@ module.exports = {
             letterSpacing: {
                 tightest: '-0.075em',
             },
-            // fontSize: {
-            //     'xs': '0.75rem',
-            //     'sm': '0.875rem',
-            //     'xl': 'clamp(1rem, 2.5vw, 1.25rem)',
-            //     '2xl': 'clamp(1.2rem, 4vw, 1.5rem)',
-            //     '5xl': 'clamp(1.8rem, 7vw, 3.5rem)',
-            //     '7xl': 'clamp(2.5rem, 7vw, 4.5rem)',
-            // },
         },
     },
     plugins: [],

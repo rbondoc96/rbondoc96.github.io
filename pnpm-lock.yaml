@@ -6,6 +6,7 @@ specifiers:
   '@fortawesome/free-brands-svg-icons': ^6.2.0
   '@fortawesome/free-regular-svg-icons': ^6.2.0
   '@fortawesome/free-solid-svg-icons': ^6.2.0
+  '@solid-primitives/destructure': ^0.1.9
   '@solidjs/router': ^0.8.0
   '@types/lodash.throttle': ^4.1.7
   '@types/node': ^18.15.1
@@ -28,6 +29,7 @@ specifiers:
   prettier: ^2.8.4
   solid-icons: ^1.0.4
   solid-js: ^1.6.14
+  solid-styled-components: ^0.28.5
   tailwindcss: ^3.2.7
   typed.js: ^2.0.132
   typescript: ^4.9.5
@@ -40,11 +42,13 @@ dependencies:
   '@fortawesome/free-brands-svg-icons': 6.2.0
   '@fortawesome/free-regular-svg-icons': 6.2.0
   '@fortawesome/free-solid-svg-icons': 6.2.0
+  '@solid-primitives/destructure': 0.1.9_solid-js@1.6.14
   '@solidjs/router': 0.8.0_solid-js@1.6.14
   gsap: 3.11.4
   lodash.throttle: 4.1.1
   solid-icons: 1.0.4_solid-js@1.6.14
   solid-js: 1.6.14
+  solid-styled-components: 0.28.5_solid-js@1.6.14
   typed.js: 2.0.132
 
 devDependencies:
@@ -803,6 +807,23 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.4.0
     dev: true
+
+  /@solid-primitives/destructure/0.1.9_solid-js@1.6.14:
+    resolution: {integrity: sha512-0ECdpv16uSoGCvRPaaYnlF24iNy/utVRWly8qXz5nvzTnwDrCaDGo4kDZVR6S7ySUMYqvCEHBhduuLFXmD71Tw==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      '@solid-primitives/utils': 5.5.0_solid-js@1.6.14
+      solid-js: 1.6.14
+    dev: false
+
+  /@solid-primitives/utils/5.5.0_solid-js@1.6.14:
+    resolution: {integrity: sha512-+0VGdqRA4g/u6PACJKER7E9v7njd3c+JA4RuXGvvZO/v8wPegOLHkxpohOQHRBSWY+Q+dmyVfXn0mks2m6gfJg==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      solid-js: 1.6.14
+    dev: false
 
   /@solidjs/router/0.8.0_solid-js@1.6.14:
     resolution: {integrity: sha512-gvKAfYbuq6rpuNM9E7qIRXOrUEHY4AoOiok3xo/Slw5ph+hvJ+gKRhQgW0Et8xcsq2NZcc4AvJF8VTBmXfwEyA==}
@@ -2136,6 +2157,14 @@ packages:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
+  /goober/2.1.12_csstype@3.1.1:
+    resolution: {integrity: sha512-yXHAvO08FU1JgTXX6Zn6sYCUFfB/OJSX8HHjDSgerZHZmFKAb08cykp5LBw5QnmyMcZyPRMqkdyHUSSzge788Q==}
+    peerDependencies:
+      csstype: ^3.0.10
+    dependencies:
+      csstype: 3.1.1
+    dev: false
+
   /gopd/1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -3019,6 +3048,16 @@ packages:
       '@babel/types': 7.21.2
       solid-js: 1.6.14
     dev: true
+
+  /solid-styled-components/0.28.5_solid-js@1.6.14:
+    resolution: {integrity: sha512-vwTcdp76wZNnESIzB6rRZ3U55NgcSAQXCiiRIiEFhxTFqT0bEh/warNT1qaRZu4OkAzrBkViOngF35ktI8sc4A==}
+    peerDependencies:
+      solid-js: ^1.4.4
+    dependencies:
+      csstype: 3.1.1
+      goober: 2.1.12_csstype@3.1.1
+      solid-js: 1.6.14
+    dev: false
 
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}

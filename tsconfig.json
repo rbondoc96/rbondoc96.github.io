@@ -3,7 +3,8 @@
         "composite": true,
         "baseUrl": ".",
         "paths": {
-            "@/*": ["./src/*"]
+            "@/*": ["./src/*"],
+            "@base/*": ["./src/components/base/*"]
         },
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "target": "ESNext",

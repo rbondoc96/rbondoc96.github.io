@@ -1,5 +1,6 @@
 .loader {
     @apply absolute inset-0;
+    @apply h-screen;
     @apply z-50;
 }
 
