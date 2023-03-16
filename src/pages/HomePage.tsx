@@ -17,7 +17,7 @@ const Home: Component = () => {
 
         const timeline = gsap.timeline();
         timeline
-            .from('.js-nav', {
+            .from('.js-header', {
                 opacity: 0,
                 yPercent: -100,
                 duration: 1,
@@ -56,16 +56,14 @@ const Home: Component = () => {
         if (element !== null) {
             setTimeout(() => {
                 element.scrollIntoView({behavior: 'smooth'});
-                target.blur();
             }, 150);
         }
     };
 
     return (
         <>
-            <header>
-                <Navigation />
-            </header>
+            <Socials />
+            <Navigation />
 
             <main class="home flex items-center">
                 <section id="home-welcome" class="home-section">
@@ -152,8 +150,6 @@ const Home: Component = () => {
                     </div>
                 </section>
             </main>
-
-            <Socials />
 
             <footer>
                 <p class="copyright-text">
