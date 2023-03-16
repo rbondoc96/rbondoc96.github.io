@@ -9,9 +9,7 @@ const App: Component = () => {
 
     return (
         <Show
-            fallback={
-                <Loader onFinish={() => setIsLoaderFinished(true)} />
-            }
+            fallback={<Loader onFinish={() => setIsLoaderFinished(true)} />}
             when={isLoaderFinished()}
         >
             <Router />

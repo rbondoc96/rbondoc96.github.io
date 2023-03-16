@@ -2,7 +2,14 @@
 import {render} from 'solid-js/web';
 
 import './index.css';
-import '@/assets/fonts';
 import App from '@/App';
+import ThemeProvider from '@/context/ThemeProvider';
 
-render(() => <App />, document.getElementById('root') as HTMLElement);
+render(
+    () => (
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
+    ),
+    document.getElementById('root') as HTMLElement,
+);
