@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    html {
-        font-family: Work Sans;
-        scroll-behavior: smooth;
-    }
-
-    body {
-        @apply bg-dark;
-    }
-}
-
 /* 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
