@@ -3,6 +3,7 @@ import type {Component} from 'solid-js';
 import {createEffect} from 'solid-js';
 // import Typed from 'typed.js';
 
+import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import Socials from '@/components/Socials';
 
@@ -151,11 +152,7 @@ const Home: Component = () => {
                 </section>
             </main>
 
-            <footer>
-                <p class="copyright-text">
-                    &copy; 2023 Rodrigo Bondoc. All rights reserved.
-                </p>
-            </footer>
+            <Footer />
         </>
     );
 };
