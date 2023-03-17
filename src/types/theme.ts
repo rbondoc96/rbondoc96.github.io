@@ -1,3 +1,5 @@
+import type {Properties as CSSProperties} from 'csstype';
+
 export type SpacingOption =
     | 0
     | 0.5
@@ -53,9 +55,16 @@ export interface ThemeTransitionOptions {
     timingFunction: Record<string, string>;
 }
 
+export interface ThemeTypography {
+    letterSpacing: Record<string, CSSProperties>;
+    size: Record<string, CSSProperties>;
+    weight: Record<string, CSSProperties>;
+}
+
 export default interface Theme {
     colors: ThemeColors;
     spacing: ThemeSpacingOptions;
     transform: ThemeTransformOptions;
     transitions: ThemeTransitionOptions;
+    typography: ThemeTypography;
 }
