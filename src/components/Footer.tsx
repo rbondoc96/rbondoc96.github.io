@@ -1,6 +1,6 @@
 import type {Component} from 'solid-js';
 
-import themed, {transform} from '@/theme/themed';
+import themed from '@/theme/themed';
 
 const Copyright = themed('p')((theme) => {
     return {
@@ -11,13 +11,11 @@ const Copyright = themed('p')((theme) => {
 });
 
 const Footer: Component = () => {
-    const CopyrightLink = transform(Copyright, 'a');
-
     return (
         <footer>
-            <CopyrightLink>
+            <Copyright>
                 &copy; 2023 Rodrigo Bondoc. All rights reserved.
-            </CopyrightLink>
+            </Copyright>
         </footer>
     );
 };

@@ -38,24 +38,4 @@ const themed: ThemedFunction = (component: ValidComponent) => {
     };
 };
 
-type GetPropsType<Element extends ValidComponent> =
-    Element extends keyof JSX.IntrinsicElements
-        ? JSX.IntrinsicElements[Element]
-        : Element extends (props: infer P) => JSX.Element
-        ? P
-        : never;
-
-export function transform<
-    SourceProps,
-    Element extends ValidComponent,
-    TargetProps = GetPropsType<Element>,
->(
-    SourceComponent: Component<SourceProps>,
-    TargetComponent: Element,
-): Component<TargetProps & Omit<SourceProps, keyof TargetProps>> {
-    return (props: TargetProps & Omit<SourceProps, keyof TargetProps>) => {
-        return <TargetComponent {...props} />;
-    };
-}
-
 export default themed;
