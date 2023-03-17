@@ -50,16 +50,16 @@ const SocialsLink = styled('a')`
 
 const Socials: Component<{
     size?: string | number;
-}> = (baseProps) => {
+}> = (_props) => {
     const props = mergeProps(
         {
             size: 20,
         },
-        baseProps,
+        _props,
     );
 
     return (
-        <Sidebar jsClass="js-socials" component="div" position="left">
+        <Sidebar jsClass="js-socials" position="left">
             <div>
                 <SocialsList>
                     <SocialsListItem>

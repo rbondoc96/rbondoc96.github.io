@@ -21,6 +21,7 @@ const NavigationListItem = styled('li')`
 `;
 
 const Link = styled('a')`
+    // ^?
     color: ${({theme}) => theme?.colors.white};
     transition-property: ${({theme}) => theme?.transitions.property.colors};
     transition-duration: ${({theme}) => theme?.transitions.duration[300]};
@@ -32,7 +33,7 @@ const Link = styled('a')`
 
 const Navigation: Component = () => {
     return (
-        <Sidebar jsClass="js-header" component="header" position="right">
+        <Sidebar as="header" jsClass="js-header" position="right">
             <nav role="navigation" aria-label="Home page sections">
                 <NavigationList>
                     <NavigationListItem>
