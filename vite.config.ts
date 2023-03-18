@@ -10,6 +10,8 @@ export default defineConfig({
             '@': resolve(__dirname, 'src'),
             '@base': resolve(__dirname, 'src/components/base'),
             '@mocks': resolve(__dirname, 'mocks'),
+            '@pages': resolve(__dirname, 'src/components/pages'),
+            '@partials': resolve(__dirname, 'src/components/partials'),
         },
     },
 });

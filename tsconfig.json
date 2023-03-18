@@ -4,7 +4,9 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["./src/*"],
-            "@base/*": ["./src/components/base/*"]
+            "@base/*": ["./src/components/base/*"],
+            "@pages/*": ["./src/components/pages/*"],
+            "@partials/*": ["./src/components/partials/*"]
         },
         "lib": ["DOM", "DOM.Iterable", "ESNext"],
         "target": "ESNext",
