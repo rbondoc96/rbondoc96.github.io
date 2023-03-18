@@ -5,106 +5,72 @@ import {
     FaSolidEnvelope,
 } from 'solid-icons/fa';
 import type {Component} from 'solid-js';
-import {mergeProps} from 'solid-js';
-import {styled} from 'solid-styled-components';
 
+import List from '@base/List';
 import Sidebar from '@base/Sidebar';
+import useThemed from '@/hooks/useThemed';
 
-const SocialsList = styled('ul')`
-    display: flex;
-    flex-direction: column;
+const SocialsLink = useThemed('a')((theme) => ({
+    'display': 'block',
+    'padding': theme.spacing[2],
 
-    > *:not(:first-child) {
-        margin-top: ${(props) => props.theme?.spacing[2]};
-    }
-`;
+    '& > svg': {
+        transitionDuration: theme.transitions.duration[300],
+        transitionProperty: theme.transitions.property.colors,
+        color: `${theme.colors.white} !important`,
+    },
 
-const SocialsListItem = styled('li')`
-    transition-property: ${({theme}) => theme?.transitions.property.transform};
-    transition-duration: ${({theme}) => theme?.transitions.duration[300]};
-    transition-timing-function: ${({theme}) =>
-        theme?.transitions.timingFunction.easeInOut};
-    &:hover {
-        transform: translateY(-${({theme}) => theme?.spacing['1.5']});
-    }
-    &:not(:hover) {
-        transform: translateY(-${({theme}) => theme?.spacing[0]});
-    }
-`;
+    '&:hover > svg': {
+        color: `${theme.colors.red} !important`,
+    },
+}));
 
-const SocialsLink = styled('a')`
-    display: block;
-    padding: ${({theme}) => theme?.spacing[2]};
-
-    & > svg {
-        transition-duration: ${({theme}) => theme?.transitions.duration[300]};
-        transition-property: ${({theme}) =>
-            theme?.transitions.property.colors};
-        color: ${({theme}) => theme?.colors.white} !important;
-    }
-
-    &:hover > svg {
-        color: ${({theme}) => theme?.colors.red} !important;
-    }
-`;
-
-const Socials: Component<{
-    size?: string | number;
-}> = (_props) => {
-    const props = mergeProps(
-        {
-            size: 20,
-        },
-        _props,
-    );
-
+const Socials: Component = () => {
     return (
         <Sidebar jsClass="js-socials" position="left">
-            <div>
-                <SocialsList>
-                    <SocialsListItem>
-                        <SocialsLink
-                            aria-label="Email"
-                            href="mailto:rbondoc96@gmail.com"
-                        >
-                            <FaSolidEnvelope size={props.size} />
-                        </SocialsLink>
-                    </SocialsListItem>
+            <List space="2">
+                <List.Item>
+                    <SocialsLink
+                        aria-label="Email"
+                        href="mailto:rbondoc96@gmail.com"
+                    >
+                        <FaSolidEnvelope size={20} />
+                    </SocialsLink>
+                </List.Item>
 
-                    <SocialsListItem>
-                        <SocialsLink
-                            aria-label="Github"
-                            href="https://github.com/rbondoc96"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <FaBrandsGithub size={props.size} />
-                        </SocialsLink>
-                    </SocialsListItem>
+                <List.Item>
+                    <SocialsLink
+                        aria-label="Github"
+                        href="https://github.com/rbondoc96"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <FaBrandsGithub size={20} />
+                    </SocialsLink>
+                </List.Item>
 
-                    <SocialsListItem>
-                        <SocialsLink
-                            aria-label="LinkedIn"
-                            href="https://linkedin.com/in/rbondoc96"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <FaBrandsLinkedinIn size={props.size} />
-                        </SocialsLink>
-                    </SocialsListItem>
+                <List.Item>
+                    <SocialsLink
+                        aria-label="LinkedIn"
+                        href="https://linkedin.com/in/rbondoc96"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <FaBrandsLinkedinIn size={20} />
+                    </SocialsLink>
+                </List.Item>
 
-                    <SocialsListItem>
-                        <SocialsLink
-                            aria-label="Resume"
-                            href="/docs/resume.pdf"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <FaSolidScroll size={props.size} />
-                        </SocialsLink>
-                    </SocialsListItem>
-                </SocialsList>
-            </div>
+                <List.Item>
+                    <SocialsLink
+                        aria-label="Resume"
+                        href="/docs/resume.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <FaSolidScroll size={20} />
+                    </SocialsLink>
+                </List.Item>
+            </List>
         </Sidebar>
     );
 };

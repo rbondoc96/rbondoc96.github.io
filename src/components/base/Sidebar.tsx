@@ -1,39 +1,39 @@
-import type {ParentComponent} from 'solid-js';
-import {mergeProps} from 'solid-js';
-import {styled} from 'solid-styled-components';
+import type {ParentComponent, JSX} from 'solid-js';
 import {destructure} from '@solid-primitives/destructure';
 
-interface SidebarProps {
-    as?: 'div' | 'header';
-    jsClass?: `js-${string}`;
+import useThemed from '@/hooks/useThemed';
+import type {AnimatedComponentProps} from '@/types/animations';
+
+interface SidebarProps extends AnimatedComponentProps {
+    as?: Extract<keyof JSX.IntrinsicElements, 'div' | 'header'>;
     position: 'left' | 'right';
 }
 
 const Sidebar: ParentComponent<SidebarProps> = (props) => {
-    const _props = mergeProps(props, {
-        as: 'div',
-    });
-    const {as, jsClass, position} = destructure(_props);
+    const {as, jsClass, position} = destructure(props);
+    const Wrapper = useThemed(as?.() ?? 'div')((theme) => ({
+        'display': 'block',
+        'position': 'fixed',
+        [position()]: 0,
+        'zIndex': 50,
+        'height': '100vh',
+        'paddingLeft': theme.spacing[6],
+        'paddingRight': theme.spacing[6],
 
-    const Wrapper = styled('div')`
-        position: fixed;
-        ${position()}: 0;
-        z-index: 50;
-        height: 100vh;
+        '> *': {
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+        },
 
-        padding-left: ${({theme}) => theme?.spacing[6]};
-        padding-right: ${({theme}) => theme?.spacing[6]};
-
-        > * {
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-    `;
+        [theme.screens.smallerThan('lg')]: {
+            display: 'none',
+        },
+    }));
 
     return (
-        <Wrapper as={as()} class={jsClass?.()}>
-            {props.children}
+        <Wrapper class={jsClass?.()}>
+            <div>{props.children}</div>
         </Wrapper>
     );
 };
