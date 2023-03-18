@@ -6,6 +6,7 @@ import {createEffect} from 'solid-js';
 import Footer from '@/components/Footer';
 import Navigation from '@/components/Navigation';
 import Socials from '@/components/Socials';
+import Content from '@pages/Home/Content';
 
 import '@/styles/home.css';
 
@@ -20,15 +21,17 @@ const Home: Component = () => {
         timeline
             .from('.js-header', {
                 opacity: 0,
-                yPercent: -100,
+                xPercent: 50,
                 duration: 1,
+                ease: 'back',
             })
             .from(
                 '.js-socials',
                 {
                     opacity: 0,
-                    yPercent: 20,
+                    xPercent: -50,
                     duration: 1,
+                    ease: 'back',
                 },
                 '<',
             )
@@ -36,7 +39,7 @@ const Home: Component = () => {
                 '.js-hero-content',
                 {
                     opacity: 0,
-                    translateX: 200,
+                    translateY: -100,
                     duration: 1.2,
                     ease: 'back',
                 },
@@ -66,93 +69,67 @@ const Home: Component = () => {
             <Socials />
             <Navigation />
 
-            <main class="home flex items-center">
-                <section id="home-welcome" class="home-section">
-                    <div class="home-section-layout">
-                        <div class="js-hero-content home-section-content">
-                            <div class="hero-content-header">
-                                <div class="hero-preamble">
-                                    Hey there! My name is
-                                </div>
-                                <h1 class="hero-title">Rodrigo Bondoc</h1>
-                                <h3 class="hero-subtitle">
-                                    Software Engineer
-                                </h3>
+            <Content jsClass="js-mainHome">
+                <Content.Section id="home-welcome">
+                    <div class="js-hero-content home-section-content">
+                        <div class="hero-content-header">
+                            <div class="hero-preamble">
+                                Hey there! My name is
                             </div>
-                            <p class="hero-body">
-                                <span class="hero-caption">
-                                    I'm a full-stack web and mobile app
-                                    developer with a background in electrical
-                                    engineering.
-                                </span>
-                                <span class="hero-caption">
-                                    In other words, I joined the dark (soft)
-                                    side.
-                                </span>
-                            </p>
-                            <div>
-                                <a
-                                    class="hero-link hero-link--joke"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href="https://knowyourmeme.com/memes/come-to-the-dark-side"
-                                >
-                                    Yes, they did have cookies.
-                                </a>
-                            </div>
-                            <div>
-                                <a
-                                    class="hero-link"
-                                    href="#home-about"
-                                    onClick={scrollTo}
-                                >
-                                    <button type="button" class="hero-button">
-                                        Get to know me!
-                                    </button>
-                                </a>
-                            </div>
+                            <h1 class="hero-title">Rodrigo Bondoc</h1>
+                            <h3 class="hero-subtitle">Software Engineer</h3>
+                        </div>
+                        <p class="hero-body">
+                            <span class="hero-caption">
+                                I'm a full-stack web and mobile app developer
+                                with a background in electrical engineering.
+                            </span>
+                            <span class="hero-caption">
+                                In other words, I joined the dark (soft) side.
+                            </span>
+                        </p>
+                        <div>
+                            <a
+                                class="hero-link hero-link--joke"
+                                target="_blank"
+                                rel="noreferrer"
+                                href="https://knowyourmeme.com/memes/come-to-the-dark-side"
+                            >
+                                Yes, they did have cookies.
+                            </a>
+                        </div>
+                        <div>
+                            <a
+                                class="hero-link"
+                                href="#home-about"
+                                onClick={scrollTo}
+                            >
+                                <button type="button" class="hero-button">
+                                    Get to know me!
+                                </button>
+                            </a>
                         </div>
                     </div>
-                </section>
+                </Content.Section>
 
-                <section id="home-about" class="home-section">
-                    <div class="home-section-layout">
-                        <div class="home-section-content">
-                            <h2 class="section-title">Me, Myself, and I</h2>
-                        </div>
-                    </div>
-                </section>
+                <Content.Section id="home-about">
+                    <h2 class="section-title">Me, Myself, and I</h2>
+                </Content.Section>
 
-                <section id="home-experience" class="home-section">
-                    <div class="home-section-layout">
-                        <div class="home-section-content">
-                            <h2 class="section-title">My Experience</h2>
-                        </div>
-                    </div>
-                </section>
+                <Content.Section id="home-experience">
+                    <h2 class="section-title">My Experience</h2>
+                </Content.Section>
 
-                <section id="home-projects" class="home-section">
-                    <div class="home-section-layout">
-                        <div class="home-section-content">
-                            <h2 class="section-title">
-                                Things I&apos;ve Built
-                            </h2>
-                        </div>
-                    </div>
-                </section>
+                <Content.Section id="home-projects">
+                    <h2 class="section-title">Things I&apos;ve Built</h2>
+                </Content.Section>
 
-                <section id="home-contact" class="home-section">
-                    <div class="home-section-layout">
-                        <div class="home-section-content">
-                            <h2 class="section-title">
-                                Let&apos;s get in touch!
-                            </h2>
-                        </div>
-                    </div>
-                </section>
-            </main>
+                <Content.Section id="home-contact">
+                    <h2 class="section-title">Let&apos;s get in touch!</h2>
 
-            <Footer />
+                    <Footer />
+                </Content.Section>
+            </Content>
         </>
     );
 };
