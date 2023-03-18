@@ -1,5 +1,15 @@
 import type {Properties as CSSProperties} from 'csstype';
 
+type ScreenSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
+export type ScreenMediaQueryString<Specifier extends 'min' | 'max'> =
+    `@media (${Specifier}-width: ${number}px)`;
+
+export type ScreenMediaQueries = Record<ScreenSize, number> & {
+    largerThan: (size: ScreenSize) => ScreenMediaQueryString<'min'>;
+    smallerThan: (size: ScreenSize) => ScreenMediaQueryString<'max'>;
+};
+
 export type SpacingOption =
     | 0
     | 0.5
@@ -63,6 +73,7 @@ export interface ThemeTypography {
 
 export default interface Theme {
     colors: ThemeColors;
+    screens: ScreenMediaQueries;
     spacing: ThemeSpacingOptions;
     transform: ThemeTransformOptions;
     transitions: ThemeTransitionOptions;
