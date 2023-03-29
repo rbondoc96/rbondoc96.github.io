@@ -1,23 +1,38 @@
-import '@fontsource/work-sans/100.css';
-import '@fontsource/work-sans/200.css';
-import '@fontsource/work-sans/300.css';
-import '@fontsource/work-sans/400.css';
-import '@fontsource/work-sans/500.css';
-import '@fontsource/work-sans/600.css';
-import '@fontsource/work-sans/700.css';
-import '@fontsource/work-sans/800.css';
-import '@fontsource/work-sans/900.css';
-
 import {StrictMode} from 'react';
 import ReactDOM from 'react-dom/client';
-import {UIProvider} from '@/core/context/UIContext';
+
+import {Global, ThemeProvider} from 'theme-ui';
 import App from './App';
-import './index.css';
+import {getTheme} from '@/core/theme';
+
+const theme = getTheme();
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <UIProvider>
-      <App />
-    </UIProvider>
-  </StrictMode>,
+    <StrictMode>
+        <ThemeProvider theme={theme}>
+            <Global
+                styles={{
+                    html: {
+                        fontFamily: 'Work Sans, sans-serif',
+                        scrollBehavior: 'smooth',
+                    },
+                    body: {
+                        backgroundColor: 'dark',
+                        height: '100%',
+                        margin: 0,
+                        padding: 0,
+                    },
+                    button: {
+                        backgroundColor: 'transparent',
+                        cursor: 'pointer',
+                    },
+                    ul: {
+                        margin: 0,
+                        padding: 0,
+                    },
+                }}
+            />
+            <App />
+        </ThemeProvider>
+    </StrictMode>,
 );
