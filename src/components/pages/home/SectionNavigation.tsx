@@ -8,16 +8,13 @@ type SectionNavigationProps = AnimatedComponentProps & {
     }>;
 };
 
-export const SectionNavigation = ({
-    animClass,
-    links,
-}: SectionNavigationProps) => {
+export const SectionNavigation = ({animClass, links}: SectionNavigationProps) => {
     return (
         <FloatingSidebar animClass={animClass} position="right">
             <nav role="navigation" aria-label="Home page sections">
                 <List direction="column" space="8">
                     {links.map((link) => (
-                        <List.Item rotate="left">
+                        <List.Item key={`nav-${link.name}`} rotate="left">
                             <Link
                                 href={link.href}
                                 textDecoration="none"
