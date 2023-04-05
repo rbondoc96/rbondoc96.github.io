@@ -1,0 +1,12 @@
+import {createThemeVariant} from '@/core/theme';
+
+const text = createThemeVariant({
+    body: {
+        color: 'white',
+        fontSize: ['md', 'lg'],
+        fontWeight: 'light',
+        lineHeight: 'md',
+    },
+});
+
+export default text;

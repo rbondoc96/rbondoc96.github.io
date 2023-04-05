@@ -1,7 +1,7 @@
 import colors from '@/core/theme/tokens/colors';
-import type {VariantDefinition} from '@/core/theme';
+import {createThemeVariant} from '@/core/theme';
 
-const buttons: VariantDefinition = {
+const buttons = createThemeVariant({
     xFill: {
         'border': '2px solid',
         'borderColor': 'blue',
@@ -10,11 +10,14 @@ const buttons: VariantDefinition = {
         'transition': 'all300',
 
         '&:hover': {
-            boxShadow: `inset 12em 0 0 0 ${colors.blue}`,
+            boxShadow: `inset 12em 0 ${colors.blue}`,
             color: 'white',
             opacity: '90',
         },
     },
-};
+    unstyled: {
+        padding: '0 !important',
+    },
+});
 
 export default buttons;
