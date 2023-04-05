@@ -1,4 +1,4 @@
-import {createThemeVariant} from '@/core/theme';
+import {createThemeVariant} from '@/core/theme/utils';
 
 const text = createThemeVariant({
     body: {

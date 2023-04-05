@@ -1,5 +1,5 @@
 import colors from '@/core/theme/tokens/colors';
-import {createThemeVariant} from '@/core/theme';
+import {createThemeVariant} from '@/core/theme/utils';
 
 const buttons = createThemeVariant({
     xFill: {

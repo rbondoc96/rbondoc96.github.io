@@ -43,12 +43,6 @@ export type ResponsiveThemePropertyKey<Property extends keyof ThemeTokens> =
 
 export type VariantDefinition = Record<string, ThemeUIStyleObject>;
 
-export const createThemeVariant = <Definition extends VariantDefinition>(
-    definition: Definition,
-): Record<keyof Definition, ThemeUIStyleObject> => {
-    return definition;
-};
-
 export const getBreakpoints = (): typeof breakpoints => breakpoints;
 
 export const getTheme = (): Theme => theme;
