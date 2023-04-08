@@ -17,3 +17,4 @@ export * from './size';
 export * from './stack';
 export * from './theme';
 export * from './typography';
+export * from './variant';

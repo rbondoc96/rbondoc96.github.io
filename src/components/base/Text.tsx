@@ -1,14 +1,11 @@
 import {type PropsWithChildren, useMemo} from 'react';
 import {get, Text as BaseText} from 'theme-ui';
 
-import type {ComponentProps} from '@/core/props';
-import type {ThemeVariants} from '@/core/theme';
+import type {ComponentProps, VariantProp} from '@/core/props';
 import useTheme from '@/hooks/useTheme';
 import extractStyleProps from '@/core/utils/extractStyleProps';
 
-type TextProps = ComponentProps & {
-    variant?: `text.${keyof ThemeVariants['text']}`;
-};
+type TextProps = ComponentProps & VariantProp<'text'>;
 
 export const Text = ({
     as = 'p',

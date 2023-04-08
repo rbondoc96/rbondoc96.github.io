@@ -1,31 +1,40 @@
 import type {PropsWithChildren} from 'react';
+import {forwardRef} from 'react';
 import {Box as TUIBox} from 'theme-ui';
 
-import type {BoxProps, MarginProps, ThemeProps} from '@/core/props';
+import type {ComponentProps} from '@/core/props';
+import extractStyleProps from '@/core/utils/extractStyleProps';
 
-type _BoxProps = BoxProps & MarginProps & ThemeProps;
+export const Box = forwardRef(function Box(
+    {
+        'aria-hidden': ariaHidden,
+        animClass,
+        as = 'div',
+        children,
+        className,
+        id,
+        sx,
+        tabIndex,
+        variant,
+        _focus,
+        _hover,
+        ...props
+    }: PropsWithChildren<ComponentProps>,
+    ref,
+) {
+    const styleProps = extractStyleProps(props)[0];
 
-export const Box = ({
-    as = 'div',
-    display,
-    children,
-    height,
-    sx,
-    width,
-    variant,
-    _focus,
-    _hover,
-    ...props
-}: PropsWithChildren<_BoxProps>) => {
     return (
         <TUIBox
+            aria-hidden={ariaHidden}
             as={as}
+            className={[animClass, className].filter(Boolean).join(' ')}
+            id={id}
+            ref={ref}
+            tabIndex={tabIndex}
             variant={variant}
             sx={{
-                display,
-                height,
-                width,
-                ...props,
+                ...styleProps,
 
                 '&:focus': {
                     ..._focus,
@@ -41,6 +50,6 @@ export const Box = ({
             {children}
         </TUIBox>
     );
-};
+});
 
 export default Box;

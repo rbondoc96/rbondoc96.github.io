@@ -2,13 +2,17 @@ import type {PropsWithChildren} from 'react';
 import {get} from 'theme-ui';
 
 import {Box, Stack} from '@/components/base';
-import type {AnimatedComponentProps, StackProps, ThemeProps} from '@/core/props';
+import type {ComponentProps, StackProps} from '@/core/props';
+import extractStyleProps from '@/core/utils/extractStyleProps';
 
-type ListItemProps = ThemeProps & {
+type ListItemProps = ComponentProps & {
     rotate?: 'left' | 'right';
 };
 
-type ListProps = AnimatedComponentProps & StackProps & ThemeProps;
+type ListProps = ComponentProps &
+    StackProps & {
+        as?: 'ul' | 'ol' | 'menu';
+    };
 
 const ListItem = ({
     children,
@@ -22,6 +26,8 @@ const ListItem = ({
         rotationStyle = 'rotate(180deg)';
     }
 
+    const styleProps = extractStyleProps(props)[0];
+
     return (
         <Box
             as="li"
@@ -33,13 +39,15 @@ const ListItem = ({
 
                 '&:hover': {
                     transform: (theme) =>
-                        `translateY(-${get(theme, 'space.1')}) ${rotationStyle}`,
+                        `translateY(-${
+                            get(theme, 'space.1') as string
+                        }) ${rotationStyle}`,
                     ..._hover,
                 },
 
+                ...styleProps,
                 ...sx,
             }}
-            {...props}
         >
             {children}
         </Box>
@@ -48,13 +56,26 @@ const ListItem = ({
 
 const _List = ({
     animClass,
+    as = 'ul',
     children,
     direction,
     space,
     sx,
+    ...props
 }: PropsWithChildren<ListProps>) => {
+    const styleProps = extractStyleProps(props)[0];
+
     return (
-        <Stack animClass={animClass} as="ul" direction={direction} space={space} sx={sx}>
+        <Stack
+            animClass={animClass}
+            as={as}
+            direction={direction}
+            space={space}
+            sx={{
+                ...styleProps,
+                ...sx,
+            }}
+        >
             {children}
         </Stack>
     );

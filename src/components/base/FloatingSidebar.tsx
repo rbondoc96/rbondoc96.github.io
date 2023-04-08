@@ -6,9 +6,7 @@ import type {AnimatedComponentProps, BoxProps} from '@/core/props';
 type FloatingSidebarProps = AnimatedComponentProps &
     BoxProps & {
         as?: 'div' | 'header';
-        paddingX?:
-            | CSSProperties['paddingLeft']
-            | Array<CSSProperties['paddingLeft']>;
+        paddingX?: CSSProperties['paddingLeft'] | Array<CSSProperties['paddingLeft']>;
         position: 'left' | 'right';
     };
 
@@ -30,14 +28,17 @@ export const FloatingSidebar = ({
                 paddingX,
                 position: 'fixed',
                 [position]: 0,
-                zIndex: 'sticky',
             }}
         >
             <Box
                 sx={{
-                    display: 'flex',
-                    height: '100%',
-                    alignItems: 'center',
+                    'display': 'flex',
+                    'height': '100%',
+                    'alignItems': 'center',
+
+                    '& > *': {
+                        zIndex: 'sticky',
+                    },
                 }}
             >
                 {children}

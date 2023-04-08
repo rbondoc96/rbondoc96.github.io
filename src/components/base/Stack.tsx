@@ -1,60 +1,41 @@
 import type {PropsWithChildren} from 'react';
 import {Flex} from 'theme-ui';
 
-import type {
-    AnimatedComponentProps,
-    BoxProps,
-    FlexProps,
-    HTMLProps,
-    MarginProps,
-    PaddingProps,
-    StackProps,
-    ThemeProps,
-} from '@/core/props';
+import type {ComponentProps, StackProps} from '@/core/props';
+import extractStyleProps from '@/core/utils/extractStyleProps';
 
-type _StackProps = AnimatedComponentProps &
-    BoxProps &
-    FlexProps &
-    HTMLProps &
-    MarginProps &
-    PaddingProps &
-    StackProps &
-    ThemeProps;
+type StackComponentProps = ComponentProps & StackProps;
 
 export const Stack = ({
-    alignItems,
     animClass,
     as = 'div',
     children,
     direction = 'row',
-    flex,
-    justifyContent,
-    minHeight,
-    paddingX,
-    paddingY,
+    id,
+    onClick,
+    onMouseDown,
+    onMouseUp,
     space,
     sx,
-    width,
     ...props
-}: PropsWithChildren<_StackProps>) => {
+}: PropsWithChildren<StackComponentProps>) => {
+    const styleProps = extractStyleProps(props)[0];
+
     return (
         <Flex
             as={as}
             className={animClass}
+            id={id}
+            onClick={onClick}
+            onMouseDown={onMouseDown}
+            onMouseUp={onMouseUp}
             sx={{
-                alignItems,
-                flex,
                 'flexDirection': direction,
-                justifyContent,
-                minHeight,
-                paddingX,
-                paddingY,
-                width,
                 '& > *:not(:first-child)': {
-                    [direction === 'row' ? 'marginRight' : 'marginTop']: space,
+                    [direction === 'row' ? 'marginLeft' : 'marginTop']: space,
                 },
 
-                ...props,
+                ...styleProps,
                 ...sx,
             }}
         >

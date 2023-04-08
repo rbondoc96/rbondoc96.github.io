@@ -1,26 +1,30 @@
-import type {PropsWithChildren, MouseEvent} from 'react';
+import type {PropsWithChildren} from 'react';
 import {Button as TUIButton, type ThemeUIStyleObject} from 'theme-ui';
 
-import type {HTMLProps, ThemeProps} from '@/core/props';
+import type {ComponentProps} from '@/core/props';
+import extractStyleProps from '@/core/utils/extractStyleProps';
 
-type ButtonProps = HTMLProps &
-    ThemeProps & {
-        link?: boolean;
-        onClick?: (event?: MouseEvent) => void;
-        size?: 'sm' | 'md' | 'lg';
-        type?: 'button' | 'submit' | 'reset';
-    };
+type ButtonComponentProps = ComponentProps & {
+    link?: boolean;
+    size?: 'sm' | 'md' | 'lg';
+    type?: 'button' | 'submit' | 'reset';
+};
 
 export const Button = ({
     className,
     children,
+    display,
     id,
     onClick,
+    onMouseDown,
+    onMouseUp,
     size = 'md',
     sx,
     type,
     variant,
-}: PropsWithChildren<ButtonProps>) => {
+    zIndex,
+    ...props
+}: PropsWithChildren<ButtonComponentProps>) => {
     const buttonStylesBySize: ThemeUIStyleObject = {
         fontSize: 'md',
         paddingX: '6',
@@ -37,18 +41,25 @@ export const Button = ({
         buttonStylesBySize.paddingY = '5';
     }
 
+    const styleProps = extractStyleProps(props)[0];
+
     return (
         <TUIButton
             className={className}
             id={id}
             onClick={onClick}
+            onMouseDown={onMouseDown}
+            onMouseUp={onMouseUp}
             type={type}
-            variant={variant}
             sx={{
+                display,
                 fontFamily: 'inherit',
+                zIndex,
                 ...buttonStylesBySize,
+                ...styleProps,
                 ...sx,
             }}
+            variant={variant}
         >
             {children}
         </TUIButton>

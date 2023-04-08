@@ -1,23 +1,11 @@
 import type {PropsWithChildren} from 'react';
 import {Link as TUILink} from 'theme-ui';
 
-import type {
-    BoxProps,
-    EventProps,
-    FlexProps,
-    HTMLProps,
-    LayoutProps,
-    ThemeProps,
-    TypographyProps,
-} from '@/core/props';
+import type {ComponentProps, VariantProp} from '@/core/props';
+import extractStyleProps from '@/core/utils/extractStyleProps';
 
-type LinkProps = BoxProps &
-    EventProps &
-    FlexProps &
-    HTMLProps &
-    LayoutProps &
-    ThemeProps &
-    TypographyProps & {
+type LinkProps = ComponentProps &
+    VariantProp<'links'> & {
         as?: never;
         href: string;
         rel?: 'noreferrer' | 'noopener' | 'noreferrer noopener';
@@ -25,9 +13,9 @@ type LinkProps = BoxProps &
     };
 
 export const Link = ({
+    animClass,
     className,
     children,
-    color,
     href,
     id,
     onClick,
@@ -40,9 +28,11 @@ export const Link = ({
     _hover,
     ...props
 }: PropsWithChildren<LinkProps>) => {
+    const styleProps = extractStyleProps(props)[0];
+
     return (
         <TUILink
-            className={className}
+            className={[animClass, className].filter(Boolean).join(' ')}
             href={href}
             id={id}
             onClick={onClick}
@@ -52,13 +42,11 @@ export const Link = ({
             target={target}
             variant={variant}
             sx={{
-                color,
-                ...props,
-
                 '&:hover': {
                     ..._hover,
                 },
 
+                ...styleProps,
                 ...sx,
             }}
         >
