@@ -1,15 +1,37 @@
-import type {CSSProperties} from 'react';
+import type {KeysOf, ResponsiveCSSProperty} from '@/core/lib/types';
 
-import type {ResponsiveThemeValue, Theme} from '@/core/theme';
-
+/**
+ * Props that define CSS box properties.
+ */
 export type BoxProps = {
-    display?: ResponsiveThemeValue<CSSProperties['display'] | null>;
-    maxHeight?: ResponsiveThemeValue<keyof Theme['sizes'] | null>;
-    maxWidth?: ResponsiveThemeValue<keyof Theme['sizes'] | null>;
-    minHeight?: ResponsiveThemeValue<keyof Theme['sizes'] | null>;
-    minWidth?: ResponsiveThemeValue<keyof Theme['sizes'] | null>;
-    height?: ResponsiveThemeValue<keyof Theme['sizes'] | null>;
-    width?: ResponsiveThemeValue<keyof Theme['sizes'] | null>;
+    /**
+     * Sets a preferred aspect ratio for the box, which will be used in the calculation of auto sizes and some other layout functions.
+     *
+     * {@link https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio}
+     */
+    aspectRatio?: ResponsiveCSSProperty<'aspectRatio'>;
+    /**
+     * Specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
+     *
+     * Docs: {@link https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break}
+     */
+    boxDecorationBreak?: ResponsiveCSSProperty<'boxDecorationBreak'>;
+    /**
+     * Sets how the total width and height of an element is calculated.
+     *
+     * Values: `content-box` | `border-box`
+     *
+     * Docs: {@link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing}
+     */
+    boxSizing?: ResponsiveCSSProperty<'boxSizing'>;
+    display?: ResponsiveCSSProperty<'display'>;
+};
+
+export const BoxPropNames: KeysOf<BoxProps> = {
+    aspectRatio: true,
+    boxDecorationBreak: true,
+    boxSizing: true,
+    display: true,
 };
 
 export default BoxProps;

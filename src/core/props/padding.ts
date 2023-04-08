@@ -1,22 +1,40 @@
-import type {ResponsiveThemeValue, Theme} from '@/core/theme';
+import type {DimensionValue, KeysOf, ResponsiveValue} from '@/core/lib/types';
+import type {ThemePropertyKey} from '@/core/theme';
 
-type PaddingPropValue = keyof Theme['space'] | number | `${number}`;
+type ResponsivePaddingValue = ResponsiveValue<ThemePropertyKey<'space'> | DimensionValue>;
 
 export type PaddingProps = {
-    padding?: ResponsiveThemeValue<PaddingPropValue>;
-    paddingBottom?: ResponsiveThemeValue<PaddingPropValue>;
-    paddingLeft?: ResponsiveThemeValue<PaddingPropValue>;
-    paddingRight?: ResponsiveThemeValue<PaddingPropValue>;
-    paddingTop?: ResponsiveThemeValue<PaddingPropValue>;
-    paddingX?: ResponsiveThemeValue<PaddingPropValue>;
-    paddingY?: ResponsiveThemeValue<PaddingPropValue>;
-    p?: ResponsiveThemeValue<PaddingPropValue>;
-    pb?: ResponsiveThemeValue<PaddingPropValue>;
-    pl?: ResponsiveThemeValue<PaddingPropValue>;
-    pr?: ResponsiveThemeValue<PaddingPropValue>;
-    pt?: ResponsiveThemeValue<PaddingPropValue>;
-    px?: ResponsiveThemeValue<PaddingPropValue>;
-    py?: ResponsiveThemeValue<PaddingPropValue>;
+    padding?: ResponsivePaddingValue;
+    paddingBottom?: ResponsivePaddingValue;
+    paddingLeft?: ResponsivePaddingValue;
+    paddingRight?: ResponsivePaddingValue;
+    paddingTop?: ResponsivePaddingValue;
+    paddingX?: ResponsivePaddingValue;
+    paddingY?: ResponsivePaddingValue;
+    p?: ResponsivePaddingValue;
+    pb?: ResponsivePaddingValue;
+    pl?: ResponsivePaddingValue;
+    pr?: ResponsivePaddingValue;
+    pt?: ResponsivePaddingValue;
+    px?: ResponsivePaddingValue;
+    py?: ResponsivePaddingValue;
+};
+
+export const PaddingPropsNames: KeysOf<PaddingProps> = {
+    padding: true,
+    paddingBottom: true,
+    paddingLeft: true,
+    paddingRight: true,
+    paddingTop: true,
+    paddingX: true,
+    paddingY: true,
+    p: true,
+    pb: true,
+    pl: true,
+    pr: true,
+    pt: true,
+    px: true,
+    py: true,
 };
 
 export default PaddingProps;

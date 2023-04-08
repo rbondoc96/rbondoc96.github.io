@@ -26,20 +26,17 @@ const theme = makeTheme({
     ...variants,
 });
 
-export type ResponsiveThemeValue<T> = T | T[];
-
 export type Theme = typeof theme;
 
 export type ThemeTokens = Omit<Theme, 'breakpoints' | keyof typeof variants>;
 
 export type ThemeVariants = typeof variants;
 
+export type ThemeVariantKey<Variant extends keyof ThemeVariants> =
+    keyof ThemeVariants[Variant];
+
 export type ThemePropertyKey<Property extends keyof ThemeTokens> =
     keyof ThemeTokens[Property];
-
-export type ResponsiveThemePropertyKey<Property extends keyof ThemeTokens> =
-    | ThemePropertyKey<Property>
-    | Array<ThemePropertyKey<Property>>;
 
 export type VariantDefinition = Record<string, ThemeUIStyleObject>;
 
