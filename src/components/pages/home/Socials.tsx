@@ -11,59 +11,47 @@ const Socials = ({animClass}: AnimatedComponentProps) => {
             <List direction="column" space="8">
                 <List.Item>
                     <Link
+                        color="white"
                         href="mailto:rbondoc96@gmail.com"
                         _hover={{color: 'red'}}
                     >
-                        <FontAwesomeIcon
-                            color="inherit"
-                            icon={faEnvelope}
-                            size="lg"
-                        />
+                        <FontAwesomeIcon color="inherit" icon={faEnvelope} size="lg" />
                     </Link>
                 </List.Item>
 
                 <List.Item>
                     <Link
+                        color="white"
                         href="https://github.com/rbondoc96"
                         target="_blank"
                         rel="noreferrer"
                         _hover={{color: 'red'}}
                     >
-                        <FontAwesomeIcon
-                            color="inherit"
-                            icon={faGithub}
-                            size="lg"
-                        />
+                        <FontAwesomeIcon color="inherit" icon={faGithub} size="lg" />
                     </Link>
                 </List.Item>
 
                 <List.Item>
                     <Link
+                        color="white"
                         href="https://linkedin.com/in/rbondoc96"
                         target="_blank"
                         rel="noreferrer"
                         _hover={{color: 'red'}}
                     >
-                        <FontAwesomeIcon
-                            color="inherit"
-                            icon={faLinkedinIn}
-                            size="lg"
-                        />
+                        <FontAwesomeIcon color="inherit" icon={faLinkedinIn} size="lg" />
                     </Link>
                 </List.Item>
 
                 <List.Item>
                     <Link
+                        color="white"
                         href="/docs/resume.pdf"
                         target="_blank"
                         rel="noreferrer"
                         _hover={{color: 'red'}}
                     >
-                        <FontAwesomeIcon
-                            color="inherit"
-                            icon={faScroll}
-                            size="lg"
-                        />
+                        <FontAwesomeIcon color="inherit" icon={faScroll} size="lg" />
                     </Link>
                 </List.Item>
             </List>
