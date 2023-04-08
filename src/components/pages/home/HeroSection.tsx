@@ -1,11 +1,11 @@
-import {Box, Button, FluidText, Link, Stack, Text} from '@/components/base';
+import {Box, Button, Link, Stack, Text} from '@/components/base';
 import {Section} from '@/components/pages/home/Section';
 import type {AnimatedComponentProps} from '@/core/props';
 
 type HeroSectionProps = AnimatedComponentProps;
 
 const HeroSection = ({animClass}: HeroSectionProps) => (
-    <Section animClass={animClass} space={['lg', 'xl']}>
+    <Section animClass={animClass} space={['xl', '2xl']}>
         <Stack direction="column" space={['2', '4']}>
             <Text
                 as="h3"
@@ -18,23 +18,25 @@ const HeroSection = ({animClass}: HeroSectionProps) => (
                 Hey there! My name is
             </Text>
 
-            <FluidText
+            <Text
                 as="h1"
                 fontSize={{
-                    min: '5xl',
+                    min: '4xl',
                     max: '8xl',
                     value: '7vw',
                 }}
                 letterSpacing="tightest"
-                marginLeft="-1"
+                sx={{
+                    marginLeft: -1,
+                }}
             >
                 Rodrigo Bondoc
-            </FluidText>
+            </Text>
 
-            <FluidText
+            <Text
                 as="h2"
                 fontSize={{
-                    min: '3xl',
+                    min: '2xl',
                     max: '6xl',
                     value: '4vw',
                 }}
@@ -42,33 +44,35 @@ const HeroSection = ({animClass}: HeroSectionProps) => (
                 letterSpacing="tight"
             >
                 Software Engineer
-            </FluidText>
+            </Text>
         </Stack>
 
         <Stack direction="column" space="4">
             <Text
                 as="span"
-                fontSize={['sm', 'lg']}
+                fontSize={['md', 'lg']}
                 fontWeight="light"
                 letterSpacing="wide"
                 lineHeight={['md', 'lg']}
             >
-                I'm a full-stack web and mobile app developer with a background
-                in electrical engineering.
+                I&apos;m a full-stack web and mobile app developer with a background in
+                electrical engineering.
             </Text>
             <Text
                 as="span"
-                fontSize={['sm', 'lg']}
+                fontSize={['md', 'lg']}
                 fontWeight="light"
                 letterSpacing="wide"
+                lineHeight={['md', 'lg']}
             >
                 In other words, I joined the dark (soft) side.
             </Text>
         </Stack>
 
-        <Stack direction="column" space={['lg', 'xl']}>
+        <Stack direction="column" space={['xl', '2xl']}>
             <Box>
                 <Link
+                    color="white"
                     href="https://knowyourmeme.com/memes/come-to-the-dark-side"
                     target="_blank"
                     rel="noreferrer"

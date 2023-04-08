@@ -1,12 +1,20 @@
-import type {CSSProperties, PropsWithChildren} from 'react';
+import type {PropsWithChildren} from 'react';
 import {Flex} from 'theme-ui';
 
-import {FluidText, Stack} from '@/components/base';
-import {AnimatedComponentProps} from '@/core/props';
+import {Stack, Text} from '@/components/base';
+import type {
+    AnimatedComponentProps,
+    HTMLProps,
+    MarginProps,
+    StackProps,
+} from '@/core/props';
 
-const Header = ({children}: PropsWithChildren) => {
+type HeaderProps = MarginProps;
+
+const Header = ({children, ...props}: PropsWithChildren<HeaderProps>) => {
     return (
-        <FluidText
+        <Text
+            as="h2"
             fontSize={{
                 min: '3xl',
                 max: '5xl',
@@ -14,25 +22,16 @@ const Header = ({children}: PropsWithChildren) => {
             }}
             fontWeight="semibold"
             letterSpacing="tightest"
+            {...props}
         >
             {children}
-        </FluidText>
+        </Text>
     );
 };
 
-type SectionProps = AnimatedComponentProps & {
-    id?: string;
-    space?:
-        | CSSProperties['marginTop']
-        | Array<CSSProperties['marginTop'] | null>;
-};
+type SectionProps = AnimatedComponentProps & HTMLProps & StackProps;
 
-const _Section = ({
-    animClass,
-    children,
-    id,
-    space,
-}: PropsWithChildren<SectionProps>) => {
+const _Section = ({animClass, children, id, space}: PropsWithChildren<SectionProps>) => {
     return (
         <Flex
             as="section"
@@ -40,7 +39,7 @@ const _Section = ({
             sx={{
                 flexDirection: 'column',
                 width: '100%',
-                paddingY: ['12', '28'],
+                paddingY: [24, 28],
                 minHeight: [null, 'screenHeight'],
             }}
         >
