@@ -105,7 +105,7 @@ export const Header = () => {
                 {routes.length > 0 && (
                     <Stack
                         direction="row"
-                        display={['none', 'none', 'inline-block']}
+                        display={['none', 'none', 'none', 'inline-block']}
                         space="sm"
                     >
                         {routes.map((route) => {
@@ -132,7 +132,7 @@ export const Header = () => {
                 )}
 
                 <Button
-                    display={['inline-block', 'inline-block', 'none']}
+                    display={['inline-block', 'inline-block', 'inline-block', 'none']}
                     variant="buttons.unstyled"
                     onClick={toggleSidebar}
                     zIndex="skipLink"

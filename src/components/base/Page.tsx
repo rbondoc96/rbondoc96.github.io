@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet-async';
 
 import {Stack} from '@/components/base';
 import Header from '@/components/partials/Header';
+import Footer from '@/components/partials/Footer';
 
 const PageContent = ({children}: PropsWithChildren) => {
     return (
@@ -86,6 +87,7 @@ export const PageWrapper = ({children}: PropsWithChildren) => {
         <>
             <Header />
             {children}
+            <Footer />
         </>
     );
 };
