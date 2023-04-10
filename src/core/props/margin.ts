@@ -4,7 +4,9 @@ import type {ThemePropertyKey} from '@/core/theme';
 type ResponsiveMarginValue = ResponsiveValue<ThemePropertyKey<'space'> | DimensionValue>;
 
 export type MarginProps = {
-    margin?: ResponsiveMarginValue;
+    margin?:
+        | ResponsiveMarginValue
+        | ResponsiveValue<`${number}px auto` | `auto ${number}px`>;
     marginBottom?: ResponsiveMarginValue;
     marginLeft?: ResponsiveMarginValue;
     marginRight?: ResponsiveMarginValue;

@@ -59,6 +59,16 @@ export type BorderProps = {
      * Docs: {@link https://developer.mozilla.org/en-US/docs/Web/CSS/border-block-end-width}
      */
     borderBlockEndWidth?: ResponsiveThemePropertyKey<'borderWidths'>;
+    borderColor?:
+        | ResponsiveThemePropertyKey<'colors'>
+        | ResponsiveCSSProperty<'borderColor'>;
+    borderRadius?: ResponsiveThemePropertyKey<'radii'>;
+    borderTopLeftRadius?: ResponsiveThemePropertyKey<'radii'>;
+    borderTopRightRadius?: ResponsiveThemePropertyKey<'radii'>;
+    borderBottomLeftRadius?: ResponsiveThemePropertyKey<'radii'>;
+    borderBottomRightRadius?: ResponsiveThemePropertyKey<'radii'>;
+    borderStyle?: ResponsiveThemePropertyKey<'borderStyles'>;
+    borderWidth?: ResponsiveThemePropertyKey<'borderWidths'>;
 };
 
 export const BorderPropNames: KeysOf<BorderProps> = {
@@ -69,6 +79,14 @@ export const BorderPropNames: KeysOf<BorderProps> = {
     borderBlockEndColor: true,
     borderBlockEndStyle: true,
     borderBlockEndWidth: true,
+    borderColor: true,
+    borderRadius: true,
+    borderTopLeftRadius: true,
+    borderTopRightRadius: true,
+    borderBottomLeftRadius: true,
+    borderBottomRightRadius: true,
+    borderStyle: true,
+    borderWidth: true,
 };
 
 export default BorderProps;

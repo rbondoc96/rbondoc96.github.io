@@ -16,6 +16,8 @@ export const Box = forwardRef(function Box(
         sx,
         tabIndex,
         variant,
+        _after,
+        _before,
         _focus,
         _hover,
         ...props
@@ -42,6 +44,14 @@ export const Box = forwardRef(function Box(
 
                 '&:hover': {
                     ..._hover,
+                },
+
+                '&::after': {
+                    ..._after,
+                },
+
+                '&::before': {
+                    ..._before,
                 },
 
                 ...sx,
