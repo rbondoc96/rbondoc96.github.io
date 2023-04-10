@@ -14,7 +14,7 @@ export const FloatingSidebar = ({
     animClass,
     as = 'div',
     children,
-    display = ['none', 'none', 'block'],
+    display = ['none', 'none', 'none', 'block'],
     paddingX = '6',
     position,
 }: PropsWithChildren<FloatingSidebarProps>) => {
