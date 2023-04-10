@@ -2,6 +2,7 @@ import {Image} from 'theme-ui';
 
 import selfie from '@/assets/images/sourcetoad-1.jpg';
 import cssLogo from '@/assets/images/tech/css3-logo.png';
+import dockerLogo from '@/assets/images/tech/docker-logo.png';
 import expressLogo from '@/assets/images/tech/express-logo.png';
 import figmaLogo from '@/assets/images/tech/figma-logo.png';
 import gitLogo from '@/assets/images/tech/git-logo.png';
@@ -129,6 +130,7 @@ const AboutSection = ({animClass, id}: AboutSectionProps) => (
                         {src: gitLogo, alt: 'Git'},
                         {src: githubLogo, alt: 'GitHub'},
                         {src: viteLogo, alt: 'Vite'},
+                        {src: dockerLogo, alt: 'Docker'},
                         {src: npmLogo, alt: 'npm'},
                     ]}
                 />
