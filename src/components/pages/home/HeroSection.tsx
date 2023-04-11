@@ -10,7 +10,7 @@ const HeroSection = ({animClass}: HeroSectionProps) => (
             <Text
                 as="h3"
                 color="blue"
-                fontSize={['md', 'lg']}
+                fontSize={['lg', 'xl']}
                 fontWeight="light"
                 letterSpacing="wide"
                 lineHeight="lg"
