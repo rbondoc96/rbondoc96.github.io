@@ -3,7 +3,9 @@ import {useEffect, useLayoutEffect, useMemo} from 'react';
 
 import {Page, Stack} from '@/components/base';
 import AboutSection from '@/components/pages/home/AboutSection';
+import ContactSection from '@/components/pages/home/ContactSection';
 import HeroSection from '@/components/pages/home/HeroSection';
+import WorkSection from '@/components/pages/home/WorkSection';
 import Socials from '@/components/pages/home/Socials';
 import SectionNavigation from '@/components/pages/home/SectionNavigation';
 import useNavigationLinks from '@/hooks/useNavigationLinks';
@@ -30,7 +32,7 @@ const HomePage = () => {
         );
 
         addStyles({
-            display: ['initial', 'initial', 'none'],
+            display: ['initial', 'initial', 'initial', 'none'],
         });
     }, [addStyles, sections, setRoutes]);
 
@@ -114,6 +116,8 @@ const HomePage = () => {
                 >
                     <HeroSection animClass="js-home-hero" />
                     <AboutSection animClass="js-home-about" id={sections[0].id} />
+                    <WorkSection animClass="js-home-experience" id={sections[1].id} />
+                    <ContactSection animClass="js-home-contact" id={sections[3].id} />
                 </Stack>
             </Page.Content>
         </Page>
