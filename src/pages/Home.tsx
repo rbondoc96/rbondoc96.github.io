@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import {Link as RouterLink} from 'react-router-dom';
 
 import styles from '@/pages/styles/Home.module.scss';
-import {Page} from '@/components/base';
+import Page from '@/components/Page';
 import Link from '@/components/Link';
 import Button from '@/components/SolidButton';
 

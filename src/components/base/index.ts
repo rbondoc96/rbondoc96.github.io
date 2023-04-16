@@ -4,6 +4,5 @@ export * from './FloatingSidebar';
 export * from './Grid';
 export * from './Link';
 export * from './List';
-export * from './Page';
 export * from './Stack';
 export * from './Text';

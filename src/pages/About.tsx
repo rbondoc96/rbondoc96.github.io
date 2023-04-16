@@ -1,9 +1,6 @@
 import {motion} from 'framer-motion';
 import styles from '@/pages/styles/About.module.scss';
-import {Page} from '@/components/base';
-// import AboutSection from '@/components/pages/home/AboutSection';
-// import Socials from '@/components/pages/home/Socials';
-// import SectionNavigation from '@/components/pages/home/SectionNavigation';
+import Page from '@/components/Page';
 
 const AboutPage = () => (
     <Page

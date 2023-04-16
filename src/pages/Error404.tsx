@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {Page} from '@/components/base';
+import Page from '@/components/Page';
 import styles from '@/pages/styles/Error404.module.scss';
 import Button from '@/components/SolidButton';
 
