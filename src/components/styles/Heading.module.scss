@@ -1,0 +1,52 @@
+$fontSize-base: theme('fontSize.base');
+$fontSize-lg: theme('fontSize.lg');
+$fontSize-xl: theme('fontSize.xl');
+$fontSize-2xl: theme('fontSize.2xl');
+$fontSize-3xl: theme('fontSize.3xl');
+$fontSize-4xl: theme('fontSize.4xl');
+$fontSize-5xl: theme('fontSize.5xl');
+$fontSize-7xl: theme('fontSize.7xl');
+
+@mixin title {
+    @apply text-white;
+    @apply leading-none;
+}
+
+.h1 {
+    @include title;
+    @apply font-bold;
+    @apply tracking-tightest;
+    font-size: clamp($fontSize-5xl, 7vw, $fontSize-7xl);
+}
+
+.h2 {
+    @include title;
+    @apply font-semibold;
+    @apply tracking-tight;
+    font-size: clamp($fontSize-3xl, 5vw, $fontSize-5xl);
+}
+
+.h3 {
+    @include title;
+    @apply font-semibold;
+    @apply tracking-tight;
+    font-size: clamp($fontSize-2xl, 5vw, $fontSize-4xl);
+}
+
+.h4 {
+    @include title;
+    @apply font-medium;
+    font-size: clamp($fontSize-xl, 3vw, $fontSize-3xl);
+}
+
+.h5 {
+    @include title;
+    @apply font-medium;
+    font-size: clamp($fontSize-lg, 3vw, $fontSize-2xl);
+}
+
+.h6 {
+    @include title;
+    @apply font-medium;
+    font-size: clamp($fontSize-base, 2.5vw, $fontSize-xl);
+}

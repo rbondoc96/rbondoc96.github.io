@@ -1,6 +1,7 @@
 import {motion} from 'framer-motion';
 import styles from '@/pages/styles/About.module.scss';
 import Page from '@/components/Page';
+import Heading from '@/components/Heading';
 
 const AboutPage = () => (
     <Page
@@ -36,8 +37,8 @@ const AboutPage = () => (
                 }}
             >
                 <div>
-                    <motion.h2
-                        className="text-white text-5xl"
+                    <Heading
+                        as="h2"
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -53,7 +54,7 @@ const AboutPage = () => (
                         }}
                     >
                         Me, Myself & I
-                    </motion.h2>
+                    </Heading>
                 </div>
             </motion.main>
         </Page.Content>
