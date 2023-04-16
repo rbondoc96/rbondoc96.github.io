@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import type {ComponentPropsWithoutRef, PropsWithChildren} from 'react';
 // import styles from './styles/Box.module.scss';
 
-type BoxElement = 'div' | 'section' | 'article' | 'main' | 'aside';
+type BoxElement = 'div' | 'section' | 'span' | 'article' | 'main' | 'aside';
 
 type BoxProps<TElement extends BoxElement> = {
     as?: TElement;
