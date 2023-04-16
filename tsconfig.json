@@ -19,7 +19,15 @@
         "paths": {
             "@/*": ["./src/*"],
             "@mocks/*": ["./mocks/*"]
-        }
+        },
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "classnameTransform": "camelCaseOnly"
+                }
+            }
+        ]
     },
     "include": ["src", "mocks"]
 }

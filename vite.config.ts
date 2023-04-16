@@ -4,11 +4,19 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src'),
-      '@mocks': resolve(__dirname, 'mocks'),
+    plugins: [react()],
+    resolve: {
+        alias: {
+            '@': resolve(__dirname, 'src'),
+            '@mocks': resolve(__dirname, 'mocks'),
+        },
     },
-  },
+    optimizeDeps: {
+        exclude: ['framer-motion'],
+    },
+    css: {
+        modules: {
+            localsConvention: 'camelCase',
+        },
+    },
 });
