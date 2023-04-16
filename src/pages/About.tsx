@@ -1,5 +1,5 @@
-import {motion} from 'framer-motion';
 import styles from '@/pages/styles/About.module.scss';
+import Box from '@/components/Box';
 import Page from '@/components/Page';
 import Heading from '@/components/Heading';
 
@@ -17,7 +17,8 @@ const AboutPage = () => (
         }}
     >
         <Page.Content>
-            <motion.main
+            <Box
+                as="main"
                 className={styles.main}
                 initial="hidden"
                 animate="visible"
@@ -56,7 +57,7 @@ const AboutPage = () => (
                         Me, Myself & I
                     </Heading>
                 </div>
-            </motion.main>
+            </Box>
         </Page.Content>
     </Page>
 );

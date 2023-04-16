@@ -1,9 +1,10 @@
-import {motion} from 'framer-motion';
 import {Link as RouterLink} from 'react-router-dom';
 
-import styles from '@/pages/styles/Home.module.scss';
-import Page from '@/components/Page';
+import styles from './styles/Home.module.scss';
+import Box from '@/components/Box';
+import Heading from '@/components/Heading';
 import Link from '@/components/Link';
+import Page from '@/components/Page';
 import Button from '@/components/SolidButton';
 
 const HomePage = () => (
@@ -20,7 +21,8 @@ const HomePage = () => (
         }}
     >
         <Page.Content>
-            <motion.main
+            <Box
+                as="main"
                 className={styles.main}
                 initial="hidden"
                 animate="visible"
@@ -40,7 +42,8 @@ const HomePage = () => (
             >
                 <div className={styles.mainContainer}>
                     <div className={styles.titleStack}>
-                        <motion.h3
+                        <Heading
+                            as="h3"
                             className={styles.titleOverline}
                             variants={{
                                 hidden: {
@@ -57,8 +60,9 @@ const HomePage = () => (
                             }}
                         >
                             Hey there! My name is
-                        </motion.h3>
-                        <motion.h1
+                        </Heading>
+                        <Heading
+                            as="h1"
                             className={styles.title}
                             variants={{
                                 hidden: {
@@ -75,8 +79,9 @@ const HomePage = () => (
                             }}
                         >
                             Rodrigo Bondoc
-                        </motion.h1>
-                        <motion.h2
+                        </Heading>
+                        <Heading
+                            as="h2"
                             className={styles.subtitle}
                             variants={{
                                 hidden: {
@@ -93,9 +98,9 @@ const HomePage = () => (
                             }}
                         >
                             Software Engineer
-                        </motion.h2>
+                        </Heading>
                     </div>
-                    <motion.div
+                    <Box
                         className={styles.titleBodyStack}
                         variants={{
                             hidden: {
@@ -118,8 +123,8 @@ const HomePage = () => (
                         <span className={styles.titleBody}>
                             In other words, I joined the dark (soft) side.
                         </span>
-                    </motion.div>
-                    <motion.div
+                    </Box>
+                    <Box
                         className={styles.linkStack}
                         variants={{
                             hidden: {
@@ -152,9 +157,9 @@ const HomePage = () => (
                                 Get to know me!
                             </Button>
                         </div>
-                    </motion.div>
+                    </Box>
                 </div>
-            </motion.main>
+            </Box>
         </Page.Content>
     </Page>
 );

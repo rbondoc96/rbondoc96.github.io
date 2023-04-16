@@ -1,9 +1,10 @@
-import {motion} from 'framer-motion';
 import {Link} from 'react-router-dom';
+import styles from './styles/Error404.module.scss';
+import Box from '@/components/Box';
 import Page from '@/components/Page';
-import styles from '@/pages/styles/Error404.module.scss';
 import Heading from '@/components/Heading';
-import Button from '@/components/SolidButton';
+import SolidButton from '@/components/SolidButton';
+import Text from '@/components/Text';
 
 const delays = {
     '404': 3,
@@ -14,7 +15,8 @@ const delays = {
 const Error404Page = () => (
     <Page>
         <Page.Content>
-            <motion.main
+            <Box
+                as="main"
                 className={styles.main}
                 initial="hidden"
                 animate="visible"
@@ -60,7 +62,8 @@ const Error404Page = () => (
                         },
                     }}
                 >
-                    <motion.span
+                    <Text
+                        as="span"
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -76,8 +79,9 @@ const Error404Page = () => (
                         }}
                     >
                         Uh oh!
-                    </motion.span>
-                    <motion.span
+                    </Text>
+                    <Text
+                        as="span"
                         variants={{
                             hidden: {
                                 opacity: 0,
@@ -94,9 +98,9 @@ const Error404Page = () => (
                         }}
                     >
                         There&apos;s nothing here.
-                    </motion.span>
+                    </Text>
                 </Heading>
-                <motion.div
+                <Box
                     className={styles.buttonContainer}
                     variants={{
                         hidden: {
@@ -113,11 +117,11 @@ const Error404Page = () => (
                         },
                     }}
                 >
-                    <Button as={Link} to="/">
+                    <SolidButton as={Link} to="/">
                         Go Home
-                    </Button>
-                </motion.div>
-            </motion.main>
+                    </SolidButton>
+                </Box>
+            </Box>
         </Page.Content>
     </Page>
 );

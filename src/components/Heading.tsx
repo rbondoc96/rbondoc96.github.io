@@ -1,18 +1,20 @@
 import {motion} from 'framer-motion';
-import type {ComponentPropsWithRef, PropsWithChildren} from 'react';
+import type {ComponentPropsWithoutRef, PropsWithChildren} from 'react';
 import styles from './styles/Heading.module.scss';
 
-type HeadingProps = {
-    as: ('h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6') & keyof typeof styles;
-    className?: string;
-} & Omit<ComponentPropsWithRef<typeof motion.h1>, 'children'>;
+type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-export const Heading = ({
+type HeadingProps<TElement extends HeadingElement> = {
+    as: TElement & keyof typeof styles;
+    className?: string;
+} & Omit<ComponentPropsWithoutRef<(typeof motion)[TElement]>, 'children'>;
+
+export const Heading = <TElement extends HeadingElement>({
     as,
     children,
     className,
     ...props
-}: PropsWithChildren<HeadingProps>) => {
+}: PropsWithChildren<HeadingProps<TElement>>) => {
     const composedStyles = [className, styles[as]].filter(Boolean).join(' ');
 
     switch (as) {
@@ -52,6 +54,13 @@ export const Heading = ({
                     {children}
                 </motion.h6>
             );
+        default: {
+            return (
+                <motion.h1 className={composedStyles} {...props}>
+                    {children}
+                </motion.h1>
+            );
+        }
     }
 };
 
