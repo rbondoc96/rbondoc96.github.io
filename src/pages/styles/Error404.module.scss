@@ -27,7 +27,9 @@
     --fontSize-min: theme('fontSize.2xl');
     @apply flex flex-col;
     @apply items-center justify-center;
-    @apply text-white font-light;
+    @apply space-y-4;
+    @apply mt-3;
+    @apply font-light;
     font-size: clamp(var(--fontSize-min), 5vw, var(--fontSize-max));
 }
 
