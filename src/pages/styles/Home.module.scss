@@ -1,0 +1,66 @@
+$fontSize-sm: theme('fontSize.sm');
+$fontSize-lg: theme('fontSize.lg');
+$fontSize-2xl: theme('fontSize.2xl');
+$fontSize-4xl: theme('fontSize.4xl');
+$fontSize-6xl: theme('fontSize.6xl');
+$fontSize-8xl: theme('fontSize.8xl');
+
+.main {
+    @apply flex flex-col;
+    @apply items-center justify-center;
+    @apply min-h-screen;
+    @apply w-full;
+    @apply px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-36;
+
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+.main-container {
+    @apply flex flex-col;
+    @apply space-y-6 md:space-y-8;
+}
+
+.title-stack {
+    @apply flex flex-col;
+    @apply space-y-3 sm:space-y-4;
+}
+
+.title-overline {
+    @apply text-cyan-400;
+    @apply font-light tracking-wide leading-3;
+    @apply text-base sm:text-lg;
+}
+
+.title {
+    @apply text-white;
+    @apply font-bold tracking-tightest leading-none;
+    @apply md:-ml-1;
+    font-size: clamp($fontSize-4xl, 7vw, $fontSize-8xl);
+}
+
+.subtitle {
+    @apply text-white;
+    @apply font-light tracking-tight leading-none;
+    font-size: clamp($fontSize-2xl, 4vw, $fontSize-6xl);
+}
+
+.title-body-stack {
+    @apply flex flex-col;
+    @apply space-y-3;
+}
+
+.title-body {
+    @apply text-white;
+    @apply font-light tracking-tight leading-7;
+    font-size: clamp($fontSize-sm, 2vw, $fontSize-lg);
+}
+
+.link-stack {
+    @apply flex flex-col;
+    @apply space-y-6 md:space-y-8;
+}
+
+.meme-link {
+    @apply text-xs md:text-sm;
+}

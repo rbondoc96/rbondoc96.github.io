@@ -1,0 +1,10 @@
+.main {
+    @apply flex flex-col;
+    @apply items-center justify-center;
+    @apply min-h-screen;
+    @apply w-full;
+    @apply px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-36;
+
+    margin: 0 auto;
+    max-width: 1600px;
+}

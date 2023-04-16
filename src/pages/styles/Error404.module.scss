@@ -1,0 +1,36 @@
+@keyframes pulsateSize {
+    0% {
+        transform: scale(0.96);
+    }
+
+    100% {
+        transform: scale(1.04);
+    }
+}
+
+.main {
+    @apply flex flex-col;
+    @apply items-center justify-center;
+    min-height: 100vh;
+}
+
+.h1 {
+    @apply text-rose-600 font-semibold;
+    @apply tracking-tighter;
+    @apply leading-none;
+    font-size: clamp(100px, 25vw, 200px);
+    animation: pulsateSize 1.25s ease-in-out infinite alternate;
+}
+
+.h2 {
+    --fontSize-max: theme('fontSize.4xl');
+    --fontSize-min: theme('fontSize.2xl');
+    @apply flex flex-col;
+    @apply items-center justify-center;
+    @apply text-white font-light;
+    font-size: clamp(var(--fontSize-min), 5vw, var(--fontSize-max));
+}
+
+.button-container {
+    @apply my-8;
+}

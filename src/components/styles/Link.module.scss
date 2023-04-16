@@ -1,0 +1,41 @@
+$color-cyan: theme('colors.cyan.400');
+$color-rose: theme('colors.rose.600');
+$font-max: theme('fontSize.lg');
+$font-min: theme('fontSize.base');
+
+@mixin link {
+    @apply inline-block;
+    @apply text-white;
+}
+
+.unstyled {
+    @include link;
+}
+
+.underline {
+    @include link;
+    @apply relative;
+    @apply duration-300;
+
+    &::after {
+        @apply absolute left-0;
+        @apply inline-block;
+        @apply w-full;
+        @apply bg-right-bottom bg-no-repeat;
+        @apply duration-300;
+        content: '';
+        background-image: linear-gradient(90deg, $color-cyan, $color-cyan);
+        background-size: 100% 1px;
+        height: 90%;
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    &:hover {
+        @apply text-rose-600;
+
+        &::after {
+            transform: scaleX(0);
+        }
+    }
+}

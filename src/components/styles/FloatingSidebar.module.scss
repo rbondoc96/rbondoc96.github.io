@@ -1,0 +1,25 @@
+.floating-sidebar {
+    @apply fixed;
+    @apply hidden md:flex;
+    @apply items-center;
+    @apply min-h-screen;
+    @apply px-6;
+}
+
+.floating-sidebar--left {
+    @apply left-0;
+}
+
+.floating-sidebar--right {
+    @apply right-0;
+}
+
+.floating-sidebar-content {
+    @apply flex;
+    @apply items-center;
+    @apply h-full;
+
+    & > * {
+        @apply z-40;
+    }
+}
