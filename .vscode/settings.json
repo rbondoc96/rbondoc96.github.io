@@ -1,11 +1,12 @@
 {
-  "prettier.configPath": ".prettierrc.json",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "files.associations": {
-    "*.css": "tailwindcss"
-  }
+    "prettier.configPath": ".prettierrc.json",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "scss.lint.unknownAtRules": "ignore"
 }
