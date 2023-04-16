@@ -1,0 +1,78 @@
+$color-rose: theme('colors.rose.600');
+$fontSize-base: theme('fontSize.base');
+$fontSize-xl: theme('fontSize.xl');
+$rounded-md: theme('borderRadius.md');
+
+.icon-card {
+    @apply flex flex-col;
+    @apply bg-slate-800;
+    @apply rounded-md;
+    @apply m-4;
+    border-color: transparent;
+    width: 300px;
+}
+
+.icon-card-title {
+    @apply text-center;
+    @apply py-2;
+    @apply w-full;
+    @apply h-max;
+    @apply uppercase;
+    @apply bg-cyan-700;
+    border-top-left-radius: $rounded-md;
+    border-top-right-radius: $rounded-md;
+    font-size: clamp($fontSize-base, 3vw, $fontSize-xl);
+}
+
+.icon-card-icons {
+    @apply flex;
+    @apply items-center justify-center;
+    @apply flex-wrap;
+    @apply flex-1;
+    @apply w-full;
+    @apply py-2;
+    border-bottom-left-radius: $rounded-md;
+    border-bottom-right-radius: $rounded-md;
+}
+
+.icon-card-icon {
+    @apply relative;
+    @apply inline-flex;
+    @apply items-center;
+    @apply w-16 h-16;
+    @apply mx-4 my-2;
+
+    &:hover > .icon-card-icon-tooltip {
+        @apply visible;
+        @apply opacity-100;
+    }
+}
+
+.icon-card-icon-tooltip {
+    @apply absolute;
+    @apply top-full left-1/2;
+    @apply z-50;
+    @apply w-max;
+    @apply px-2 py-1;
+    @apply text-center;
+    @apply opacity-0;
+    @apply rounded-lg;
+    @apply -translate-x-1/2;
+    @apply bg-rose-600;
+    @apply duration-300;
+    pointer-events: none;
+    max-width: 120px;
+
+    /* Triangle-shaped pointer at the top-center of tooltip box */
+    &::after {
+        @apply absolute;
+        @apply bottom-full left-1/2;
+        @apply border-4 border-solid;
+        @apply -translate-x-1/2;
+        content: '';
+        border-bottom-color: $color-rose;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+    }
+}
