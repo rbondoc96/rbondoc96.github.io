@@ -25,6 +25,10 @@
         @apply blur-sm;
     }
 
+    body.no-scroll {
+        @apply overflow-hidden;
+    }
+
     #root {
         @apply flex flex-col;
     }
