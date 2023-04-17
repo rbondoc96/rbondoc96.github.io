@@ -55,7 +55,7 @@ const jobs: ExpandedCardContent[] = [
         },
         layoutId: 'expandable-card-labcorp',
         link: {
-            href: 'https://sourcetoad.com',
+            href: 'https://drugdevelopment.labcorp.com/',
             label: 'View their site',
         },
         minorTitle: 'January 2021 - May 2022',
@@ -79,7 +79,7 @@ const jobs: ExpandedCardContent[] = [
         },
         layoutId: 'expandable-card-aya',
         link: {
-            href: 'https://sourcetoad.com',
+            href: 'https://www.ayahealthcare.com/',
             label: 'View their site',
         },
         minorTitle: 'December 2019 - December 2020',
@@ -103,7 +103,7 @@ const jobs: ExpandedCardContent[] = [
         },
         layoutId: 'expandable-card-raveon',
         link: {
-            href: 'https://sourcetoad.com',
+            href: 'https://www.raveon.com/',
             label: 'View their site',
         },
         minorTitle: 'July 2019 - August 2019',
