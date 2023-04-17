@@ -1,0 +1,13 @@
+.list {
+    @apply flex flex-col;
+    @apply space-y-2;
+}
+
+.list-item {
+    @apply flex;
+}
+
+.list-item__bullet {
+    @apply mt-1;
+    @apply mr-2;
+}

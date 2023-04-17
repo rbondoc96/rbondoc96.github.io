@@ -18,7 +18,11 @@ export const Link = ({
     ...props
 }: PropsWithChildren<LinkProps>) => {
     if (variant === 'button') {
-        return <SolidButton as={Tag} {...props} />;
+        return (
+            <SolidButton as={Tag} {...props}>
+                {children}
+            </SolidButton>
+        );
     }
 
     const composedStyles = [className, styles[variant]].filter(Boolean).join(' ');

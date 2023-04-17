@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import type {ComponentPropsWithoutRef} from 'react';
 import styles from './styles/Image.module.scss';
 
-type ImageProps = {
+export type ImageProps = {
     alt: string;
     className?: string;
     src: string;

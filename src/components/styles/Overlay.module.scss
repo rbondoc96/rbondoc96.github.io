@@ -1,0 +1,14 @@
+.overlay {
+    @apply fixed;
+    @apply top-0 left-0;
+    @apply flex;
+    @apply items-center justify-center;
+    @apply w-screen;
+    @apply h-screen;
+    @apply z-50;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    &[aria-hidden='true'] {
+        @apply hidden;
+    }
+}
