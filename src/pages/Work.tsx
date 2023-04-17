@@ -1,5 +1,4 @@
 import styles from './styles/Work.module.scss';
-
 import appTester from '@/assets/images/jobs/app-tester.png';
 import aya from '@/assets/images/jobs/aya.png';
 import labcorp from '@/assets/images/jobs/labcorp.png';

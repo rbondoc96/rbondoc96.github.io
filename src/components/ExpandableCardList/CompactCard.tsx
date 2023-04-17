@@ -24,26 +24,39 @@ export const CompactCard = ({
 }: CompactCardProps) => {
     return (
         <Box
+            as="article"
             layoutId={layoutId}
             className={styles.compactCard}
             onClick={onClick}
-            whileHover={{
-                y: -15,
-                transition: {
-                    duration: 0.25,
+            variants={{
+                hidden: {
+                    opacity: 0,
+                    y: -50,
+                },
+                visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        duration: 1,
+                    },
                 },
             }}
         >
-            <Box as="article" className={styles.compactCardContainer}>
+            <Box
+                className={styles.compactCardContainer}
+                // FIXME: This stretches the background of compactCardContent on hover
+                whileHover={{
+                    y: -15,
+                    transition: {
+                        duration: 0.25,
+                    },
+                }}
+            >
                 <Image alt={icon.alt} src={icon.src} />
                 <Box className={styles.compactCardContent}>
-                    <Box>
-                        <Box>
-                            <Heading as="h4" className={styles.compactCardTitle}>
-                                {title}
-                            </Heading>
-                        </Box>
-                    </Box>
+                    <Heading as="h4" className={styles.compactCardTitle}>
+                        {title}
+                    </Heading>
                     <Box className={styles.compactCardFooter}>
                         <Text as="span">{footer}</Text>
                     </Box>

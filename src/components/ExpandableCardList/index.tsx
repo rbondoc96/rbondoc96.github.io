@@ -25,7 +25,20 @@ export const ExpandableCardList = ({cards}: ExpandableCardListProps) => {
 
     return (
         <>
-            <Box className={styles.expandableCardList}>
+            <Box
+                className={styles.expandableCardList}
+                variants={{
+                    hidden: {
+                        opacity: 0,
+                    },
+                    visible: {
+                        opacity: 1,
+                        transition: {
+                            staggerChildren: 0.25,
+                        },
+                    },
+                }}
+            >
                 {cards.map((card) => (
                     <CompactCard
                         key={`expandable-card-${card.title}`}
