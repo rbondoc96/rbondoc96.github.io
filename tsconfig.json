@@ -1,25 +1,6 @@
 {
+    "include": ["src"],
     "compilerOptions": {
-        "target": "ESNext",
-        "useDefineForClassFields": true,
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "allowJs": false,
-        "skipLibCheck": true,
-        "esModuleInterop": false,
-        "allowSyntheticDefaultImports": true,
-        "strict": true,
-        "forceConsistentCasingInFileNames": true,
-        "module": "ESNext",
-        "moduleResolution": "Node",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "noEmit": true,
-        "jsx": "react-jsx",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"],
-            "@mocks/*": ["./mocks/*"]
-        },
         "plugins": [
             {
                 "name": "typescript-plugin-css-modules",
@@ -27,7 +8,35 @@
                     "classnameTransform": "camelCaseOnly"
                 }
             }
-        ]
-    },
-    "include": ["src", "mocks"]
+        ],
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "skipLibCheck": true,
+        "types": ["vite/client"],
+
+        "target": "ES2020",
+        "module": "ESNext",
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+
+        /* Bundler Mode */
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "jsxImportSource": "solid-js",
+        "moduleResolution": "Node",
+        "noEmit": true,
+        "resolveJsonModule": true,
+        "sourceMap": false,
+
+        /* Linting */
+        "allowJs": false,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "useDefineForClassFields": true
+    }
 }
