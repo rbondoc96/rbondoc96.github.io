@@ -1,17 +1,19 @@
-import './index.scss';
-import {StrictMode} from 'react';
-import {HelmetProvider} from 'react-helmet-async';
-import {BrowserRouter} from 'react-router-dom';
-import App from '@/App';
+import {MetaProvider} from '@solidjs/meta';
+import {Router, useRoutes} from '@solidjs/router';
+import {type Component} from 'solid-js';
 
-const Root = () => (
-    <StrictMode>
-        <HelmetProvider>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </HelmetProvider>
-    </StrictMode>
-);
+import routes from '@/navigation/routes';
+
+const Root: Component = () => {
+    const Routes = useRoutes(routes);
+
+    return (
+        <MetaProvider>
+            <Router>
+                <Routes />
+            </Router>
+        </MetaProvider>
+    );
+};
 
 export default Root;
