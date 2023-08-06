@@ -1,7 +1,4 @@
 {
-    "prettier.configPath": ".prettierrc.json",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
     "editor.quickSuggestions": {
         "strings": true
     },
