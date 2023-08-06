@@ -23,7 +23,7 @@
         "solid-js": "^1.7.9"
     },
     "devDependencies": {
-        "@pxeeio/eslint-config-solid": "^0.1.0",
+        "@pxeeio/eslint-config-solid": "^0.1.2",
         "@types/lodash.throttle": "^4.1.7",
         "@types/node": "^18.15.10",
         "@typescript-eslint/eslint-plugin": "^6.2.1",
