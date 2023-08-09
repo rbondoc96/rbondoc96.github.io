@@ -5,6 +5,7 @@ import OpenGraphHelmet from '@/components/Helmet/OpenGraphHelmet';
 import TwitterCardHelmet from '@/components/Helmet/TwitterCardHelmet';
 import type {
     LinkAttribute,
+    MetaAttribute,
     OpenGraphAttributes,
     TwitterCardAttributes,
 } from '@/components/Helmet/types';
@@ -12,61 +13,68 @@ import type {
 export type HelmetProps = {
     author?: string;
     description?: string;
+    favicon?: `${string}.ico`;
     image?: string;
     title?: string;
     links?: LinkAttribute[];
+    meta?: MetaAttribute[];
 } & OpenGraphAttributes & TwitterCardAttributes;
 
-const Helmet: Component<HelmetProps> = baseProps => {
-    const props = mergeProps(
+const Helmet: Component<HelmetProps> = props => {
+    const propsWithDefaults = mergeProps(
         {
             links: [],
         },
-        baseProps,
+        props,
     );
 
-    const [openGraphProps, others] = splitProps(props, [
-        'og:description',
-        'og:image',
-        'og:locale',
-        'og:title',
-        'og:type',
-        'og:url',
+    const [openGraphProps, propsWithoutOpenGraph] = splitProps(propsWithDefaults, [
+        'og-description',
+        'og-image',
+        'og-locale',
+        'og-title',
+        'og-type',
+        'og-url',
     ]);
 
-    const [twitterCardProps, rest] = splitProps(others, [
-        'twitter:card',
-        'twitter:creator',
-        'twitter:description',
-        'twitter:image',
-        'twitter:image:alt',
-        'twitter:site',
-        'twitter:title',
+    const [twitterCardProps, remainingProps] = splitProps(propsWithoutOpenGraph, [
+        'twitter-card',
+        'twitter-creator',
+        'twitter-description',
+        'twitter-image',
+        'twitter-image-alt',
+        'twitter-site',
+        'twitter-title',
     ]);
 
     return (
         <>
-            <Show when={rest.title} keyed>
+            <Show when={remainingProps.title} keyed>
                 {title => <Title>{title}</Title>}
             </Show>
-            
-            <Index each={rest.links}>{link => <Link {...link()} />}</Index>
-            
-            <Show when={rest.author} keyed>
+
+            <Show when={remainingProps.favicon} keyed>
+                {favicon => <Link rel="icon" type="image/ico" href={favicon} />}
+            </Show>
+
+            <Show when={remainingProps.author} keyed>
                 {author => <Meta name="author" content={author} />}
             </Show>
 
-            <Show when={rest.description} keyed>
+            <Show when={remainingProps.description} keyed>
                 {description => <Meta name="description" content={description} />}
             </Show>
 
-            <Show when={rest.image} keyed>
+            <Show when={remainingProps.image} keyed>
                 {image => <Meta name="image" content={image} />}
             </Show>
 
             <OpenGraphHelmet {...openGraphProps} />
 
             <TwitterCardHelmet {...twitterCardProps} />
+            
+            <Index each={remainingProps.links}>{link => <Link {...link()} />}</Index>
+            <Index each={remainingProps.meta}>{meta => <Meta {...meta()} />}</Index>
         </>
     );
 };
