@@ -1,16 +1,11 @@
 import {Motion} from '@motionone/solid';
-import {type Component, createSignal} from 'solid-js';
+import {type Component} from 'solid-js';
 
 import Logo from '@/components/Logo';
 import Page from '@/components/Page';
-import SquareOfDotsIcon from '@/components/SquareOfDotsIcon';
 import ThemeToggle from '@/components/ThemeToggle';
 
-import styles from './styles.module.scss';
-
 const HomePage: Component = () => {
-    const [isNavigationDrawerVisible, setIsNavigationDrawerVisible] = createSignal(false);
-
     return (
         <Page
             author="Rodrigo Bondoc"
@@ -36,17 +31,11 @@ const HomePage: Component = () => {
                 duration: 1,
             }}
         >
-            <a
-                href="#content"
-                class={styles.skipToContentLink}
-            >
-                Skip to Content
-            </a>
-            <header class={styles.header}>
-                <div class={styles.headerLayout}>
-                    <div class={styles.headerContainer}>
-                        <div class={styles.headerInnerContainer}>
-                            <div class={styles.headerContent}>
+            <header class="w-full">
+                <div class="absolute left-0 right-0 pt-8">
+                    <div class="mx-auto max-w-7xl px-8 lg:px-10">
+                        <div class="mx-auto max-w-2xl lg:max-w-none">
+                            <div class="flex items-center justify-between">
                                 <Motion.div
                                     /**
                                      * Don't use Motion.a because there is an issue
@@ -54,7 +43,6 @@ const HomePage: Component = () => {
                                      * when it finishes the first time. So it will end up
                                      * playing the animation twice.
                                      */
-                                    class={styles.headerLogoLink}
                                     initial={{
                                         opacity: 0,
                                         y: '-100%',
@@ -64,37 +52,17 @@ const HomePage: Component = () => {
                                         y: '0%',
                                     }}
                                     transition={{
-                                        delay: 1,
                                         duration: 1,
                                     }}
                                 >
                                     <a
                                         aria-label="Home"
+                                        class="block p-2"
                                         href="/"
                                     >
                                         <Logo />
                                     </a>
                                 </Motion.div>
-
-                                <Motion.nav
-                                    initial={{
-                                        opacity: 0,
-                                        y: '-100%',
-                                    }}
-                                    animate={{
-                                        opacity: 1,
-                                        y: '0%',
-                                    }}
-                                    transition={{
-                                        delay: 1.5,
-                                        duration: 1,
-                                    }}
-                                >
-                                    <a href="#about">About</a>
-                                    <a href="#about">Experience</a>
-                                    <a href="#about">Projects</a>
-                                    <a href="#about">Contact</a>
-                                </Motion.nav>
                                 
                                 <Motion.div
                                     initial={{
@@ -106,28 +74,12 @@ const HomePage: Component = () => {
                                         y: '0%',
                                     }}
                                     transition={{
-                                        delay: 1.8,
+                                        delay: 0.5,
                                         duration: 1,
                                     }}
                                 >
                                     <ThemeToggle />
                                 </Motion.div>
-                                
-                                <button
-                                    class={styles.headerNavigationToggleButton}
-                                    type="button"
-                                    aria-label="Toggle navigation"
-                                    aria-expanded={isNavigationDrawerVisible()}
-                                    onClick={
-                                        () => setIsNavigationDrawerVisible(prevState => !prevState)
-                                    }
-                                >
-                                    <div>
-                                        <SquareOfDotsIcon />
-                                        <span>Menu</span>
-                                        <SquareOfDotsIcon />
-                                    </div>
-                                </button>
                             </div>
                         </div>
                     </div>
