@@ -5,6 +5,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 export default {
     content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {
@@ -25,6 +26,7 @@ export default {
         colors: {
             black: colors.black,
             cyan: {
+                DEFAULT: 'hsl(185, 90.2%, 48.2%)',
                 400: 'hsl(185, 90.2%, 48.2%)',
                 700: colors.cyan[700],
             },
@@ -32,12 +34,17 @@ export default {
                 950: 'hsl(240, 37.9%, 5.7%)',
             },
             rose: {
+                DEFAULT: 'hsl(347, 67.8%, 47.5%)',
                 600: 'hsl(347, 67.8%, 47.5%)',
             },
             slate: {
+                200: colors.slate['200'],
+                300: colors.slate['300'],
+                400: colors.slate['400'],
                 800: 'hsl(230, 30%, 20%)',
                 950: 'hsl(240, 25%, 10%)',
             },
+            transparent: colors.transparent,
             violet: {
                 400: 'hsl(247.14, 36.84%, 44.71%)',
             },
@@ -46,6 +53,7 @@ export default {
         textColor: {
             black: colors.black,
             cyan: {
+                DEFAULT: 'hsl(185, 90.2%, 48.2%)',
                 400: 'hsl(185, 90.2%, 48.2%)',
             },
             // dark: 'hsl(240, 37.9%, 5.7%)',
@@ -55,6 +63,7 @@ export default {
             // light: colors.zinc[50],
             muted: colors.zinc[400],
             rose: {
+                DEFAULT: 'hsl(347, 67.8%, 47.5%)',
                 600: 'hsl(347, 67.8%, 47.5%)',
             },
             transparent: colors.transparent,

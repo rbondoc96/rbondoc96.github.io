@@ -6,15 +6,13 @@
 
 @layer base {
     html {
-        @apply text-white;
         font-family: 'Work Sans', sans-serif;
         scroll-behavior: smooth;
     }
 
-    html,
-    body,
-    #root {
-        @apply bg-slate-950;
+    body {
+        @apply antialiased;
+        @apply bg-slate-200 dark:bg-slate-950;
     }
 
     body.blurred {
@@ -33,8 +31,21 @@
         @apply flex flex-col;
     }
 
-    a,
-    button {
+    :focus-visible {
         @apply outline-0;
+        @apply focus-visible:ring-4 focus-visible:ring-cyan;
+    }
+
+    // 'no-preference' means user has made no preference known to the device
+    // 'reduce' means user has enabled a reduced motion setting on their device
+    @media (prefers-reduced-motion: no-preference) {
+        a,
+        button {
+            transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,-webkit-backdrop-filter;
+            transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+            transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter,-webkit-backdrop-filter;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
     }
 }
