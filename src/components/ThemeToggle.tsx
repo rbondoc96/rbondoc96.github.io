@@ -4,8 +4,6 @@ import {type Component, createSignal, Show} from 'solid-js';
 
 import {setTheme, useLocalStore} from '@/stores/local.store';
 
-import styles from './styles.module.scss';
-
 const ThemeToggle: Component = () => {
     const localStore = useLocalStore();
 
@@ -20,23 +18,23 @@ const ThemeToggle: Component = () => {
     
     return (
         <button
-            class={styles.themeToggle}
+            class="rounded-3xl px-4 py-2.5 border border-slate-300 shadow-lg"
             onClick={toggleDarkMode}
         >
-            <div>
+            <div class="flex items-center justify-center">
                 <Show
                     when={isDarkMode()}
                     fallback={(
                         <FontAwesomeIcon
                             fw
-                            class={styles.iconSun}
+                            class="text-black dark:text-white"
                             icon={faSun}
                         />
                     )}
                 >
                     <FontAwesomeIcon
                         fw
-                        class={styles.iconMoon}
+                        class="text-black dark:text-white"
                         icon={faMoon}
                     />
                 </Show>
