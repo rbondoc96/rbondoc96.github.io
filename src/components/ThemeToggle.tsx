@@ -18,7 +18,8 @@ const ThemeToggle: Component = () => {
     
     return (
         <button
-            class="rounded-3xl px-4 py-2.5 border border-slate-300 shadow-lg"
+            // eslint-disable-next-line max-len
+            class="rounded-3xl px-4 py-2.5 shadow-lg border-2 border-slate-300 dark:border-slate-800"
             onClick={toggleDarkMode}
         >
             <div class="flex items-center justify-center">

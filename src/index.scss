@@ -27,13 +27,17 @@
         @apply overflow-hidden;
     }
 
-    #root {
-        @apply flex flex-col;
+    h1, h2, h3, h4, h5, h6, p, span {
+        @apply text-black dark:text-white;
     }
 
     :focus-visible {
         @apply outline-0;
         @apply focus-visible:ring-4 focus-visible:ring-cyan;
+    }
+
+    #root {
+        @apply flex flex-col;
     }
 
     // 'no-preference' means user has made no preference known to the device

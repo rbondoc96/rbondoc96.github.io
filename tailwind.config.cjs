@@ -24,7 +24,7 @@ export default {
             '2xl': `${breakpoints['2xl']}px`,
         },
         colors: {
-            black: colors.black,
+            black: 'hsl(240, 37.9%, 5.7%)',
             cyan: {
                 DEFAULT: 'hsl(185, 90.2%, 48.2%)',
                 400: 'hsl(185, 90.2%, 48.2%)',
@@ -51,16 +51,16 @@ export default {
             white: colors.zinc[50],
         },
         textColor: {
-            black: colors.black,
+            black: 'hsl(240, 37.9%, 5.7%)',
             cyan: {
                 DEFAULT: 'hsl(185, 90.2%, 48.2%)',
                 400: 'hsl(185, 90.2%, 48.2%)',
             },
-            // dark: 'hsl(240, 37.9%, 5.7%)',
             gray: {
+                400: colors.gray[400],
+                500: colors.gray[500],
                 950: 'hsl(240, 37.9%, 5.7%)',
             },
-            // light: colors.zinc[50],
             muted: colors.zinc[400],
             rose: {
                 DEFAULT: 'hsl(347, 67.8%, 47.5%)',
